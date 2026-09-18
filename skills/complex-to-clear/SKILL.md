@@ -3,7 +3,7 @@ name: complex-to-clear
 description: Explain complex knowledge clearly without flattening, distorting, misattributing, or over-simplifying the source material. Use for educational content, scripts, courses, explainers, and beginner-facing knowledge translation.
 ---
 
-# COMPLEX-TO-CLEAR v1.3
+# COMPLEX-TO-CLEAR v1.4
 
 ## Purpose
 
@@ -344,6 +344,30 @@ Run this test:
 
 If the comparison creates false equivalence, false contemporaneity, or unsupported influence, FAIL.
 
+
+## H20 — Preserve Approved Material by Default
+
+Once a user, editor, or review gate has explicitly approved a paragraph, section, structure, analogy, or phrasing, later revisions must preserve it by default.
+
+When feedback identifies local problems, perform **surgical revision**:
+- change only the failing sentence, paragraph, transition, or claim;
+- keep already-approved material intact unless the requested fix logically requires a wider change;
+- do not silently rewrite the whole piece merely to make the new version feel more internally uniform.
+
+A full rewrite is allowed only when:
+- the central question is wrong;
+- the canonical explanation core has changed;
+- the article structure itself fails;
+- local repairs would create contradictions or obvious incoherence.
+
+Before a full rewrite, state internally what structural failure makes local editing insufficient.
+
+Run this test:
+
+> Did the revision solve the identified problem while preserving everything that had already passed review?
+
+If no, FAIL.
+
 # DISTORTION GATE
 
 Run before any content enters final scripting or publication.
@@ -415,6 +439,10 @@ Required checks:
 20. **CROSS_CULTURAL_PARALLEL**
    - If a cross-cultural comparison is used, are chronology, similarity, difference, and transmission status kept distinct?
    - Does the comparison clarify rather than create false equivalence?
+
+21. **APPROVED_MATERIAL_PRESERVATION**
+   - Did the revision preserve previously approved material unless a wider structural repair was genuinely necessary?
+   - Were local problems fixed locally rather than triggering an unnecessary full rewrite?
 
 Any hard FAIL returns the content to:
 ```text
