@@ -7,7 +7,12 @@ import subprocess
 from dataclasses import asdict
 from typing import Any
 
-from .classifier import ClassifiedObservation, _author_hash, _infer_group
+from .classifier import (
+    ClassifiedObservation,
+    _author_hash,
+    _infer_group,
+    _normalize_timestamp,
+)
 
 
 ALLOWED_HORIZONS = {
@@ -187,8 +192,15 @@ class ExternalJSONClassifier:
         platform = str(record.get("platform") or "unknown")
         author = str(record.get("author")) if record.get("author") else None
         source_group = _infer_group(record)
-        published_at = str(record.get("published_at") or record.get("captured_at"))
-        captured_at = str(record.get("captured_at") or published_at)
+        captured_at_raw = str(record.get("captured_at") or "")
+        captured_at = _normalize_timestamp(
+            record.get("captured_at"),
+            captured_at_raw,
+        )
+        published_at = _normalize_timestamp(
+            record.get("published_at"),
+            captured_at,
+        )
         raw_hash = str(
             record.get("raw_hash")
             or hashlib.sha256(text.encode("utf-8")).hexdigest()
