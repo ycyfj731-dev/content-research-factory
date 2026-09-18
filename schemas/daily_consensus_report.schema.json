@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://content-research-factory.local/schemas/daily_consensus_report.schema.json",
+  "title": "DailyConsensusReport",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "asset_id",
+    "date",
+    "locked_at",
+    "group_scores",
+    "overall_consensus_score",
+    "crowding_score",
+    "sample_sizes",
+    "coverage",
+    "dominant_narratives",
+    "data_quality"
+  ],
+  "properties": {
+    "asset_id": {"type": "string"},
+    "date": {"type": "string", "format": "date"},
+    "locked_at": {"type": "string", "format": "date-time"},
+    "group_scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["institution", "kol", "crowd"],
+      "properties": {
+        "institution": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "kol": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "crowd": {"type": ["number", "null"], "minimum": 0, "maximum": 100}
+      }
+    },
+    "overall_consensus_score": {"type": "number", "minimum": 0, "maximum": 100},
+    "crowding_score": {"type": "number", "minimum": 0, "maximum": 100},
+    "sample_sizes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["raw", "unique_authors", "effective"],
+      "properties": {
+        "raw": {"type": "integer", "minimum": 0},
+        "unique_authors": {"type": "integer", "minimum": 0},
+        "effective": {"type": "number", "minimum": 0}
+      }
+    },
+    "coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["platform", "status", "observations"],
+        "properties": {
+          "platform": {"type": "string"},
+          "status": {
+            "type": "string",
+            "enum": ["ok", "partial", "missing", "failed"]
+          },
+          "observations": {"type": "integer", "minimum": 0},
+          "note": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "dominant_narratives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["narrative_id", "label", "direction", "saturation"],
+        "properties": {
+          "narrative_id": {"type": "string"},
+          "label": {"type": "string"},
+          "direction": {"type": "number", "minimum": -1, "maximum": 1},
+          "saturation": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+          "unique_originators": {"type": ["integer", "null"], "minimum": 0},
+          "unique_spreaders": {"type": ["integer", "null"], "minimum": 0}
+        }
+      }
+    },
+    "market_snapshot": {
+      "type": ["object", "null"],
+      "additionalProperties": true
+    },
+    "fundamental_reality_score": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "divergence_state": {
+      "type": ["string", "null"],
+      "enum": [
+        "BEARISH_CONSENSUS_BULLISH_REALITY",
+        "BULLISH_CONSENSUS_BEARISH_REALITY",
+        "CONSENSUS_CONFIRMED",
+        "MIXED",
+        "INSUFFICIENT_DATA",
+        null
+      ]
+    },
+    "data_quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "warnings"],
+      "properties": {
+        "score": {"type": "number", "minimum": 0, "maximum": 100},
+        "warnings": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}
