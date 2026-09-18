@@ -1,0 +1,115 @@
+version: 1
+
+asset:
+  id: "GFEX_LC"
+  name: "碳酸锂"
+  exchange: "GFEX"
+  aliases:
+    - "碳酸锂"
+    - "LC"
+    - "LC2701"
+    - "广期所碳酸锂"
+
+discovery:
+  core_keywords:
+    - "碳酸锂"
+    - "LC2701"
+    - "碳酸锂 仓单"
+    - "碳酸锂 逼仓"
+    - "碳酸锂 去库"
+    - "碳酸锂 累库"
+    - "碳酸锂 复产"
+    - "津巴布韦 锂矿"
+    - "宜春 锂云母"
+    - "江西 锂矿"
+    - "碳酸锂 现货"
+    - "碳酸锂 基差"
+  narrative_seed_tags:
+    - "zimbabwe_supply"
+    - "jiangxi_restart"
+    - "warehouse_receipts"
+    - "holiday_restocking"
+    - "social_inventory"
+    - "spot_futures_basis"
+    - "production_growth"
+    - "deliverable_supply_squeeze"
+
+source_groups:
+  institution:
+    overall_weight: 0.45
+    default_source_weight: 1.0
+  kol:
+    overall_weight: 0.30
+    default_source_weight: 1.0
+  crowd:
+    overall_weight: 0.25
+    default_source_weight: 1.0
+
+freshness_half_life_days:
+  intraday: 0.5
+  "1_5d": 2.0
+  "6_20d": 7.0
+  "21_60d": 21.0
+  longer: 60.0
+  unspecified: 7.0
+
+weighting:
+  explicit_position_factor: 1.25
+  conviction_floor: 0.25
+  conviction_scale: 0.75
+
+collection:
+  fixed_panel:
+    enabled: true
+    principle: "keep source identities stable through time"
+  dynamic_discovery:
+    enabled: true
+  comment_sampling:
+    top: 15
+    latest: 15
+    random: 20
+  daily_targets:
+    institution_observations: 10
+    kol_observations: 30
+    crowd_observations: 300
+
+platforms:
+  weibo:
+    preferred_route: "MediaCrawler"
+    fallback: "Agent-Reach/search"
+  xiaohongshu:
+    preferred_route: "MediaCrawler"
+    fallback: "Agent-Reach"
+  douyin:
+    preferred_route: "MediaCrawler"
+    fallback: "public-search-or-authorized-provider"
+  wechat_official:
+    preferred_route: "authorized-commercial-provider-or-search"
+    fallback: "coverage_missing"
+  video_account:
+    preferred_route: "authorized-commercial-provider-or-search"
+    fallback: "coverage_missing"
+  institution_web:
+    preferred_route: "Agent-Reach/search"
+    fallback: "direct-public-web"
+
+quality:
+  require_coverage_metadata: true
+  lock_daily_scores: true
+  preserve_raw_hash: true
+  preserve_model_version: true
+  no_hindsight_relabeling: true
+
+market_snapshot_fields:
+  - "futures_price"
+  - "spot_price"
+  - "basis"
+  - "warehouse_receipts"
+  - "warehouse_receipts_delta"
+  - "social_inventory"
+  - "social_inventory_delta"
+  - "open_interest"
+  - "open_interest_delta"
+  - "near_far_spread"
+  - "production"
+  - "ore_arrivals"
