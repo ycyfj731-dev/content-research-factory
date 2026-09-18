@@ -10,9 +10,11 @@ from .adapters.mcp_stdio import MCPStdioConfig
 from .adapters.mediacrawler_mcp import MediaCrawlerMCPAdapter
 from .adapters.moneyprinterturbo import MoneyPrinterTurboAdapter, MoneyPrinterTurboConfig
 from .adapters.trendradar import TrendRadarAdapter
+from .doctor import run_doctor
 from .export import write_research_package
 from .pipeline import ContentResearchPipeline
 from .reporting import write_brief
+from .smoke import SMOKE_QUERY, run_smoke_test
 
 
 def slugify(value: str) -> str:
@@ -100,7 +102,33 @@ def main(argv: list[str] | None = None) -> int:
         help="Send the completed research package to MoneyPrinterTurbo.",
     )
 
+    subparsers.add_parser("doctor")
+
+    smoke = subparsers.add_parser("smoke-test")
+    smoke.add_argument(
+        "--output-dir",
+        default="outputs/smoke-test",
+        help="Directory for the fixed first smoke-test artifacts.",
+    )
+
     args = parser.parse_args(argv)
+
+    if args.command == "doctor":
+        checks = run_doctor()
+        for check in checks:
+            print(f"{check.name:20} {check.status:14} {check.detail}")
+        return 0 if all(c.status in {"READY", "PARTIAL", "NOT_CONFIGURED"} for c in checks) else 1
+
+    if args.command == "smoke-test":
+        pipeline = build_pipeline(enable_video=False)
+        package, root = run_smoke_test(pipeline, args.output_dir)
+        print(f"query: {SMOKE_QUERY}")
+        print(f"output: {root}")
+        print(f"discoveries: {len(package.discoveries)}")
+        print(f"verifications: {len(package.verifications)}")
+        print(f"deep_research: {len(package.deep_research)}")
+        print(f"comments: {package.synthesis.get('comment_count', 0)}")
+        return 0
 
     if args.command == "research":
         pipeline = build_pipeline(enable_video=args.produce_video)
