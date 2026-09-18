@@ -52,6 +52,10 @@ checks:
     hard: true
     question: "Has the explanation avoided forcing a neat conclusion where the intellectual problem should remain open?"
 
+  - id: EXPLANATION_CONSISTENCY
+    hard: true
+    question: "Does this version preserve the frozen canonical explanation core, including what the source is doing, who is doing it, what is and is not yet established, and the same claim scope?"
+
 decision:
   READY:
     rule: "all checks PASS"
