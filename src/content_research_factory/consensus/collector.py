@@ -7,7 +7,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
-from ..clients import AgentReachClient, MediaCrawlerClient, TrendRadarClient
+from ..clients import (
+    AgentReachClient,
+    MediaCrawlerClient,
+    SupplementalSearchClient,
+    TrendRadarClient,
+    WebCrawlerClient,
+)
+from .coverage import CoverageRecord
 from .discovery import DiscoveryQuery
 
 
@@ -78,13 +85,18 @@ def _normalize_item(
         origin_tool=origin_tool,
         platform=str(platform) if platform is not None else None,
         source_id=str(source_id) if source_id is not None else None,
-        parent_source_id=parent_source_id,
+        parent_source_id=parent_source_id
+        or (
+            str(item["parent_source_id"])
+            if item.get("parent_source_id") is not None
+            else None
+        ),
         url=str(url) if url is not None else None,
         author=str(author) if author is not None else None,
         title=str(title) if title is not None else None,
         text=str(text) if text is not None else None,
         published_at=str(published_at) if published_at is not None else None,
-        content_type=content_type,
+        content_type=str(item.get("content_type") or content_type),
         raw_hash=_source_key(item),
         raw=dict(item),
     )
@@ -97,10 +109,15 @@ class ConsensusCollector:
         trend_radar: TrendRadarClient,
         agent_reach: AgentReachClient,
         media_crawler: MediaCrawlerClient,
+        supplemental_sources: Iterable[tuple[str, SupplementalSearchClient]] = (),
+        web_crawler: WebCrawlerClient | None = None,
     ) -> None:
         self.trend_radar = trend_radar
         self.agent_reach = agent_reach
         self.media_crawler = media_crawler
+        self.supplemental_sources = list(supplemental_sources)
+        self.web_crawler = web_crawler
+        self.last_coverage: list[CoverageRecord] = []
 
     def collect(
         self,
@@ -109,8 +126,10 @@ class ConsensusCollector:
         discovery_limit: int = 8,
         verification_limit: int = 12,
         social_limit: int = 12,
+        supplemental_limit: int = 12,
         deep_posts_per_query: int = 2,
         comments_limit: int = 50,
+        web_pages_per_query: int = 2,
         captured_at: datetime | None = None,
     ) -> list[RawConsensusEvidence]:
         now = captured_at or datetime.now(timezone.utc)
@@ -120,6 +139,8 @@ class ConsensusCollector:
 
         records: list[RawConsensusEvidence] = []
         seen: set[str] = set()
+        coverage_counts: dict[str, int] = {}
+        coverage_errors: dict[str, str] = {}
 
         def append(record: RawConsensusEvidence) -> None:
             if record.source_id:
@@ -140,50 +161,89 @@ class ConsensusCollector:
                 return
             seen.add(key)
             records.append(record)
+            coverage_counts[record.origin_tool] = (
+                coverage_counts.get(record.origin_tool, 0) + 1
+            )
+
+        def fail(source: str, exc: Exception) -> None:
+            coverage_errors[source] = f"{type(exc).__name__}: {exc}"
 
         for query in plan:
-            discovered = self.trend_radar.discover(
-                query.query,
-                limit=discovery_limit,
-            )
-            for item in discovered:
-                append(
-                    _normalize_item(
-                        item,
-                        query=query,
-                        captured_at=captured,
-                        default_tool="TrendRadar",
-                    )
+            discovered: list[dict[str, Any]] = []
+            try:
+                discovered = self.trend_radar.discover(
+                    query.query,
+                    limit=discovery_limit,
                 )
+                for item in discovered:
+                    append(
+                        _normalize_item(
+                            item,
+                            query=query,
+                            captured_at=captured,
+                            default_tool="TrendRadar",
+                        )
+                    )
+            except Exception as exc:
+                fail("TrendRadar", exc)
 
-            verified = self.agent_reach.verify(
-                query.query,
-                candidates=discovered,
-                limit=verification_limit,
-            )
-            for item in verified:
-                append(
-                    _normalize_item(
-                        item,
-                        query=query,
-                        captured_at=captured,
-                        default_tool="Agent-Reach",
-                    )
+            try:
+                verified = self.agent_reach.verify(
+                    query.query,
+                    candidates=discovered,
+                    limit=verification_limit,
                 )
+                for item in verified:
+                    append(
+                        _normalize_item(
+                            item,
+                            query=query,
+                            captured_at=captured,
+                            default_tool="Agent-Reach",
+                        )
+                    )
 
-            social = self.media_crawler.search(
-                query.query,
-                limit=social_limit,
-            )
-            for item in social:
-                append(
-                    _normalize_item(
-                        item,
-                        query=query,
-                        captured_at=captured,
-                        default_tool="MediaCrawler",
-                    )
+                if self.web_crawler is not None:
+                    crawled = 0
+                    for item in verified:
+                        if crawled >= web_pages_per_query:
+                            break
+                        url = _first(item, "url", "source_url", "share_url")
+                        if not url:
+                            continue
+                        try:
+                            page = self.web_crawler.crawl(str(url))
+                            append(
+                                _normalize_item(
+                                    page,
+                                    query=query,
+                                    captured_at=captured,
+                                    default_tool="Crawl4AI",
+                                )
+                            )
+                            crawled += 1
+                        except Exception as exc:
+                            fail("Crawl4AI", exc)
+            except Exception as exc:
+                fail("Agent-Reach", exc)
+
+            social: list[dict[str, Any]] = []
+            try:
+                social = self.media_crawler.search(
+                    query.query,
+                    limit=social_limit,
                 )
+                for item in social:
+                    append(
+                        _normalize_item(
+                            item,
+                            query=query,
+                            captured_at=captured,
+                            default_tool="MediaCrawler",
+                        )
+                    )
+            except Exception as exc:
+                fail("MediaCrawler", exc)
 
             deep_count = 0
             for item in social:
@@ -201,37 +261,103 @@ class ConsensusCollector:
                     continue
                 platform = item.get("platform")
                 source_id_str = str(source_id)
-
-                detail = self.media_crawler.detail(
-                    source_id_str,
-                    platform=platform,
-                )
-                append(
-                    _normalize_item(
-                        detail,
-                        query=query,
-                        captured_at=captured,
-                        default_tool="MediaCrawler",
+                try:
+                    detail = self.media_crawler.detail(
+                        source_id_str,
+                        platform=platform,
                     )
-                )
-
-                comments = self.media_crawler.comments(
-                    source_id_str,
-                    platform=platform,
-                    limit=comments_limit,
-                )
-                for comment in comments:
                     append(
                         _normalize_item(
-                            comment,
+                            detail,
                             query=query,
                             captured_at=captured,
                             default_tool="MediaCrawler",
-                            content_type="comment",
-                            parent_source_id=source_id_str,
                         )
                     )
-                deep_count += 1
+
+                    comments = self.media_crawler.comments(
+                        source_id_str,
+                        platform=platform,
+                        limit=comments_limit,
+                    )
+                    for comment in comments:
+                        append(
+                            _normalize_item(
+                                comment,
+                                query=query,
+                                captured_at=captured,
+                                default_tool="MediaCrawler",
+                                content_type="comment",
+                                parent_source_id=source_id_str,
+                            )
+                        )
+                    deep_count += 1
+                except Exception as exc:
+                    fail("MediaCrawler", exc)
+
+            for source_name, source in self.supplemental_sources:
+                try:
+                    extra = source.search(
+                        query.query,
+                        limit=supplemental_limit,
+                    )
+                    for item in extra:
+                        append(
+                            _normalize_item(
+                                item,
+                                query=query,
+                                captured_at=captured,
+                                default_tool=source_name,
+                            )
+                        )
+                except Exception as exc:
+                    fail(source_name, exc)
+
+                deep_search = getattr(source, "deep_comment_search", None)
+                if callable(deep_search):
+                    try:
+                        comments = deep_search(
+                            query.query,
+                            limit=min(comments_limit, supplemental_limit),
+                        )
+                        for comment in comments:
+                            append(
+                                _normalize_item(
+                                    comment,
+                                    query=query,
+                                    captured_at=captured,
+                                    default_tool=source_name,
+                                    content_type="comment",
+                                )
+                            )
+                    except Exception as exc:
+                        fail(source_name, exc)
+
+        expected_sources = ["TrendRadar", "Agent-Reach", "MediaCrawler"]
+        expected_sources.extend(name for name, _ in self.supplemental_sources)
+        if self.web_crawler is not None:
+            expected_sources.append("Crawl4AI")
+
+        self.last_coverage = []
+        for source in dict.fromkeys(expected_sources):
+            count = coverage_counts.get(source, 0)
+            error = coverage_errors.get(source)
+            if error and count:
+                status = "partial"
+            elif error:
+                status = "failed"
+            elif count:
+                status = "ok"
+            else:
+                status = "missing"
+            self.last_coverage.append(
+                CoverageRecord(
+                    source=source,
+                    status=status,
+                    records=count,
+                    error=error,
+                )
+            )
 
         return records
 

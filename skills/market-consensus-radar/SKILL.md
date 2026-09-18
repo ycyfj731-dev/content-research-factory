@@ -324,3 +324,29 @@ Not yet included:
 - embedding-based narrative clusterer;
 - automated historical event study;
 - execution/trading integration.
+
+
+## V0.2 optional source expansion
+
+The core route remains authoritative. Optional sources may extend coverage:
+
+- Crawl4AI = enrich public web pages discovered by Agent-Reach
+- TrendScope = international trend intelligence
+- Reddit MCP = Reddit posts and comment search
+- TikHub = Chinese social fallback for Douyin, Xiaohongshu, and Weibo
+
+All optional sources must be fail-soft. A missing API key, local service, package,
+or provider failure must produce coverage metadata rather than fabricate zero activity.
+
+## V0.2 semantic layer
+
+Sentence-Transformers may provide multilingual semantic similarity for narrative
+clustering. BERTopic may discover unseeded topics.
+
+Rules:
+
+- semantic models may change cluster membership;
+- BERTopic may suggest new narrative labels;
+- neither may directly determine directional stance;
+- lexical/seeded clustering remains the auditable fallback;
+- the selected semantic model name must be stored with outputs.

@@ -66,10 +66,13 @@ def cluster_observations(
     observations: Iterable[dict[str, Any]],
     *,
     similarity_threshold: float = 0.52,
+    semantic_matrix: list[list[float]] | None = None,
+    semantic_threshold: float = 0.72,
 ) -> tuple[list[dict[str, Any]], list[NarrativeCluster]]:
     rows = [dict(row) for row in observations]
     clusters: list[list[int]] = []
     representatives: list[str] = []
+    representative_indices: list[int] = []
 
     for index, row in enumerate(rows):
         text = str(row.get("raw_text") or "")
@@ -77,24 +80,45 @@ def cluster_observations(
 
         best_cluster: int | None = None
         best_score = 0.0
+        best_qualifies = False
         for cluster_index, representative in enumerate(representatives):
             rep_seed = _seed_label(representative)
             lexical = jaccard_similarity(text, representative)
             seed_bonus = 0.35 if seed and rep_seed and seed == rep_seed else 0.0
-            score = min(1.0, lexical + seed_bonus)
+            lexical_score = min(1.0, lexical + seed_bonus)
+
+            semantic_score = 0.0
+            if semantic_matrix is not None:
+                rep_index = representative_indices[cluster_index]
+                try:
+                    semantic_score = float(semantic_matrix[index][rep_index])
+                except (IndexError, TypeError, ValueError):
+                    semantic_score = 0.0
+
+            qualifies = (
+                lexical_score >= similarity_threshold
+                or (
+                    semantic_matrix is not None
+                    and semantic_score >= semantic_threshold
+                )
+            )
+            score = max(lexical_score, semantic_score)
             if score > best_score:
                 best_score = score
                 best_cluster = cluster_index
+                best_qualifies = qualifies
 
-        if best_cluster is not None and best_score >= similarity_threshold:
+        if best_cluster is not None and best_qualifies:
             clusters[best_cluster].append(index)
             # Keep the longer text as a more informative representative.
             current = representatives[best_cluster]
             if len(text) > len(current):
                 representatives[best_cluster] = text
+                representative_indices[best_cluster] = index
         else:
             clusters.append([index])
             representatives.append(text)
+            representative_indices.append(index)
 
     cluster_objects: list[NarrativeCluster] = []
 

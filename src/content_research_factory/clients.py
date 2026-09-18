@@ -50,3 +50,13 @@ class MediaCrawlerClient(Protocol):
 class MoneyPrinterTurboClient(Protocol):
     def produce(self, research_package: dict[str, Any]) -> dict[str, Any]:
         ...
+
+
+class SupplementalSearchClient(Protocol):
+    def search(self, query: str, *, limit: int = 20) -> list[dict[str, Any]]:
+        ...
+
+
+class WebCrawlerClient(Protocol):
+    def crawl(self, url: str) -> dict[str, Any]:
+        ...

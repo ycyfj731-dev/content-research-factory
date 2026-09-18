@@ -19,6 +19,20 @@ crf = "content_research_factory.cli:main"
 test = [
   "pytest>=8.0"
 ]
+sources = [
+  "crawl4ai>=0.9.0",
+  "tikhub>=2.1.0"
+]
+semantic = [
+  "sentence-transformers>=3.0",
+  "bertopic>=0.16"
+]
+full = [
+  "crawl4ai>=0.9.0",
+  "tikhub>=2.1.0",
+  "sentence-transformers>=3.0",
+  "bertopic>=0.16"
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
