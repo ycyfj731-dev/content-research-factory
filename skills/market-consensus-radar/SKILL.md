@@ -40,23 +40,42 @@ First production target: China lithium carbonate futures (GFEX LC).
 Configuration:
 `config/consensus/lithium_carbonate.yaml`
 
-## Core rule: fixed panel + dynamic discovery
+## Core rule: web-wide capture first
 
-Daily collection has two lanes.
+Daily collection starts from the broad public conversation around the asset.
 
-### A. Fixed panel
+### A. Web-wide keyword + semantic capture — primary lane
 
-Track the same institutions, creators, and seed communities every day.
+Search the configured asset aliases, contracts, fundamentals, and event terms every day across available public platforms.
 
-Goal: comparability through time.
+For LC this includes terms such as:
 
-### B. Dynamic discovery
+- 碳酸锂 / LC / active contracts;
+- 仓单 / 去库 / 累库 / 逼仓;
+- 津巴布韦锂矿 / 宜春复产 / 锂云母;
+- 现货 / 基差 / 锂盐厂 / 正极厂.
 
-Discover new narratives, viral posts, new creators, and event-driven keywords every day.
+The discovery layer should also expand semantically so relevant slang or indirect references can be captured when they clearly refer to LC.
 
-Goal: detect narrative regime change.
+Goal: do not miss new narratives just because they come from accounts outside a fixed list.
 
-Never replace the fixed panel with dynamic search results.
+### B. Fixed panel — calibration lane
+
+Track a stable panel of institutions, creators, and seed communities.
+
+Goal: detect platform/API coverage drift and provide a stable time-series anchor.
+
+The fixed panel does **not** define the market universe and must not block newly discovered sources.
+
+### C. Dynamic hotspot lane
+
+Promote viral posts, rapidly growing narratives, and newly relevant creators for deeper comment collection.
+
+Goal: measure narrative acceleration and crowd adoption.
+
+The production design is therefore:
+
+`web-wide capture + fixed-panel calibration + hotspot amplification`
 
 ## Source groups
 
@@ -168,6 +187,32 @@ For every major narrative track:
 
 The key question is not only "what does the market believe?" but also "how mature is that belief?"
 
+## Raw vs normalized consensus
+
+Every daily run should preserve two views.
+
+### Raw Consensus
+
+Represents the exact-deduped captured stream before semantic-repeat and concentration controls.
+
+Raw still applies basic classification confidence and freshness. It is **not** a simple unfiltered comment count.
+
+Purpose: show what the public information stream actually looked like that day.
+
+### Normalized Consensus
+
+Starts from the same observations but additionally:
+
+- discounts semantic repetition via uniqueness_factor;
+- caps influence from any one platform;
+- caps influence from any one author;
+- caps influence from any one parent post/comment thread;
+- combines Institution/KOL/Crowd at the group level.
+
+Purpose: estimate broad independent market consensus rather than content volume.
+
+A large Raw-vs-Normalized gap is itself a research signal: it can indicate one viral post, one platform, or one repeated narrative is dominating the visible conversation.
+
 ## Consensus scoring
 
 Scoring implementation:
@@ -203,9 +248,11 @@ Minimum output:
 
 - date / asset;
 - platform coverage;
-- institution / KOL / crowd scores;
-- overall consensus score;
-- crowding score;
+- raw Institution / KOL / Crowd scores;
+- normalized Institution / KOL / Crowd scores;
+- Raw Consensus;
+- Normalized / Overall Consensus;
+- raw and normalized crowding;
 - effective sample size;
 - dominant narratives and saturation;
 - data-quality warnings;
