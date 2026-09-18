@@ -80,6 +80,7 @@ def cluster_observations(
 
         best_cluster: int | None = None
         best_score = 0.0
+        best_qualifies = False
         for cluster_index, representative in enumerate(representatives):
             rep_seed = _seed_label(representative)
             lexical = jaccard_similarity(text, representative)
@@ -94,15 +95,20 @@ def cluster_observations(
                 except (IndexError, TypeError, ValueError):
                     semantic_score = 0.0
 
-            score = max(
-                lexical_score,
-                semantic_score if semantic_score >= semantic_threshold else 0.0,
+            qualifies = (
+                lexical_score >= similarity_threshold
+                or (
+                    semantic_matrix is not None
+                    and semantic_score >= semantic_threshold
+                )
             )
+            score = max(lexical_score, semantic_score)
             if score > best_score:
                 best_score = score
                 best_cluster = cluster_index
+                best_qualifies = qualifies
 
-        if best_cluster is not None and best_score >= similarity_threshold:
+        if best_cluster is not None and best_qualifies:
             clusters[best_cluster].append(index)
             # Keep the longer text as a more informative representative.
             current = representatives[best_cluster]
