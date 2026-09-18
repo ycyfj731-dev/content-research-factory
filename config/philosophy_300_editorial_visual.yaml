@@ -1,0 +1,65 @@
+version: "1.0"
+name: philosophy-300-editorial-visual
+canvas:
+  width: 1080
+  height: 1440
+  ratio: "3:4"
+  pages_default: 9
+
+layout:
+  margin_x_min: 88
+  margin_x_max: 112
+  margin_y_min: 96
+  text_width_percent:
+    min: 70
+    max: 78
+  body_alignment: left
+
+typography:
+  max_font_families: 2
+  max_weights: 3
+  max_sizes_per_page: 4
+  title_style: high_contrast_serif
+  body_style: readable_editorial_text
+  micro_style: neutral_small
+
+color:
+  background: warm_white
+  text: near_black
+  accent_count: 1
+  accent_style: muted_dark
+
+forbidden:
+  - knowledge_card_boxes
+  - gradients
+  - stickers
+  - decorative_icons
+  - fake_paper_texture
+  - filler_ai_portraits
+  - excessive_rules
+  - quote_mark_decoration
+  - ppt_density
+
+page_archetypes:
+  - cover
+  - essay
+  - question
+  - example
+  - editorial_pause
+  - conclusion
+  - next_lesson_hook
+
+gates:
+  - ONE_DOMINANT_ELEMENT
+  - WHITESPACE_SUFFICIENT
+  - TEXT_WIDTH_READABLE
+  - NO_CARD_UI
+  - MAX_TWO_TYPE_FAMILIES
+  - MAX_ONE_ACCENT_COLOR
+  - SEMANTIC_PAGE_BREAK
+  - CONTENT_LOCK_PRESERVED
+  - IMAGE_HAS_FUNCTION
+  - DENSITY_RHYTHM
+  - CONCLUSION_BEFORE_HOOK
+  - SERIES_IDENTITY_VISIBLE
+  - NO_TEMPLATE_FEEL
