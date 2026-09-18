@@ -13,9 +13,11 @@ from .adapters.mediacrawler_mcp import MediaCrawlerMCPAdapter
 from .adapters.moneyprinterturbo import MoneyPrinterTurboAdapter, MoneyPrinterTurboConfig
 from .adapters.trendradar import TrendRadarAdapter
 from .consensus.collector import ConsensusCollector, write_jsonl
+from .consensus.coverage import coverage_as_dicts
 from .consensus.discovery import build_discovery_plan, plan_as_dicts
 from .consensus.processor import process_raw_evidence
 from .consensus.runner import score_observation_file
+from .consensus.source_factory import build_source_expansion
 from .doctor import run_doctor
 from .export import write_research_package
 from .pipeline import ContentResearchPipeline
@@ -146,6 +148,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     collect.add_argument("--comments-limit", type=int, default=50)
     collect.add_argument("--deep-posts-per-query", type=int, default=2)
+    collect.add_argument(
+        "--coverage-output",
+        default=None,
+        help="Optional coverage ledger JSON path. Defaults beside the raw output.",
+    )
 
     process = subparsers.add_parser("consensus-process")
     process.add_argument("input", help="Append-only raw evidence JSONL.")
@@ -184,6 +191,21 @@ def main(argv: list[str] | None = None) -> int:
         type=int,
         default=60,
         help="Timeout in seconds for each external classifier invocation.",
+    )
+    process.add_argument(
+        "--semantic-model",
+        default=None,
+        help="Optional Sentence-Transformers model for multilingual semantic clustering.",
+    )
+    process.add_argument(
+        "--semantic-threshold",
+        type=float,
+        default=0.72,
+    )
+    process.add_argument(
+        "--bertopic",
+        action="store_true",
+        help="Run BERTopic as a discovery-only topic layer.",
     )
 
     consensus = subparsers.add_parser("consensus-score")
@@ -226,10 +248,13 @@ def main(argv: list[str] | None = None) -> int:
         if args.max_queries is not None:
             plan_items = plan_items[: max(0, args.max_queries)]
         pipeline = build_pipeline(enable_video=False)
+        expansion = build_source_expansion()
         collector = ConsensusCollector(
             trend_radar=pipeline.trend_radar,
             agent_reach=pipeline.agent_reach,
             media_crawler=pipeline.media_crawler,
+            supplemental_sources=expansion.supplemental_sources,
+            web_crawler=expansion.web_crawler,
         )
         records = collector.collect(
             plan_items,
@@ -237,10 +262,27 @@ def main(argv: list[str] | None = None) -> int:
             deep_posts_per_query=args.deep_posts_per_query,
         )
         target = write_jsonl(records, args.output)
+        coverage_target = Path(args.coverage_output) if args.coverage_output else Path(
+            str(target) + ".coverage.json"
+        )
+        coverage_target.parent.mkdir(parents=True, exist_ok=True)
+        coverage_target.write_text(
+            json.dumps(
+                {
+                    "enabled_expansion_sources": list(expansion.enabled_sources),
+                    "coverage": coverage_as_dicts(collector.last_coverage),
+                },
+                ensure_ascii=False,
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
         print(json.dumps({
             "output": str(target),
+            "coverage_output": str(coverage_target),
             "queries": len(plan_items),
             "records": len(records),
+            "enabled_expansion_sources": list(expansion.enabled_sources),
         }, ensure_ascii=False, indent=2))
         return 0
 
@@ -257,6 +299,9 @@ def main(argv: list[str] | None = None) -> int:
             similarity_threshold=args.similarity_threshold,
             classifier_command=args.classifier_command,
             classifier_timeout_seconds=args.classifier_timeout,
+            semantic_model=args.semantic_model,
+            semantic_threshold=args.semantic_threshold,
+            enable_bertopic=args.bertopic,
         )
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
