@@ -4,11 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "content-research-factory"
-version = "0.1.0"
+version = "0.2.0"
 description = "Research-to-production orchestration for social content."
 requires-python = ">=3.11"
 dependencies = [
-  "PyYAML>=6.0"
+  "PyYAML>=6.0",
+  "mcp>=1.0"
 ]
 
 [project.scripts]
