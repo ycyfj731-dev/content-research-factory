@@ -236,3 +236,28 @@ Daily scoring stores both:
   then Institution/KOL/Crowd balanced
 
 Never compare daily scores without checking platform coverage and effective sample size.
+
+
+### Process raw LC evidence into observations and narratives
+
+After collection:
+
+    crf consensus-process outputs/consensus/raw/lithium_carbonate.jsonl
+
+Default outputs:
+
+    outputs/consensus/processed/lithium_carbonate.observations.json
+    outputs/consensus/processed/lithium_carbonate.observations.narratives.json
+
+Then score the processed observations:
+
+    crf consensus-score outputs/consensus/processed/lithium_carbonate.observations.json
+
+Current classification mode is a conservative, deterministic LC baseline. It keeps
+factual news neutral unless a directional view is explicit, distinguishes quoted and
+conditional views, preserves explicit long/short disclosures, and neutralizes ambiguous
+sarcasm.
+
+Narrative clustering is auditable in V0.1: seeded LC narratives plus character-ngram
+similarity. Repeated narratives receive lower uniqueness weight before Normalized
+Consensus is calculated.
