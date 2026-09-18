@@ -2,38 +2,70 @@ from __future__ import annotations
 
 from typing import Any, Mapping, Sequence
 
-from .jsonrpc_stdio import JSONRPCStdioClient, JSONRPCStdioConfig
+from .mcp_stdio import MCPStdioConfig, MCPStdioToolClient
 
 
 class TrendRadarAdapter:
+    """Adapter for sansan0/TrendRadar's real MCP server."""
+
     def __init__(
         self,
-        config: JSONRPCStdioConfig,
+        config: MCPStdioConfig,
         *,
-        discover_method: str = "discover",
+        search_tool: str = "search_news",
+        trending_tool: str = "get_trending_topics",
     ) -> None:
-        self.rpc = JSONRPCStdioClient(config)
-        self.discover_method = discover_method
+        self.mcp = MCPStdioToolClient(config)
+        self.search_tool = search_tool
+        self.trending_tool = trending_tool
 
     def discover(self, query: str, *, limit: int = 20) -> list[dict[str, Any]]:
-        result = self.rpc.call(
-            self.discover_method,
-            {"query": query, "limit": limit},
+        search_result = self.mcp.call(
+            self.search_tool,
+            {
+                "query": query,
+                "limit": limit,
+                "sort_by": "relevance",
+                "include_url": True,
+                "include_rss": True,
+            },
         )
-        return self._normalize(result)
+        rows = self._normalize(search_result)
+
+        trending = self.mcp.call(
+            self.trending_tool,
+            {
+                "top_n": min(limit, 20),
+                "mode": "current",
+                "extract_mode": "auto_extract",
+            },
+        )
+        trends = self._normalize(trending)
+
+        seen = set()
+        merged = []
+        for item in [*rows, *trends]:
+            key = str(item.get("url") or item.get("source_url") or item.get("title") or item)
+            if key in seen:
+                continue
+            seen.add(key)
+            row = dict(item)
+            row.setdefault("origin_tool", "TrendRadar")
+            merged.append(row)
+            if len(merged) >= limit:
+                break
+        return merged
 
     @staticmethod
     def _normalize(result: Any) -> list[dict[str, Any]]:
+        if result is None:
+            return []
         if isinstance(result, Mapping):
-            items = result.get("items") or result.get("data") or [result]
-        elif isinstance(result, Sequence) and not isinstance(result, (str, bytes)):
-            items = result
-        else:
-            raise ValueError("TrendRadar result must contain item objects")
-
-        normalized = []
-        for item in items:
-            if not isinstance(item, Mapping):
-                raise ValueError("TrendRadar item must be an object")
-            normalized.append(dict(item))
-        return normalized
+            for key in ("items", "data", "results", "news", "hot_news", "topics", "trending_topics"):
+                value = result.get(key)
+                if isinstance(value, Sequence) and not isinstance(value, (str, bytes)):
+                    return [dict(x) for x in value if isinstance(x, Mapping)]
+            return [dict(result)]
+        if isinstance(result, Sequence) and not isinstance(result, (str, bytes)):
+            return [dict(x) for x in result if isinstance(x, Mapping)]
+        return [{"text": str(result)}]
