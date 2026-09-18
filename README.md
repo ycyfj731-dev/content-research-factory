@@ -1,6 +1,6 @@
 # CONTENT-RESEARCH-FACTORY
 
-A research-to-production pipeline for discovering, validating, deep-reading, and producing social content.
+Research-to-production pipeline for content discovery, cross-platform verification, Chinese social deep research, comments, and optional video production.
 
 ## Fixed routing
 
@@ -11,47 +11,127 @@ A research-to-production pipeline for discovering, validating, deep-reading, and
 | MediaCrawler | 中文社媒深抓和评论 |
 | MoneyPrinterTurbo | 视频生产 |
 
-This routing is a project invariant. Do not silently swap responsibilities between tools.
+This routing is a project invariant.
 
-## Repository layout
+## Real upstreams
 
-```text
-.
-├── SKILL.md
-├── README.md
-├── config/
-│   └── routing.yaml
-├── src/
-│   └── content_research_factory/
-│       ├── __init__.py
-│       ├── routing.py
-│       └── adapters/
-│           ├── __init__.py
-│           └── mediacrawler_mcp.py
-├── tests/
-│   ├── test_routing.py
-│   └── test_mediacrawler_adapter.py
-└── pyproject.toml
-```
+The runtime is wired to these upstream projects:
 
-## First-stage pipeline
+- TrendRadar: sansan0/TrendRadar
+  - interface: MCP
+  - tools used: search_news, get_trending_topics
+- Agent-Reach: Panniantong/Agent-Reach
+  - interface: capability router + platform CLIs
+  - health check: agent-reach doctor --json
+- MediaCrawler MCP: Bowenwin/MediaCrawler_MCP_Server
+  - based on NanmiCoder/MediaCrawler
+  - interface: MCP
+  - tools used: crawl_search, crawl_detail
+- MoneyPrinterTurbo: harry0703/MoneyPrinterTurbo
+  - interface: CLI
+  - production entry: uv run python cli.py --video-subject ...
 
-1. TrendRadar discovers candidate topics.
-2. Agent-Reach verifies the topic across platforms.
-3. MediaCrawler performs deep Chinese-social retrieval, including posts and comments.
-4. MoneyPrinterTurbo receives an approved research package for video production.
+See config/upstreams.yaml for the pinned integration contract.
 
-## Development
+## Important license note
 
-Requires Python 3.11+.
+Bowenwin/MediaCrawler_MCP_Server states in its source header that it is for learning and research and must not be used commercially.
 
-```bash
-python -m pip install -e ".[test]"
-pytest
-```
+That means CONTENT-RESEARCH-FACTORY can use this adapter for research/testing, but a commercial deployment must replace or separately clear the MediaCrawler layer before production use.
 
-## MediaCrawler adapter
+## Install
 
-The starter adapter intentionally isolates MediaCrawler behind a normalized interface. The rest of the factory should consume normalized research records instead of depending on MediaCrawler-specific payload shapes.
+Requires:
 
-Configuration lives in `config/routing.yaml`.
+- Python 3.11+
+- git
+- uv
+
+### Windows PowerShell
+
+Run:
+
+    .\scripts\bootstrap_upstreams.ps1
+    python -m pip install -e ".[test]"
+
+The PowerShell bootstrap sets these variables for the current shell:
+
+- TREND_RADAR_DIR
+- MEDIA_CRAWLER_DIR
+- MONEY_PRINTER_TURBO_DIR
+
+### macOS / Linux
+
+Run:
+
+    bash scripts/bootstrap_upstreams.sh
+    export TREND_RADAR_DIR=.vendor/TrendRadar
+    export MEDIA_CRAWLER_DIR=.vendor/MediaCrawler_MCP_Server
+    export MONEY_PRINTER_TURBO_DIR=.vendor/MoneyPrinterTurbo
+    python -m pip install -e ".[test]"
+
+## Research
+
+Run:
+
+    crf research "AI 五行饮食"
+
+Artifacts are written to:
+
+    outputs/
+    └── ai-五行饮食/
+        ├── research.json
+        └── brief.md
+
+## Research + video production
+
+Run:
+
+    crf research "AI 五行饮食" --produce-video
+
+MoneyPrinterTurbo is only invoked when --produce-video is explicitly supplied.
+
+## Pipeline
+
+    TrendRadar
+      -> Agent-Reach
+      -> MediaCrawler
+      -> ResearchPackage
+      -> synthesis
+      -> optional MoneyPrinterTurbo
+
+## Agent-Reach verification behavior
+
+Agent-Reach is not treated as a fictional single verify API.
+
+The adapter first runs:
+
+    agent-reach doctor --json
+
+Then it uses the documented read-only backend command for configured platforms, currently:
+
+- Bilibili: bili search
+- Twitter/X: twitter search or OpenCLI
+- Reddit: rdt search or OpenCLI
+- XiaoHongShu: OpenCLI
+
+Unavailable or unconfigured platform backends are skipped instead of being fabricated.
+
+## MediaCrawler behavior
+
+The MediaCrawler MCP tools primarily write crawl results to storage.
+
+The adapter therefore:
+
+1. calls crawl_search or crawl_detail through real MCP stdio;
+2. forces JSON storage;
+3. reads the newly generated content/comment JSON files;
+4. normalizes them into the factory evidence schema.
+
+## Tests
+
+Run:
+
+    pytest -q
+
+GitHub Actions configuration is in .github/workflows/test.yml.
