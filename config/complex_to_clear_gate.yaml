@@ -1,4 +1,4 @@
-version: "1.0"
+version: "1.1"
 name: complex-to-clear-distortion-gate
 policy: hard_fail
 
@@ -55,6 +55,13 @@ checks:
   - id: EXPLANATION_CONSISTENCY
     hard: true
     question: "Does this version preserve the frozen canonical explanation core, including what the source is doing, who is doing it, what is and is not yet established, and the same claim scope?"
+
+  - id: ZERO_BASELINE_GROUNDING
+    hard: true
+    question: "Can a reader with no prior study enter from ordinary experience or already-established course knowledge, without needing unexplained philosophers, doctrines, periods, or technical terms?"
+  - id: BEGINNER_PRIOR_KNOWLEDGE
+    hard: true
+    question: "Does the explanation avoid silently assuming any unintroduced or contested textbook narrative, disciplinary convention, or historical interpretation?"
 
 decision:
   READY:
