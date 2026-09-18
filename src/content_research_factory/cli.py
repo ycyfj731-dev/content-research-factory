@@ -169,6 +169,22 @@ def main(argv: list[str] | None = None) -> int:
         type=float,
         default=0.52,
     )
+    process.add_argument(
+        "--classifier-command",
+        default=None,
+        help="Optional external JSON classifier command. Defaults to heuristic LC classifier.",
+    )
+    process.add_argument(
+        "--classifier-model-version",
+        default=None,
+        help="Model/version label stored with classified observations.",
+    )
+    process.add_argument(
+        "--classifier-timeout",
+        type=int,
+        default=60,
+        help="Timeout in seconds for each external classifier invocation.",
+    )
 
     consensus = subparsers.add_parser("consensus-score")
     consensus.add_argument("input", help="JSON observations file.")
@@ -229,12 +245,18 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.command == "consensus-process":
+        model_version = args.classifier_model_version or (
+            "external-json-v0.1" if args.classifier_command else "heuristic-lc-v0.1"
+        )
         result = process_raw_evidence(
             args.input,
             config_path=args.config,
             output_path=args.output,
             narratives_path=args.narratives_output,
+            model_version=model_version,
             similarity_threshold=args.similarity_threshold,
+            classifier_command=args.classifier_command,
+            classifier_timeout_seconds=args.classifier_timeout,
         )
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
