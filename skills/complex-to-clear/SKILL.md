@@ -197,6 +197,43 @@ When the intellectual value lies in the unresolved problem, preserve the tension
 
 The reader should sometimes leave with a sharper question rather than a packaged answer.
 
+
+## H14 — Explanation Consistency
+
+Once a source passage has passed the DISTORTION GATE, freeze a **canonical explanation core** before any style rewrite.
+
+The canonical core must record:
+- what the passage is doing;
+- what problem or claim it introduces;
+- who is making that move;
+- whether the passage asks a question, advances an argument, gives an answer, or sets up a later answer;
+- what it does **not** yet establish;
+- any essential boundary or unresolved issue.
+
+All later versions — short, long, literary, conversational, video, article, child-friendly, or expert-facing — may change:
+- wording;
+- examples;
+- rhythm;
+- order of exposition;
+- level of detail.
+
+They may **not** change the canonical explanation core.
+
+Run this comparison:
+
+> Would a reader of Version A and Version B come away believing the source passage is doing the same philosophical / conceptual job?
+
+If no, FAIL.
+
+A style rewrite must never silently:
+- turn a question into an answer;
+- turn a character's challenge into the author's conclusion;
+- import a later conclusion into an earlier passage;
+- narrow or widen the claim;
+- change the stated reason why the passage matters.
+
+If a better reading of the source is discovered, update the canonical core explicitly, record the reason, and rerun the gate. Do not let explanation drift happen through copyediting.
+
 # DISTORTION GATE
 
 Run before any content enters final scripting or publication.
@@ -246,6 +283,10 @@ Required checks:
 14. **PREMATURE_CLOSURE**
    - Has the explanation preserved an open problem when closure would be artificial?
 
+15. **EXPLANATION_CONSISTENCY**
+   - Does this version preserve the frozen canonical explanation core from the source-approved version?
+   - Would readers of different style/length versions understand the passage as doing the same conceptual job?
+
 Any hard FAIL returns the content to:
 ```text
 Bottleneck -> Minimum Model -> Bridge -> Mechanism
@@ -290,6 +331,7 @@ Question
   -> COMPLEX-TO-CLEAR
   -> Hook
   -> Script
+  -> Freeze Canonical Explanation Core
   -> DISTORTION GATE
 ```
 
