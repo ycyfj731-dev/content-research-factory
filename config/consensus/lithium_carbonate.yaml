@@ -58,12 +58,37 @@ weighting:
   conviction_floor: 0.25
   conviction_scale: 0.75
 
+normalization:
+  raw_definition: "exact-deduped captured stream before semantic-repeat and concentration controls"
+  normalized_definition: "semantic-repeat discounted, concentration-capped, source-group-balanced consensus"
+  caps_by_group:
+    institution:
+      platform_max_share: 0.55
+      author_max_share: 0.15
+      parent_post_max_share: 1.0
+    kol:
+      platform_max_share: 0.45
+      author_max_share: 0.08
+      parent_post_max_share: 0.20
+    crowd:
+      platform_max_share: 0.40
+      author_max_share: 0.02
+      parent_post_max_share: 0.08
+
 collection:
+  mode: "web_wide_first"
+  web_wide_capture:
+    enabled: true
+    principle: "capture the broad daily public conversation first, then normalize it"
+    exact_dedup_required: true
+    semantic_expansion_required: true
   fixed_panel:
     enabled: true
-    principle: "keep source identities stable through time"
+    role: "calibration_anchor"
+    principle: "keep source identities stable through time for coverage calibration"
   dynamic_discovery:
     enabled: true
+    role: "primary_discovery"
   comment_sampling:
     top: 15
     latest: 15
