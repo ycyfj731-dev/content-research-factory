@@ -14,10 +14,8 @@ BULLISH_PATTERNS = (
     r"加多",
     r"多单",
     r"买多",
-    r"反弹",
-    r"上涨",
-    r"走强",
-    r"突破",
+    r"(?:会|要|将|继续|预计|可能|大概率).{0,8}(?:涨|反弹|走强|突破)",
+    r"(?:涨|反弹|走强).{0,6}(?:到|至)\s*\d",
     r"逼空",
     r"挤空",
     r"空头要小心",
@@ -32,11 +30,8 @@ BEARISH_PATTERNS = (
     r"加空",
     r"空单",
     r"卖空",
-    r"下跌",
-    r"走弱",
-    r"跌破",
-    r"补跌",
-    r"过剩",
+    r"(?:会|要|将|继续|预计|可能|大概率).{0,8}(?:跌|下跌|走弱|跌破|补跌)",
+    r"(?:跌|下跌|走弱).{0,6}(?:到|至)\s*\d",
     r"多头要小心",
     r"多头.*难受",
 )
@@ -103,7 +98,7 @@ SARCASTIC_MARKERS = (
 )
 
 QUOTE_PATTERNS = (
-    r".{1,20}(?:认为|表示|指出|预计|称).*?(?:上涨|下跌|看多|看空|偏多|偏空)",
+    r"(?:机构|期货公司|券商|分析师|研究员|报告|研报|SMM|Mysteel|钢联|华泰|中信|国泰君安|南华|五矿).{0,20}(?:认为|表示|指出|预计|称).*?(?:上涨|下跌|看多|看空|偏多|偏空|涨|跌)",
 )
 
 INTRADAY_TERMS = ("今天", "日内", "尾盘", "今晚", "上午", "下午")
@@ -297,6 +292,13 @@ class HeuristicLCClassifier:
 
         bull = _count(BULLISH_PATTERNS, text)
         bear = _count(BEARISH_PATTERNS, text)
+
+        # Very short cheering/taunting comments are directional but low-information.
+        compact = re.sub(r"\s+", "", text)
+        if compact in {"涨", "涨涨涨", "起飞", "冲", "多"}:
+            bull += 1
+        if compact in {"跌", "跌跌跌", "崩", "空"}:
+            bear += 1
         strong_bull = _count(STRONG_BULLISH_PATTERNS, text)
         strong_bear = _count(STRONG_BEARISH_PATTERNS, text)
 
