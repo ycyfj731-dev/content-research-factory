@@ -1,6 +1,6 @@
 # 西方哲学300讲｜Curriculum v0.2
 
-Status: SOURCE-SCREENED STRUCTURE DRAFT  
+Status: 001–030 CANONICAL CORES FROZEN  
 Rule: “300” is a product scale, not a quota. Internal acceptable range remains 280–320, but v0.1 uses 300 slots to test balance.
 
 ## Curriculum method
@@ -168,9 +168,16 @@ Use as structural references, not as authorities to copy mechanically:
 - Primary texts whenever extant.
 - For Presocratics: distinguish fragments from testimonia; use modern collections such as Laks–Most where possible.
 
+## Freeze reference
+
+Canonical cores 001–030 are frozen in:
+
+`docs/philosophy-300/CANONICAL_CORES_001_030_v1.0.md`
+
+Any change to those cores requires an explicit versioned revision and a new source-fidelity + explanation-consistency pass.
+
 ## Next build
 
-1. Freeze canonical cores for 001–030.
-2. Run 001–030 through the full COMPLEX-TO-CLEAR + DISTORTION GATE.
-3. Draft lectures 031–065 (Socrates & Plato) only after 001–030 passes structural review.
-4. Begin prose drafting only after a lesson's canonical core is frozen.
+1. Run 001–030 through the full COMPLEX-TO-CLEAR + 15-item DISTORTION GATE at lesson-production time.
+2. Draft lectures 031–065 (Socrates & Plato) against the same freeze contract.
+3. Begin prose drafting only from a frozen canonical core.
