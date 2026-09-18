@@ -1,14 +1,15 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
 from pathlib import Path
 
-from .adapters.agent_reach import AgentReachAdapter
-from .adapters.jsonrpc_stdio import JSONRPCStdioConfig
-from .adapters.mediacrawler_mcp import MediaCrawlerConfig, MediaCrawlerMCPAdapter
+from .adapters.agent_reach import AgentReachAdapter, AgentReachConfig
+from .adapters.mcp_stdio import MCPStdioConfig
+from .adapters.mediacrawler_mcp import MediaCrawlerMCPAdapter
+from .adapters.moneyprinterturbo import MoneyPrinterTurboAdapter, MoneyPrinterTurboConfig
 from .adapters.trendradar import TrendRadarAdapter
-from .config import load_config
 from .export import write_research_package
 from .pipeline import ContentResearchPipeline
 from .reporting import write_brief
@@ -19,46 +20,66 @@ def slugify(value: str) -> str:
     return value.strip("-") or "research"
 
 
-def build_pipeline(config_path: str | Path) -> ContentResearchPipeline:
-    config = load_config(config_path)
+def require_env(name: str) -> str:
+    value = os.environ.get(name)
+    if not value:
+        raise RuntimeError(
+            f"Missing {name}. Run scripts/bootstrap_upstreams.sh and export the printed path."
+        )
+    return value
 
-    trend_cfg = config["trendradar"]
-    reach_cfg = config["agent_reach"]
-    media_cfg = config["mediacrawler"]
+
+def build_pipeline(*, enable_video: bool = False) -> ContentResearchPipeline:
+    trend_dir = require_env("TREND_RADAR_DIR")
+    media_dir = require_env("MEDIA_CRAWLER_DIR")
 
     trend = TrendRadarAdapter(
-        JSONRPCStdioConfig(
-            command=trend_cfg["command"],
-            args=tuple(trend_cfg.get("args", [])),
-            timeout_seconds=int(trend_cfg.get("timeout_seconds", 60)),
-        ),
-        discover_method=trend_cfg.get("methods", {}).get("discover", "discover"),
-    )
-
-    reach = AgentReachAdapter(
-        JSONRPCStdioConfig(
-            command=reach_cfg["command"],
-            args=tuple(reach_cfg.get("args", [])),
-            timeout_seconds=int(reach_cfg.get("timeout_seconds", 60)),
-        ),
-        verify_method=reach_cfg.get("methods", {}).get("verify", "verify"),
-    )
-
-    media = MediaCrawlerMCPAdapter(
-        MediaCrawlerConfig(
-            command=media_cfg["command"],
-            args=tuple(media_cfg.get("args", [])),
-            timeout_seconds=int(media_cfg.get("timeout_seconds", 60)),
-            search_method=media_cfg.get("methods", {}).get("search", "search"),
-            detail_method=media_cfg.get("methods", {}).get("detail", "detail"),
-            comments_method=media_cfg.get("methods", {}).get("comments", "comments"),
+        MCPStdioConfig(
+            command="uv",
+            args=(
+                "--directory",
+                trend_dir,
+                "run",
+                "python",
+                "-m",
+                "mcp_server.server",
+            ),
         )
     )
+
+    reach = AgentReachAdapter(AgentReachConfig())
+
+    media = MediaCrawlerMCPAdapter(
+        MCPStdioConfig(
+            command="uv",
+            args=(
+                "--directory",
+                media_dir,
+                "run",
+                "main.py",
+            ),
+            env={
+                **os.environ,
+                "ENABLE_GET_COMMENTS": "true",
+                "CRAWLER_MAX_NOTES_COUNT": "20",
+                "MAX_CONCURRENCY_NUM": "1",
+            },
+        ),
+        project_dir=media_dir,
+    )
+
+    money = None
+    if enable_video:
+        money_dir = require_env("MONEY_PRINTER_TURBO_DIR")
+        money = MoneyPrinterTurboAdapter(
+            MoneyPrinterTurboConfig(project_dir=money_dir)
+        )
 
     return ContentResearchPipeline(
         trend_radar=trend,
         agent_reach=reach,
         media_crawler=media,
+        money_printer_turbo=money,
     )
 
 
@@ -69,26 +90,28 @@ def main(argv: list[str] | None = None) -> int:
     research = subparsers.add_parser("research")
     research.add_argument("query")
     research.add_argument(
-        "--config",
-        default="config/routing.yaml",
-        help="Path to repository config.",
-    )
-    research.add_argument(
         "--output-dir",
         default="outputs",
         help="Base directory for generated research artifacts.",
+    )
+    research.add_argument(
+        "--produce-video",
+        action="store_true",
+        help="Send the completed research package to MoneyPrinterTurbo.",
     )
 
     args = parser.parse_args(argv)
 
     if args.command == "research":
-        pipeline = build_pipeline(args.config)
-        package = pipeline.run(args.query)
+        pipeline = build_pipeline(enable_video=args.produce_video)
+        package = pipeline.run(
+            args.query,
+            produce_video=args.produce_video,
+        )
 
         run_dir = Path(args.output_dir) / slugify(args.query)
         write_research_package(package, run_dir / "research.json")
         write_brief(package, run_dir / "brief.md")
-
         print(run_dir)
         return 0
 
