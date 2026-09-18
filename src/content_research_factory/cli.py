@@ -12,6 +12,7 @@ from .adapters.mcp_stdio import MCPStdioConfig
 from .adapters.mediacrawler_mcp import MediaCrawlerMCPAdapter
 from .adapters.moneyprinterturbo import MoneyPrinterTurboAdapter, MoneyPrinterTurboConfig
 from .adapters.trendradar import TrendRadarAdapter
+from .consensus.discovery import build_discovery_plan, plan_as_dicts
 from .consensus.runner import score_observation_file
 from .doctor import run_doctor
 from .export import write_research_package
@@ -105,6 +106,19 @@ def main(argv: list[str] | None = None) -> int:
         help="Send the completed research package to MoneyPrinterTurbo.",
     )
 
+    plan = subparsers.add_parser("consensus-plan")
+    plan.add_argument(
+        "--config",
+        default="config/consensus/lithium_carbonate.yaml",
+        help="Consensus asset configuration.",
+    )
+    plan.add_argument(
+        "--dynamic-term",
+        action="append",
+        default=[],
+        help="Optional same-day dynamic term; may be repeated.",
+    )
+
     consensus = subparsers.add_parser("consensus-score")
     consensus.add_argument("input", help="JSON observations file.")
     consensus.add_argument(
@@ -128,6 +142,14 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     args = parser.parse_args(argv)
+
+    if args.command == "consensus-plan":
+        plan_items = build_discovery_plan(
+            args.config,
+            dynamic_terms=args.dynamic_term,
+        )
+        print(json.dumps(plan_as_dicts(plan_items), ensure_ascii=False, indent=2))
+        return 0
 
     if args.command == "consensus-score":
         now = None
