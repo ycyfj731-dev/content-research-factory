@@ -276,24 +276,24 @@ def _normalize_group_weights(
 ) -> list[tuple[ConsensusObservation, float]]:
     result = list(weighted)
 
-    # Repeat a few rounds because applying one cap changes the denominator used
-    # by the next cap. Three deterministic rounds are enough for stable bounded
-    # influence in this lightweight V0.1 implementation.
-    for _ in range(3):
-        result = _cap_dimension(
-            result,
-            key_fn=lambda obs: obs.platform or "unknown",
-            max_share=float(caps.get("platform_max_share", 1.0)),
-        )
-        result = _cap_dimension(
-            result,
-            key_fn=lambda obs: obs.author_id_hash or f"anon:{obs.source_id or id(obs)}",
-            max_share=float(caps.get("author_max_share", 1.0)),
-        )
-        result = _cap_parent_threads(
-            result,
-            max_share=float(caps.get("parent_post_max_share", 1.0)),
-        )
+    # Apply each concentration control once. Repeatedly re-applying a share cap
+    # against the newly reduced denominator recursively distorts the original
+    # evidence mix and can drive genuinely asymmetric independent evidence
+    # toward an artificial 50/50 balance.
+    result = _cap_dimension(
+        result,
+        key_fn=lambda obs: obs.platform or "unknown",
+        max_share=float(caps.get("platform_max_share", 1.0)),
+    )
+    result = _cap_dimension(
+        result,
+        key_fn=lambda obs: obs.author_id_hash or f"anon:{obs.source_id or id(obs)}",
+        max_share=float(caps.get("author_max_share", 1.0)),
+    )
+    result = _cap_parent_threads(
+        result,
+        max_share=float(caps.get("parent_post_max_share", 1.0)),
+    )
 
     return result
 
