@@ -18,11 +18,23 @@ Therefore:
 - bullish = +0.5
 - strong bullish = +1.0
 
-## 2. Effective observation weight
+## 2. Two weight paths
 
-For observation i:
+V0.1 keeps two simultaneous views.
 
-`w_i = source_weight × classifier_confidence × conviction_factor × freshness × uniqueness_factor × position_factor`
+### Raw weight
+
+`w_raw_i = source_weight × classifier_confidence × conviction_factor × freshness × position_factor`
+
+Exact duplicates must already be removed upstream.
+
+Raw deliberately does **not** apply semantic uniqueness discounting or concentration caps.
+
+### Normalized base weight
+
+`w_norm_i = w_raw_i × uniqueness_factor`
+
+Normalized weights then receive platform / author / parent-post concentration caps inside each source group.
 
 Where:
 
@@ -179,3 +191,46 @@ For example:
 may be labeled `BEARISH_CONSENSUS_BULLISH_REALITY`.
 
 The label describes a state. It does not guarantee reversal.
+
+
+## 10. Concentration controls
+
+Normalization applies caps independently inside Institution, KOL, and Crowd.
+
+LC defaults:
+
+| group | platform max share | author max share | parent-post max share |
+|---|---:|---:|---:|
+| institution | 55% | 15% | 100% |
+| kol | 45% | 8% | 20% |
+| crowd | 40% | 2% | 8% |
+
+These are measurement controls, not claims about economic importance.
+
+The purpose is to prevent:
+
+- one platform outage or surge from moving the index mechanically;
+- one prolific author from becoming the market;
+- one viral post with thousands of comments from dominating Crowd Consensus.
+
+## 11. Raw Consensus
+
+Raw Consensus pools the captured stream after exact deduplication and basic time/confidence weighting.
+
+It answers:
+
+> What did the visible conversation look like before normalization?
+
+This score is volume-sensitive by design.
+
+## 12. Normalized / Overall Consensus
+
+Normalized group scores apply uniqueness and concentration controls first.
+
+Then Institution/KOL/Crowd are combined using group weights.
+
+It answers:
+
+> After controlling for repeated narratives and concentration, what is the broad independent directional consensus?
+
+Always store Raw and Normalized together. The difference between them is analytically useful.
