@@ -24,25 +24,78 @@
     "provenance"
   ],
   "properties": {
-    "observation_id": {"type": "string", "minLength": 1},
-    "asset_id": {"type": "string", "minLength": 1},
-    "captured_at": {"type": "string", "format": "date-time"},
-    "published_at": {"type": "string", "format": "date-time"},
-    "platform": {"type": "string", "minLength": 1},
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "asset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "platform": {
+      "type": "string",
+      "minLength": 1
+    },
     "source_group": {
       "type": "string",
-      "enum": ["institution", "kol", "crowd"]
+      "enum": [
+        "institution",
+        "kol",
+        "crowd"
+      ]
     },
-    "source_id": {"type": ["string", "null"]},
-    "author_id_hash": {"type": ["string", "null"]},
-    "author_display_name": {"type": ["string", "null"]},
+    "source_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "author_id_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "author_display_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "content_type": {
       "type": "string",
-      "enum": ["report", "post", "video", "comment", "reply", "other"]
+      "enum": [
+        "report",
+        "post",
+        "video",
+        "comment",
+        "reply",
+        "other"
+      ]
     },
-    "parent_source_id": {"type": ["string", "null"]},
-    "source_url": {"type": ["string", "null"]},
-    "raw_text": {"type": "string"},
+    "parent_source_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "raw_text": {
+      "type": "string"
+    },
     "direction": {
       "type": "integer",
       "minimum": -2,
@@ -50,7 +103,14 @@
     },
     "horizon": {
       "type": "string",
-      "enum": ["intraday", "1_5d", "6_20d", "21_60d", "longer", "unspecified"]
+      "enum": [
+        "intraday",
+        "1_5d",
+        "6_20d",
+        "21_60d",
+        "longer",
+        "unspecified"
+      ]
     },
     "classifier_confidence": {
       "type": "number",
@@ -62,20 +122,40 @@
       "minimum": 0,
       "maximum": 1
     },
-    "position_disclosed": {"type": "boolean"},
+    "position_disclosed": {
+      "type": "boolean"
+    },
     "disclosed_position": {
-      "type": ["string", "null"],
-      "enum": ["long", "short", "flat", "unknown", null]
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "long",
+        "short",
+        "flat",
+        "unknown",
+        null
+      ]
     },
     "reason_tags": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string"
+      },
       "uniqueItems": true
     },
-    "target_price": {"type": ["number", "null"]},
+    "target_price": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
     "narrative_ids": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string"
+      },
       "uniqueItems": true
     },
     "uniqueness_factor": {
@@ -87,7 +167,10 @@
       "type": "number",
       "exclusiveMinimum": 0
     },
-    "raw_hash": {"type": "string", "minLength": 1},
+    "raw_hash": {
+      "type": "string",
+      "minLength": 1
+    },
     "engagement": {
       "type": "object",
       "additionalProperties": true
@@ -95,13 +178,48 @@
     "provenance": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["tool", "model_version"],
+      "required": [
+        "tool",
+        "model_version"
+      ],
       "properties": {
-        "tool": {"type": "string"},
-        "model_version": {"type": "string"},
-        "retrieval_run_id": {"type": ["string", "null"]},
-        "classification_run_id": {"type": ["string", "null"]}
+        "tool": {
+          "type": "string"
+        },
+        "model_version": {
+          "type": "string"
+        },
+        "retrieval_run_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "classification_run_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
+    },
+    "discovery_lane": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "web_wide",
+        "fixed_panel",
+        "hotspot",
+        null
+      ]
+    },
+    "search_term": {
+      "type": [
+        "string",
+        "null"
+      ]
     }
   }
 }
