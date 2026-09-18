@@ -200,15 +200,22 @@ def _cap_dimension(
     for obs, weight in weighted:
         buckets[str(key_fn(obs))] += weight
 
-    # A max-share constraint is mathematically impossible when there are too
-    # few independent buckets (e.g. two authors with a 2% author cap).
-    # In that case skip the cap rather than flattening all weights and erasing
-    # freshness/conviction information.
-    if len(buckets) * max_share < 1.0:
+    cap = total * max_share
+    over_limit = [
+        key for key, bucket_weight in buckets.items()
+        if bucket_weight > cap
+    ]
+
+    # If every bucket is above the nominal cap, the constraint is infeasible
+    # for the current sample (e.g. two authors with a 2% author cap). In that
+    # case skip the cap rather than flattening all weights and erasing
+    # freshness/conviction information. If only a subset is over the cap, trim
+    # the dominant buckets; this still reduces concentration even when the
+    # final renormalized share cannot mathematically reach the nominal cap.
+    if over_limit and len(over_limit) == len(buckets):
         return weighted
 
     scales: dict[str, float] = {}
-    cap = total * max_share
     for key, bucket_weight in buckets.items():
         scales[key] = min(1.0, cap / bucket_weight) if bucket_weight > 0 else 1.0
 
