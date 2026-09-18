@@ -1,4 +1,4 @@
-version: "1.2"
+version: "1.3"
 name: complex-to-clear-distortion-gate
 policy: hard_fail
 
@@ -69,6 +69,11 @@ checks:
   - id: NEXT_HOOK_SEPARATION
     hard: true
     question: "If a next-lesson hook is used, is it clearly separate from the current conclusion and does it introduce a genuinely new question rather than create an artificial cliffhanger?"
+
+  - id: CROSS_CULTURAL_PARALLEL
+    hard: true
+    conditional: true
+    question: "If a cross-cultural comparison is used, does it preserve chronology, specify the exact similarity, state the important difference, and avoid implying influence without evidence?"
 
 decision:
   READY:
