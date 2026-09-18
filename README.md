@@ -168,3 +168,37 @@ The smoke test intentionally uses smaller limits than a full research run and wr
     outputs/smoke-test/brief.md
 
 Run `crf doctor` first. Do not treat a smoke test as successful unless the real upstreams execute and the generated research package contains actual retrieved evidence.
+
+
+## Market Consensus Radar
+
+The repository now includes a V0.1 consensus-scoring layer for financial social research.
+
+Initial asset:
+
+    GFEX lithium carbonate (LC)
+
+Key files:
+
+    skills/market-consensus-radar/SKILL.md
+    skills/market-consensus-radar/SCORING.md
+    config/consensus/lithium_carbonate.yaml
+    schemas/consensus_observation.schema.json
+    schemas/daily_consensus_report.schema.json
+
+Score an already collected/classified observation file:
+
+    crf consensus-score observations.json
+
+Use an explicit historical cutoff to make a run reproducible:
+
+    crf consensus-score observations.json --now 2026-09-18T16:00:00+08:00
+
+The scorer returns Institution/KOL/Crowd scores, an overall 0-100 consensus score,
+a direction-agnostic crowding score, and raw/unique/effective sample sizes.
+
+V0.1 deliberately separates scoring from collection. The existing fixed routing remains:
+
+    TrendRadar -> Agent-Reach -> MediaCrawler -> Consensus classification/scoring
+
+Historical scores must be append-only and must not be relabeled with hindsight.
