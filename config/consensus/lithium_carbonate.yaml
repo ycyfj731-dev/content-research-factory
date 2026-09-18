@@ -197,3 +197,29 @@ market_snapshot_fields:
   - "near_far_spread"
   - "production"
   - "ore_arrivals"
+
+source_expansion:
+  crawl4ai:
+    enabled_env: "CRF_ENABLE_CRAWL4AI"
+    role: "public_web_enrichment"
+  trendscope:
+    base_url_env: "TRENDSCOPE_URL"
+    api_key_env: "TRENDSCOPE_API_KEY"
+    role: "international_trend_intelligence"
+  reddit_mcp:
+    api_key_env: "REDDITAPIS_KEY"
+    package: "redditapis-mcp@latest"
+    role: "reddit_posts_and_comments"
+  tikhub:
+    api_key_env: "TIKHUB_API_KEY"
+    platforms:
+      - "douyin"
+      - "xiaohongshu"
+      - "weibo"
+    role: "chinese_social_fallback"
+
+semantic:
+  default_model: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  semantic_threshold: 0.72
+  bertopic_language: "multilingual"
+  policy: "semantic layer may cluster/discover narratives but must not directly set directional stance"
