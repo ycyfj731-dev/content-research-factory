@@ -168,3 +168,96 @@ The smoke test intentionally uses smaller limits than a full research run and wr
     outputs/smoke-test/brief.md
 
 Run `crf doctor` first. Do not treat a smoke test as successful unless the real upstreams execute and the generated research package contains actual retrieved evidence.
+
+
+## Market Consensus Radar
+
+The repository now includes a V0.1 consensus-scoring layer for financial social research.
+
+Initial asset:
+
+    GFEX lithium carbonate (LC)
+
+Key files:
+
+    skills/market-consensus-radar/SKILL.md
+    skills/market-consensus-radar/SCORING.md
+    config/consensus/lithium_carbonate.yaml
+    schemas/consensus_observation.schema.json
+    schemas/daily_consensus_report.schema.json
+
+Score an already collected/classified observation file:
+
+    crf consensus-score observations.json
+
+Use an explicit historical cutoff to make a run reproducible:
+
+    crf consensus-score observations.json --now 2026-09-18T16:00:00+08:00
+
+The scorer returns Institution/KOL/Crowd scores, an overall 0-100 consensus score,
+a direction-agnostic crowding score, and raw/unique/effective sample sizes.
+
+V0.1 deliberately separates scoring from collection. The existing fixed routing remains:
+
+    TrendRadar -> Agent-Reach -> MediaCrawler -> Consensus classification/scoring
+
+Historical scores must be append-only and must not be relabeled with hindsight.
+
+
+### Web-wide LC collection
+
+Preview the deterministic daily query plan:
+
+    crf consensus-plan
+
+Add same-day dynamic terms without changing the core baseline:
+
+    crf consensus-plan --dynamic-term 枧下窝复产 --dynamic-term 宁德时代
+
+Run the web-wide collector and append raw evidence:
+
+    crf consensus-collect
+
+Smoke-test only the first few queries:
+
+    crf consensus-collect --max-queries 3 --comments-limit 10
+
+Default raw ledger:
+
+    outputs/consensus/raw/lithium_carbonate.jsonl
+
+The collection architecture is **web-wide first**. The fixed panel is a calibration
+anchor, not the market universe.
+
+Daily scoring stores both:
+
+- Raw Consensus: exact-deduped captured stream before semantic/concentration controls
+- Normalized Consensus: semantic-repeat discounted, platform/author/post capped,
+  then Institution/KOL/Crowd balanced
+
+Never compare daily scores without checking platform coverage and effective sample size.
+
+
+### Process raw LC evidence into observations and narratives
+
+After collection:
+
+    crf consensus-process outputs/consensus/raw/lithium_carbonate.jsonl
+
+Default outputs:
+
+    outputs/consensus/processed/lithium_carbonate.observations.json
+    outputs/consensus/processed/lithium_carbonate.observations.narratives.json
+
+Then score the processed observations:
+
+    crf consensus-score outputs/consensus/processed/lithium_carbonate.observations.json
+
+Current classification mode is a conservative, deterministic LC baseline. It keeps
+factual news neutral unless a directional view is explicit, distinguishes quoted and
+conditional views, preserves explicit long/short disclosures, and neutralizes ambiguous
+sarcasm.
+
+Narrative clustering is auditable in V0.1: seeded LC narratives plus character-ngram
+similarity. Repeated narratives receive lower uniqueness weight before Normalized
+Consensus is calculated.

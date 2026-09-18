@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import re
+from datetime import datetime
 from pathlib import Path
 
 from .adapters.agent_reach import AgentReachAdapter, AgentReachConfig
@@ -10,6 +12,10 @@ from .adapters.mcp_stdio import MCPStdioConfig
 from .adapters.mediacrawler_mcp import MediaCrawlerMCPAdapter
 from .adapters.moneyprinterturbo import MoneyPrinterTurboAdapter, MoneyPrinterTurboConfig
 from .adapters.trendradar import TrendRadarAdapter
+from .consensus.collector import ConsensusCollector, write_jsonl
+from .consensus.discovery import build_discovery_plan, plan_as_dicts
+from .consensus.processor import process_raw_evidence
+from .consensus.runner import score_observation_file
 from .doctor import run_doctor
 from .export import write_research_package
 from .pipeline import ContentResearchPipeline
@@ -102,6 +108,97 @@ def main(argv: list[str] | None = None) -> int:
         help="Send the completed research package to MoneyPrinterTurbo.",
     )
 
+    plan = subparsers.add_parser("consensus-plan")
+    plan.add_argument(
+        "--config",
+        default="config/consensus/lithium_carbonate.yaml",
+        help="Consensus asset configuration.",
+    )
+    plan.add_argument(
+        "--dynamic-term",
+        action="append",
+        default=[],
+        help="Optional same-day dynamic term; may be repeated.",
+    )
+
+    collect = subparsers.add_parser("consensus-collect")
+    collect.add_argument(
+        "--config",
+        default="config/consensus/lithium_carbonate.yaml",
+        help="Consensus asset configuration.",
+    )
+    collect.add_argument(
+        "--output",
+        default="outputs/consensus/raw/lithium_carbonate.jsonl",
+        help="Append-only raw evidence JSONL.",
+    )
+    collect.add_argument(
+        "--max-queries",
+        type=int,
+        default=None,
+        help="Optional cap for smoke/testing; production should normally run the full plan.",
+    )
+    collect.add_argument(
+        "--dynamic-term",
+        action="append",
+        default=[],
+        help="Optional same-day dynamic term; may be repeated.",
+    )
+    collect.add_argument("--comments-limit", type=int, default=50)
+    collect.add_argument("--deep-posts-per-query", type=int, default=2)
+
+    process = subparsers.add_parser("consensus-process")
+    process.add_argument("input", help="Append-only raw evidence JSONL.")
+    process.add_argument(
+        "--config",
+        default="config/consensus/lithium_carbonate.yaml",
+        help="Consensus asset configuration.",
+    )
+    process.add_argument(
+        "--output",
+        default="outputs/consensus/processed/lithium_carbonate.observations.json",
+        help="Processed observation JSON.",
+    )
+    process.add_argument(
+        "--narratives-output",
+        default=None,
+        help="Optional narrative summary JSON path.",
+    )
+    process.add_argument(
+        "--similarity-threshold",
+        type=float,
+        default=0.52,
+    )
+    process.add_argument(
+        "--classifier-command",
+        default=None,
+        help="Optional external JSON classifier command. Defaults to heuristic LC classifier.",
+    )
+    process.add_argument(
+        "--classifier-model-version",
+        default=None,
+        help="Model/version label stored with classified observations.",
+    )
+    process.add_argument(
+        "--classifier-timeout",
+        type=int,
+        default=60,
+        help="Timeout in seconds for each external classifier invocation.",
+    )
+
+    consensus = subparsers.add_parser("consensus-score")
+    consensus.add_argument("input", help="JSON observations file.")
+    consensus.add_argument(
+        "--config",
+        default="config/consensus/lithium_carbonate.yaml",
+        help="Consensus asset configuration.",
+    )
+    consensus.add_argument(
+        "--now",
+        default=None,
+        help="Optional ISO-8601 scoring timestamp with timezone.",
+    )
+
     subparsers.add_parser("doctor")
 
     smoke = subparsers.add_parser("smoke-test")
@@ -112,6 +209,71 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     args = parser.parse_args(argv)
+
+    if args.command == "consensus-plan":
+        plan_items = build_discovery_plan(
+            args.config,
+            dynamic_terms=args.dynamic_term,
+        )
+        print(json.dumps(plan_as_dicts(plan_items), ensure_ascii=False, indent=2))
+        return 0
+
+    if args.command == "consensus-collect":
+        plan_items = build_discovery_plan(
+            args.config,
+            dynamic_terms=args.dynamic_term,
+        )
+        if args.max_queries is not None:
+            plan_items = plan_items[: max(0, args.max_queries)]
+        pipeline = build_pipeline(enable_video=False)
+        collector = ConsensusCollector(
+            trend_radar=pipeline.trend_radar,
+            agent_reach=pipeline.agent_reach,
+            media_crawler=pipeline.media_crawler,
+        )
+        records = collector.collect(
+            plan_items,
+            comments_limit=args.comments_limit,
+            deep_posts_per_query=args.deep_posts_per_query,
+        )
+        target = write_jsonl(records, args.output)
+        print(json.dumps({
+            "output": str(target),
+            "queries": len(plan_items),
+            "records": len(records),
+        }, ensure_ascii=False, indent=2))
+        return 0
+
+    if args.command == "consensus-process":
+        model_version = args.classifier_model_version or (
+            "external-json-v0.1" if args.classifier_command else "heuristic-lc-v0.1"
+        )
+        result = process_raw_evidence(
+            args.input,
+            config_path=args.config,
+            output_path=args.output,
+            narratives_path=args.narratives_output,
+            model_version=model_version,
+            similarity_threshold=args.similarity_threshold,
+            classifier_command=args.classifier_command,
+            classifier_timeout_seconds=args.classifier_timeout,
+        )
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
+
+    if args.command == "consensus-score":
+        now = None
+        if args.now:
+            now = datetime.fromisoformat(args.now.replace("Z", "+00:00"))
+            if now.tzinfo is None:
+                raise ValueError("--now must include a timezone")
+        result = score_observation_file(
+            args.input,
+            config_path=args.config,
+            now=now,
+        )
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
 
     if args.command == "doctor":
         checks = run_doctor()
