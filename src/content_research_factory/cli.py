@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import re
+from datetime import datetime
 from pathlib import Path
 
 from .adapters.agent_reach import AgentReachAdapter, AgentReachConfig
@@ -10,6 +12,7 @@ from .adapters.mcp_stdio import MCPStdioConfig
 from .adapters.mediacrawler_mcp import MediaCrawlerMCPAdapter
 from .adapters.moneyprinterturbo import MoneyPrinterTurboAdapter, MoneyPrinterTurboConfig
 from .adapters.trendradar import TrendRadarAdapter
+from .consensus.runner import score_observation_file
 from .doctor import run_doctor
 from .export import write_research_package
 from .pipeline import ContentResearchPipeline
@@ -102,6 +105,19 @@ def main(argv: list[str] | None = None) -> int:
         help="Send the completed research package to MoneyPrinterTurbo.",
     )
 
+    consensus = subparsers.add_parser("consensus-score")
+    consensus.add_argument("input", help="JSON observations file.")
+    consensus.add_argument(
+        "--config",
+        default="config/consensus/lithium_carbonate.yaml",
+        help="Consensus asset configuration.",
+    )
+    consensus.add_argument(
+        "--now",
+        default=None,
+        help="Optional ISO-8601 scoring timestamp with timezone.",
+    )
+
     subparsers.add_parser("doctor")
 
     smoke = subparsers.add_parser("smoke-test")
@@ -112,6 +128,20 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     args = parser.parse_args(argv)
+
+    if args.command == "consensus-score":
+        now = None
+        if args.now:
+            now = datetime.fromisoformat(args.now.replace("Z", "+00:00"))
+            if now.tzinfo is None:
+                raise ValueError("--now must include a timezone")
+        result = score_observation_file(
+            args.input,
+            config_path=args.config,
+            now=now,
+        )
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
 
     if args.command == "doctor":
         checks = run_doctor()
