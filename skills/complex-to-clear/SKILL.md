@@ -3,7 +3,7 @@ name: complex-to-clear
 description: Explain complex knowledge clearly without flattening, distorting, misattributing, or over-simplifying the source material. Use for educational content, scripts, courses, explainers, and beginner-facing knowledge translation.
 ---
 
-# COMPLEX-TO-CLEAR v1.0
+# COMPLEX-TO-CLEAR v1.1
 
 ## Purpose
 
@@ -234,6 +234,47 @@ A style rewrite must never silently:
 
 If a better reading of the source is discovered, update the canonical core explicitly, record the reason, and rerun the gate. Do not let explanation drift happen through copyediting.
 
+
+## H15 — Zero-Baseline Grounding
+
+“Beginner-friendly” does not mean merely translating expert language into simpler words.
+
+For a true zero-baseline audience, explanations must begin from knowledge the reader is reasonably expected to already have:
+- ordinary life experience;
+- common social conventions;
+- familiar language;
+- directly observable situations;
+- previously established lessons in the same course.
+
+Do not begin from an unexplained philosopher, doctrine, historical event, school, technical distinction, or disciplinary background.
+
+Background information is allowed only when it is **necessary for understanding the current question**. Useful-but-nonessential background belongs later or elsewhere.
+
+Run this test:
+
+> Could a reader with no prior study enter at the first paragraph without needing to know another philosopher, theory, period, or technical term?
+
+If no, FAIL.
+
+## H16 — Beginner Prior-Knowledge Check
+
+Do not silently assume that a beginner already accepts a textbook narrative, disciplinary convention, or historical interpretation.
+
+Examples of hidden assumptions:
+- “Greek philosophy began when myth gave way to reason.”
+- “Heraclitus taught that everything flows.”
+- “Parmenides said the senses deceive us.”
+- “The Sophists rejected truth.”
+- “Modern science replaced philosophy.”
+
+Any such premise must first be established, qualified, or presented explicitly as a contested interpretation.
+
+Run this test:
+
+> Does the explanation depend on a background claim that the reader has not yet been taught — or that scholarship itself disputes?
+
+If yes, either establish it first, mark it as interpretation, or remove it. Otherwise FAIL.
+
 # DISTORTION GATE
 
 Run before any content enters final scripting or publication.
@@ -286,6 +327,13 @@ Required checks:
 15. **EXPLANATION_CONSISTENCY**
    - Does this version preserve the frozen canonical explanation core from the source-approved version?
    - Would readers of different style/length versions understand the passage as doing the same conceptual job?
+
+16. **ZERO_BASELINE_GROUNDING**
+   - Does the explanation begin from knowledge a true beginner already has?
+   - Is every piece of background necessary to understand the current question?
+
+17. **BEGINNER_PRIOR_KNOWLEDGE**
+   - Does the explanation avoid silently assuming an unintroduced or contested textbook narrative?
 
 Any hard FAIL returns the content to:
 ```text
