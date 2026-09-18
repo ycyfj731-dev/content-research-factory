@@ -17,6 +17,26 @@ routing:
     tool: MoneyPrinterTurbo
     responsibility: "视频生产"
 
+trendradar:
+  transport: stdio
+  command: python
+  args:
+    - "-m"
+    - "trendradar_mcp"
+  timeout_seconds: 60
+  methods:
+    discover: discover
+
+agent_reach:
+  transport: stdio
+  command: python
+  args:
+    - "-m"
+    - "agent_reach_mcp"
+  timeout_seconds: 60
+  methods:
+    verify: verify
+
 mediacrawler:
   transport: stdio
   command: python
