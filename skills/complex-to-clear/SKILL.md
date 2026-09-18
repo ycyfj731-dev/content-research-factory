@@ -3,7 +3,7 @@ name: complex-to-clear
 description: Explain complex knowledge clearly without flattening, distorting, misattributing, or over-simplifying the source material. Use for educational content, scripts, courses, explainers, and beginner-facing knowledge translation.
 ---
 
-# COMPLEX-TO-CLEAR v1.2
+# COMPLEX-TO-CLEAR v1.3
 
 ## Purpose
 
@@ -318,6 +318,32 @@ Better:
 The reader should be able to distinguish:
 **CONCLUSION OF THIS LESSON** from **HOOK FOR THE NEXT LESSON**.
 
+
+## H19 — Cross-Cultural Parallel Discipline
+
+A same-era comparison with another intellectual tradition may be added when it genuinely helps a beginner orient the idea. It is optional, not mandatory.
+
+When used, the comparison must state or preserve four distinctions:
+- **chronology** — are the thinkers/texts actually contemporary or only roughly near in time?
+- **similarity** — what specific question, concept, or problem is comparable?
+- **difference** — where do the two traditions diverge in aim, vocabulary, method, or conclusion?
+- **transmission** — is there evidence of influence/contact, or is this only an independent parallel?
+
+Never write:
+- “X is the Chinese version of Y” unless the claim is historically justified;
+- “they were saying the same thing” based on superficial resemblance;
+- “both East and West discovered…” without checking chronology and conceptual scope.
+
+Prefer a short orientation box or sentence such as:
+
+> 同一时期的中国也在讨论相近问题，但不是同一套答案。孔子关注秩序与人的修养，早期希腊思想家此时更多在追问自然、存在和变化；相似的是都在重新组织“人如何理解世界”的问题，路径并不相同。
+
+Run this test:
+
+> If the comparison were removed, would the lesson still be complete — and if retained, does it clarify rather than flatten both traditions?
+
+If the comparison creates false equivalence, false contemporaneity, or unsupported influence, FAIL.
+
 # DISTORTION GATE
 
 Run before any content enters final scripting or publication.
@@ -385,6 +411,10 @@ Required checks:
 19. **NEXT_HOOK_SEPARATION**
    - If a next-lesson hook is used, is it clearly separated from the current lesson's conclusion?
    - Does it introduce a new question rather than withhold a necessary part of the current answer?
+
+20. **CROSS_CULTURAL_PARALLEL**
+   - If a cross-cultural comparison is used, are chronology, similarity, difference, and transmission status kept distinct?
+   - Does the comparison clarify rather than create false equivalence?
 
 Any hard FAIL returns the content to:
 ```text
