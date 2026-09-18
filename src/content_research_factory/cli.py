@@ -14,6 +14,7 @@ from .adapters.moneyprinterturbo import MoneyPrinterTurboAdapter, MoneyPrinterTu
 from .adapters.trendradar import TrendRadarAdapter
 from .consensus.collector import ConsensusCollector, write_jsonl
 from .consensus.discovery import build_discovery_plan, plan_as_dicts
+from .consensus.processor import process_raw_evidence
 from .consensus.runner import score_observation_file
 from .doctor import run_doctor
 from .export import write_research_package
@@ -146,6 +147,29 @@ def main(argv: list[str] | None = None) -> int:
     collect.add_argument("--comments-limit", type=int, default=50)
     collect.add_argument("--deep-posts-per-query", type=int, default=2)
 
+    process = subparsers.add_parser("consensus-process")
+    process.add_argument("input", help="Append-only raw evidence JSONL.")
+    process.add_argument(
+        "--config",
+        default="config/consensus/lithium_carbonate.yaml",
+        help="Consensus asset configuration.",
+    )
+    process.add_argument(
+        "--output",
+        default="outputs/consensus/processed/lithium_carbonate.observations.json",
+        help="Processed observation JSON.",
+    )
+    process.add_argument(
+        "--narratives-output",
+        default=None,
+        help="Optional narrative summary JSON path.",
+    )
+    process.add_argument(
+        "--similarity-threshold",
+        type=float,
+        default=0.52,
+    )
+
     consensus = subparsers.add_parser("consensus-score")
     consensus.add_argument("input", help="JSON observations file.")
     consensus.add_argument(
@@ -202,6 +226,17 @@ def main(argv: list[str] | None = None) -> int:
             "queries": len(plan_items),
             "records": len(records),
         }, ensure_ascii=False, indent=2))
+        return 0
+
+    if args.command == "consensus-process":
+        result = process_raw_evidence(
+            args.input,
+            config_path=args.config,
+            output_path=args.output,
+            narratives_path=args.narratives_output,
+            similarity_threshold=args.similarity_threshold,
+        )
+        print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
 
     if args.command == "consensus-score":
