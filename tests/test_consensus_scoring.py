@@ -24,6 +24,9 @@ def obs(
     position_disclosed=False,
     disclosed_position=None,
     author=None,
+    platform="weibo",
+    source_id=None,
+    parent_source_id=None,
 ):
     return ConsensusObservation(
         source_group=group,
@@ -37,6 +40,9 @@ def obs(
         position_disclosed=position_disclosed,
         disclosed_position=disclosed_position,
         author_id_hash=author,
+        platform=platform,
+        source_id=source_id,
+        parent_source_id=parent_source_id,
     )
 
 
@@ -113,3 +119,107 @@ def test_invalid_direction_rejected():
             direction=3,
             published_at=NOW,
         )
+
+
+def test_viral_single_post_can_move_raw_more_than_normalized():
+    rows = [
+        obs(
+            group="institution",
+            direction=-2,
+            author=f"inst-{i}",
+            platform="institution_web",
+            source_id=f"inst-post-{i}",
+        )
+        for i in range(10)
+    ]
+    rows += [
+        obs(
+            group="crowd",
+            direction=2,
+            author=f"crowd-{i}",
+            platform="douyin",
+            source_id=f"comment-{i}",
+            parent_source_id="viral-video",
+        )
+        for i in range(500)
+    ]
+
+    result = build_daily_scores(rows, now=NOW)
+
+    assert result.raw_consensus_score > 90.0
+    # Parent-post and group balancing prevent one viral thread from defining
+    # the normalized market consensus.
+    assert result.overall_consensus_score < result.raw_consensus_score - 20.0
+
+
+def test_semantic_repetition_is_visible_in_raw_but_discounted_in_normalized():
+    rows = [
+        obs(
+            group="kol",
+            direction=2,
+            author=f"copy-{i}",
+            platform="weibo",
+            source_id=f"copy-post-{i}",
+            uniqueness=0.05,
+        )
+        for i in range(100)
+    ]
+    rows += [
+        obs(
+            group="kol",
+            direction=-2,
+            author=f"independent-{i}",
+            platform="xiaohongshu",
+            source_id=f"independent-post-{i}",
+            uniqueness=1.0,
+        )
+        for i in range(15)
+    ]
+
+    result = build_daily_scores(rows, now=NOW)
+
+    assert result.raw_group_scores["kol"] > 80.0
+    assert result.group_scores["kol"] < 40.0
+
+
+def test_platform_concentration_is_capped_in_normalized_score():
+    rows = [
+        obs(
+            group="crowd",
+            direction=2,
+            author=f"wb-{i}",
+            platform="weibo",
+            source_id=f"wb-{i}",
+            parent_source_id=f"wb-parent-{i}",
+        )
+        for i in range(300)
+    ]
+    rows += [
+        obs(
+            group="crowd",
+            direction=-2,
+            author=f"xhs-{i}",
+            platform="xiaohongshu",
+            source_id=f"xhs-{i}",
+            parent_source_id=f"xhs-parent-{i}",
+        )
+        for i in range(50)
+    ]
+
+    result = build_daily_scores(rows, now=NOW)
+
+    assert result.raw_group_scores["crowd"] > 80.0
+    assert result.group_scores["crowd"] < result.raw_group_scores["crowd"]
+
+
+def test_raw_and_normalized_match_when_sample_is_balanced_and_unique():
+    rows = [
+        obs(group="institution", direction=1, author="i1", platform="institution_web", source_id="i1"),
+        obs(group="kol", direction=1, author="k1", platform="weibo", source_id="k1"),
+        obs(group="crowd", direction=1, author="c1", platform="xiaohongshu", source_id="c1"),
+    ]
+
+    result = build_daily_scores(rows, now=NOW)
+
+    assert result.raw_consensus_score == pytest.approx(75.0)
+    assert result.overall_consensus_score == pytest.approx(75.0)
