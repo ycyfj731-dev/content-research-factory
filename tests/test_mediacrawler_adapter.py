@@ -1,69 +1,45 @@
 import json
-from types import SimpleNamespace
 
-import pytest
-
-from content_research_factory.adapters.mediacrawler_mcp import (
-    MediaCrawlerConfig,
-    MediaCrawlerError,
-    MediaCrawlerMCPAdapter,
-)
+from content_research_factory.adapters.mediacrawler_mcp import MediaCrawlerMCPAdapter
 
 
-def test_search_normalizes_result(monkeypatch):
-    def fake_run(*args, **kwargs):
-        request = json.loads(kwargs["input"])
-        assert request["method"] == "search"
-        return SimpleNamespace(
-            returncode=0,
-            stderr="",
-            stdout=json.dumps(
-                {
-                    "jsonrpc": "2.0",
-                    "id": request["id"],
-                    "result": {
-                        "items": [
-                            {
-                                "id": "abc",
-                                "platform": "xiaohongshu",
-                                "content": "example",
-                                "nickname": "creator",
-                            }
-                        ]
-                    },
-                }
-            ),
-        )
+class FakeMCP:
+    def __init__(self):
+        self.calls = []
 
-    monkeypatch.setattr("subprocess.run", fake_run)
+    def call(self, method, params):
+        self.calls.append((method, params))
+        return "success to crawl"
 
-    adapter = MediaCrawlerMCPAdapter(MediaCrawlerConfig(command="dummy"))
-    rows = adapter.search("AI 家居")
 
-    assert rows[0]["source_id"] == "abc"
-    assert rows[0]["text"] == "example"
-    assert rows[0]["author"] == "creator"
+def test_search_calls_real_crawl_search_and_reads_json(tmp_path):
+    data_dir = tmp_path / "data" / "xhs"
+    data_dir.mkdir(parents=True)
+    payload = [
+        {
+            "note_id": "abc",
+            "title": "example",
+            "desc": "body",
+        }
+    ]
+    target = data_dir / "search_contents_20260918.json"
+    target.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+    adapter = object.__new__(MediaCrawlerMCPAdapter)
+    adapter.mcp = FakeMCP()
+    adapter.project_dir = tmp_path
+    adapter.platforms = ("xhs",)
+    adapter.search_tool = "crawl_search"
+    adapter.detail_tool = "crawl_detail"
+
+    rows = adapter.search("AI 家居", platform="xhs")
+
+    assert rows[0]["note_id"] == "abc"
     assert rows[0]["origin_tool"] == "MediaCrawler"
+    assert adapter.mcp.calls[0][0] == "crawl_search"
+    assert adapter.mcp.calls[0][1]["store_type"] == "json"
 
 
-def test_rpc_error_is_raised(monkeypatch):
-    def fake_run(*args, **kwargs):
-        request = json.loads(kwargs["input"])
-        return SimpleNamespace(
-            returncode=0,
-            stderr="",
-            stdout=json.dumps(
-                {
-                    "jsonrpc": "2.0",
-                    "id": request["id"],
-                    "error": {"message": "boom"},
-                }
-            ),
-        )
-
-    monkeypatch.setattr("subprocess.run", fake_run)
-
-    adapter = MediaCrawlerMCPAdapter(MediaCrawlerConfig(command="dummy"))
-
-    with pytest.raises(MediaCrawlerError):
-        adapter.search("test")
+def test_platform_aliases_are_normalized():
+    assert MediaCrawlerMCPAdapter._platform("xiaohongshu") == "xhs"
+    assert MediaCrawlerMCPAdapter._platform("bilibili") == "bili"
