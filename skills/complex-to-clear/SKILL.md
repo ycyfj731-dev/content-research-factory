@@ -3,7 +3,7 @@ name: complex-to-clear
 description: Explain complex knowledge clearly without flattening, distorting, misattributing, or over-simplifying the source material. Use for educational content, scripts, courses, explainers, and beginner-facing knowledge translation.
 ---
 
-# COMPLEX-TO-CLEAR v1.1
+# COMPLEX-TO-CLEAR v1.2
 
 ## Purpose
 
@@ -275,6 +275,49 @@ Run this test:
 
 If yes, either establish it first, mark it as interpretation, or remove it. Otherwise FAIL.
 
+
+## H17 — One Concept Must Reach Closure
+
+Each lesson must fully complete **one central concept or question** before ending.
+
+“Complete” does not mean giving a final answer to every philosophical dispute. It means the reader must know:
+- what this lesson asked;
+- what the lesson established;
+- what remains unresolved;
+- why the lesson can now stop.
+
+Do not end while the current concept still depends on an explanation that was merely postponed to the next lesson.
+
+A lesson may preserve philosophical uncertainty, but it must still achieve **pedagogical closure**.
+
+Run this test:
+
+> If the reader never opens the next lesson, would this lesson still feel complete rather than interrupted?
+
+If no, FAIL.
+
+## H18 — Explicit Next-Lesson Hook
+
+A next-lesson hook is optional, but when used it must be clearly separate from the current lesson's conclusion.
+
+A valid hook:
+- comes only **after** the current concept has reached closure;
+- names the next question clearly enough that the reader knows a new lesson is beginning;
+- creates curiosity without withholding a necessary part of the current explanation;
+- does not rely on vague dramatic interruption.
+
+Bad:
+> And this is where everything changes...
+
+Bad:
+> But there is one problem.
+
+Better:
+> 下一讲，我们再追一个新问题：既然泰勒斯没有留下著作，为什么后人仍把他叫作“第一位哲学家”？
+
+The reader should be able to distinguish:
+**CONCLUSION OF THIS LESSON** from **HOOK FOR THE NEXT LESSON**.
+
 # DISTORTION GATE
 
 Run before any content enters final scripting or publication.
@@ -334,6 +377,14 @@ Required checks:
 
 17. **BEGINNER_PRIOR_KNOWLEDGE**
    - Does the explanation avoid silently assuming an unintroduced or contested textbook narrative?
+
+18. **ONE_CONCEPT_CLOSURE**
+   - Has the lesson completed one central concept or question before ending?
+   - Would the lesson still feel complete if the reader never opened the next one?
+
+19. **NEXT_HOOK_SEPARATION**
+   - If a next-lesson hook is used, is it clearly separated from the current lesson's conclusion?
+   - Does it introduce a new question rather than withhold a necessary part of the current answer?
 
 Any hard FAIL returns the content to:
 ```text
