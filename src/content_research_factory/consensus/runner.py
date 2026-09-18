@@ -31,6 +31,9 @@ def observation_from_mapping(row: dict[str, Any]) -> ConsensusObservation:
         position_disclosed=bool(row.get("position_disclosed", False)),
         disclosed_position=row.get("disclosed_position"),
         author_id_hash=row.get("author_id_hash"),
+        platform=str(row.get("platform", "unknown")),
+        source_id=row.get("source_id"),
+        parent_source_id=row.get("parent_source_id"),
     )
 
 
@@ -65,11 +68,14 @@ def score_observation_file(
     }
     weighting = config.get("weighting", {})
 
+    normalization_caps = config.get("normalization", {}).get("caps_by_group")
+
     scores = build_daily_scores(
         observations,
         now=now,
         group_weights=group_weights,
         half_life_days=half_lives,
+        normalization_caps=normalization_caps,
         explicit_position_factor=float(weighting.get("explicit_position_factor", 1.25)),
         conviction_floor=float(weighting.get("conviction_floor", 0.25)),
         conviction_scale=float(weighting.get("conviction_scale", 0.75)),
@@ -78,8 +84,11 @@ def score_observation_file(
     return {
         "asset_id": config["asset"]["id"],
         "scored_at": now.isoformat(),
+        "raw_group_scores": scores.raw_group_scores,
         "group_scores": scores.group_scores,
+        "raw_consensus_score": scores.raw_consensus_score,
         "overall_consensus_score": scores.overall_consensus_score,
+        "raw_crowding_score": scores.raw_crowding_score,
         "crowding_score": scores.crowding_score,
         "sample_sizes": {
             "raw": scores.raw_sample_size,
