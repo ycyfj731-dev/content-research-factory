@@ -122,14 +122,20 @@ class ConsensusCollector:
         seen: set[str] = set()
 
         def append(record: RawConsensusEvidence) -> None:
-            key = _stable_hash(
-                record.platform,
-                record.source_id,
-                record.parent_source_id,
-                record.url,
-                record.text,
-                record.content_type,
-            )
+            if record.source_id:
+                key = _stable_hash(
+                    record.platform,
+                    record.source_id,
+                    record.content_type,
+                )
+            else:
+                key = _stable_hash(
+                    record.platform,
+                    record.parent_source_id,
+                    record.url,
+                    record.text,
+                    record.content_type,
+                )
             if key in seen:
                 return
             seen.add(key)
