@@ -200,6 +200,13 @@ def _cap_dimension(
     for obs, weight in weighted:
         buckets[str(key_fn(obs))] += weight
 
+    # A max-share constraint is mathematically impossible when there are too
+    # few independent buckets (e.g. two authors with a 2% author cap).
+    # In that case skip the cap rather than flattening all weights and erasing
+    # freshness/conviction information.
+    if len(buckets) * max_share < 1.0:
+        return weighted
+
     scales: dict[str, float] = {}
     cap = total * max_share
     for key, bucket_weight in buckets.items():
