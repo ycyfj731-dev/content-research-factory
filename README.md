@@ -261,3 +261,51 @@ sarcasm.
 Narrative clustering is auditable in V0.1: seeded LC narratives plus character-ngram
 similarity. Repeated narratives receive lower uniqueness weight before Normalized
 Consensus is calculated.
+
+
+## Market Consensus Radar V0.2 source expansion
+
+Optional source expansion is enabled only when configured. V0.1 remains the default.
+
+Install source adapters:
+
+    pip install -e ".[sources]"
+
+Install multilingual semantic/topic analysis:
+
+    pip install -e ".[semantic]"
+
+Or everything:
+
+    pip install -e ".[full]"
+
+Optional environment switches:
+
+    CRF_ENABLE_CRAWL4AI=true
+    TRENDSCOPE_URL=http://127.0.0.1:8000
+    TRENDSCOPE_API_KEY=...
+    REDDITAPIS_KEY=...
+    TIKHUB_API_KEY=...
+
+When enabled, `crf consensus-collect` supplements the existing
+TrendRadar -> Agent-Reach -> MediaCrawler route with:
+
+- Crawl4AI: public web page enrichment
+- TrendScope: international trend intelligence
+- Reddit MCP: Reddit posts and deep comment search
+- TikHub: Douyin / Xiaohongshu / Weibo fallback search
+
+Every collection writes a coverage ledger beside the raw JSONL. A provider failure
+is recorded as `partial` or `failed` and does not abort the entire daily run.
+
+Semantic narrative clustering is opt-in:
+
+    crf consensus-process RAW.jsonl \
+      --semantic-model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+
+BERTopic can be added as a discovery-only layer:
+
+    crf consensus-process RAW.jsonl --bertopic
+
+The semantic/topic layer may group and discover narratives, but it does not directly
+assign bullish/bearish stance.
