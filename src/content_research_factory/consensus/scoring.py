@@ -225,6 +225,50 @@ def _cap_dimension(
     ]
 
 
+def _cap_parent_threads(
+    weighted: list[tuple[ConsensusObservation, float]],
+    *,
+    max_share: float,
+) -> list[tuple[ConsensusObservation, float]]:
+    """Cap only repeated observations that actually belong to a parent thread.
+
+    Standalone posts/reports are independent source items and must not be
+    treated as their own parent threads. This cap exists specifically to stop
+    one viral comment section from dominating Crowd Consensus.
+    """
+    if not weighted or max_share >= 1.0:
+        return weighted
+    if max_share <= 0:
+        raise ValueError("max_share must be > 0")
+
+    total = sum(weight for _, weight in weighted)
+    if total <= 0:
+        return weighted
+
+    buckets: dict[str, float] = defaultdict(float)
+    for obs, weight in weighted:
+        if obs.parent_source_id:
+            buckets[str(obs.parent_source_id)] += weight
+
+    if not buckets:
+        return weighted
+
+    cap = total * max_share
+    scales = {
+        key: min(1.0, cap / bucket_weight) if bucket_weight > 0 else 1.0
+        for key, bucket_weight in buckets.items()
+    }
+
+    return [
+        (
+            obs,
+            weight * scales.get(str(obs.parent_source_id), 1.0)
+            if obs.parent_source_id
+            else weight,
+        )
+        for obs, weight in weighted
+    ]
+
 def _normalize_group_weights(
     weighted: list[tuple[ConsensusObservation, float]],
     *,
@@ -246,9 +290,8 @@ def _normalize_group_weights(
             key_fn=lambda obs: obs.author_id_hash or f"anon:{obs.source_id or id(obs)}",
             max_share=float(caps.get("author_max_share", 1.0)),
         )
-        result = _cap_dimension(
+        result = _cap_parent_threads(
             result,
-            key_fn=lambda obs: obs.parent_source_id or obs.source_id or f"source:{id(obs)}",
             max_share=float(caps.get("parent_post_max_share", 1.0)),
         )
 
