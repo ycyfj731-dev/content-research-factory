@@ -1,0 +1,30 @@
+version: 1
+
+routing:
+  trend_discovery:
+    tool: TrendRadar
+    responsibility: "热点发现"
+
+  cross_platform_verification:
+    tool: Agent-Reach
+    responsibility: "跨平台验证"
+
+  chinese_social_deep_research:
+    tool: MediaCrawler
+    responsibility: "中文社媒深抓和评论"
+
+  video_production:
+    tool: MoneyPrinterTurbo
+    responsibility: "视频生产"
+
+mediacrawler:
+  transport: stdio
+  command: python
+  args:
+    - "-m"
+    - "mediacrawler_mcp"
+  timeout_seconds: 60
+  methods:
+    search: search
+    detail: detail
+    comments: comments
