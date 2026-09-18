@@ -3,7 +3,7 @@ from content_research_factory.models import ResearchPackage
 
 
 class FakePipeline:
-    def run(self, query):
+    def run(self, query, *, produce_video=False):
         return ResearchPackage(
             query=query,
             discoveries=[],
@@ -18,22 +18,41 @@ class FakePipeline:
                 "platform_counts": {},
                 "ready_for_production": False,
             },
+            production_handoff=(
+                {"status": "completed"} if produce_video else None
+            ),
         )
 
 
 def test_cli_writes_artifacts(monkeypatch, tmp_path):
-    monkeypatch.setattr(cli, "build_pipeline", lambda config: FakePipeline())
-
-    code = cli.main(
-        [
-            "research",
-            "AI 五行饮食",
-            "--output-dir",
-            str(tmp_path),
-        ]
+    monkeypatch.setattr(
+        cli,
+        "build_pipeline",
+        lambda enable_video=False: FakePipeline(),
     )
-
+    code = cli.main([
+        "research",
+        "AI 五行饮食",
+        "--output-dir",
+        str(tmp_path),
+    ])
     assert code == 0
     run_dir = tmp_path / "ai-五行饮食"
     assert (run_dir / "research.json").exists()
     assert (run_dir / "brief.md").exists()
+
+
+def test_cli_can_enable_video(monkeypatch, tmp_path):
+    monkeypatch.setattr(
+        cli,
+        "build_pipeline",
+        lambda enable_video=False: FakePipeline(),
+    )
+    code = cli.main([
+        "research",
+        "AI 五行饮食",
+        "--output-dir",
+        str(tmp_path),
+        "--produce-video",
+    ])
+    assert code == 0
