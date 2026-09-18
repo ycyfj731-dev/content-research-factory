@@ -220,6 +220,32 @@
         "string",
         "null"
       ]
+    },
+    "classification_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "quoted_view",
+          "conditional",
+          "historical_only",
+          "sarcasm_or_irony",
+          "mixed_horizon",
+          "low_information",
+          "copied_news",
+          "ambiguous_asset_reference",
+          "explicit_position",
+          "explicit_target"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "classification_evidence": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Short source span or concise evidence note supporting the classification."
     }
   }
 }
