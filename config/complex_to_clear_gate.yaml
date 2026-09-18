@@ -1,0 +1,69 @@
+version: "1.0"
+name: complex-to-clear-distortion-gate
+policy: hard_fail
+
+statuses:
+  - READY
+  - REWRITE
+  - NEEDS_SOURCE
+  - NEEDS_EXPERT_CHECK
+
+checks:
+  - id: SOURCE_FIDELITY
+    hard: true
+    question: "Is the central problem or claim genuinely supported by the strongest reasonably available source?"
+  - id: ATTRIBUTION
+    hard: true
+    question: "Is every claim assigned to the correct author, speaker, institution, study, party, or interpretive layer?"
+  - id: QUOTE_INTEGRITY
+    hard: true
+    question: "Are direct quotations verified and paraphrases clearly not presented as quotations?"
+  - id: ANALOGY_FIDELITY
+    hard: true
+    question: "If the analogy is removed, does the explanation still express the source problem or claim?"
+  - id: TEMPORAL_DISCIPLINARY_CONTAMINATION
+    hard: true
+    question: "Has the explanation avoided silently importing later concepts or concepts from another discipline?"
+  - id: CORE_QUESTION_DISCIPLINE
+    hard: true
+    question: "Does this unit have one central conceptual question?"
+  - id: TERM_ORDER
+    hard: true
+    question: "Is the concept understandable before specialist terminology is introduced?"
+  - id: METAPHOR_TO_MECHANISM
+    hard: true
+    question: "Does every important metaphor resolve into a mechanism-level explanation?"
+  - id: BOUNDARY_CHECK
+    hard: true
+    question: "Is at least one misconception, limit, counterexample, or overextension explicitly handled?"
+  - id: CONTESTEDNESS
+    hard: true
+    question: "Are material expert disagreements or uncertainties represented as such?"
+  - id: APPLICATION_LAYERING
+    hard: true
+    question: "Are source claim, interpretation, and modern application kept distinct?"
+  - id: BEGINNER_RETELL
+    hard: true
+    question: "Can a non-specialist restate the core idea in ordinary language?"
+  - id: EXPERT_DISTORTION
+    hard: true
+    question: "Would a knowledgeable reader recognize the result as simplified but substantively faithful?"
+  - id: PREMATURE_CLOSURE
+    hard: true
+    question: "Has the explanation avoided forcing a neat conclusion where the intellectual problem should remain open?"
+
+decision:
+  READY:
+    rule: "all checks PASS"
+  NEEDS_SOURCE:
+    rule: "SOURCE_FIDELITY or QUOTE_INTEGRITY is UNKNOWN because evidence is missing"
+  NEEDS_EXPERT_CHECK:
+    rule: "CONTESTEDNESS or EXPERT_DISTORTION cannot be resolved confidently"
+  REWRITE:
+    rule: "any hard check FAIL"
+
+rewrite_return_stage:
+  - Bottleneck
+  - Minimum Sufficient Model
+  - Bridge / Metaphor
+  - Mechanism
