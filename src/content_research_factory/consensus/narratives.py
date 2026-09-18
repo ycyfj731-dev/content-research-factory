@@ -80,7 +80,7 @@ def cluster_observations(
         for cluster_index, representative in enumerate(representatives):
             rep_seed = _seed_label(representative)
             lexical = jaccard_similarity(text, representative)
-            seed_bonus = 0.20 if seed and rep_seed and seed == rep_seed else 0.0
+            seed_bonus = 0.35 if seed and rep_seed and seed == rep_seed else 0.0
             score = min(1.0, lexical + seed_bonus)
             if score > best_score:
                 best_score = score
