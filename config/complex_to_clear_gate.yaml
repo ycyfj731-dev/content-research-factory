@@ -1,4 +1,4 @@
-version: "1.1"
+version: "1.2"
 name: complex-to-clear-distortion-gate
 policy: hard_fail
 
@@ -62,6 +62,13 @@ checks:
   - id: BEGINNER_PRIOR_KNOWLEDGE
     hard: true
     question: "Does the explanation avoid silently assuming any unintroduced or contested textbook narrative, disciplinary convention, or historical interpretation?"
+
+  - id: ONE_CONCEPT_CLOSURE
+    hard: true
+    question: "Does the lesson fully complete one central concept or question, with a clear account of what was established and what remains unresolved?"
+  - id: NEXT_HOOK_SEPARATION
+    hard: true
+    question: "If a next-lesson hook is used, is it clearly separate from the current conclusion and does it introduce a genuinely new question rather than create an artificial cliffhanger?"
 
 decision:
   READY:
