@@ -1,0 +1,51 @@
+version: 1
+
+upstreams:
+  TrendRadar:
+    repository: "https://github.com/sansan0/TrendRadar"
+    ref: "master"
+    role: "热点发现"
+    interface: "MCP"
+    mcp_tools:
+      search: "search_news"
+      trending: "get_trending_topics"
+    startup:
+      command: "uv"
+      args: ["--directory", "${TREND_RADAR_DIR}", "run", "python", "-m", "mcp_server.server"]
+
+  Agent-Reach:
+    repository: "https://github.com/Panniantong/Agent-Reach"
+    ref: "main"
+    role: "跨平台验证"
+    interface: "CLI capability router"
+    healthcheck:
+      command: "agent-reach"
+      args: ["doctor", "--json"]
+    documented_backends:
+      bilibili: "bili search <query> --type video -n <limit>"
+      twitter: "twitter search <query> -n <limit>"
+      reddit: "rdt search <query> --limit <limit>"
+      xiaohongshu: "opencli xiaohongshu search <query> -f yaml"
+
+  MediaCrawler:
+    repository: "https://github.com/Bowenwin/MediaCrawler_MCP_Server"
+    upstream_core: "https://github.com/NanmiCoder/MediaCrawler"
+    ref: "main"
+    role: "中文社媒深抓和评论"
+    interface: "MCP"
+    mcp_tools:
+      search: "crawl_search"
+      detail: "crawl_detail"
+      creator: "crawl_creator"
+    startup:
+      command: "uv"
+      args: ["--directory", "${MEDIA_CRAWLER_DIR}", "run", "main.py"]
+
+  MoneyPrinterTurbo:
+    repository: "https://github.com/harry0703/MoneyPrinterTurbo"
+    ref: "main"
+    role: "视频生产"
+    interface: "CLI"
+    startup:
+      command: "uv"
+      args: ["run", "python", "cli.py", "--video-subject", "<subject>"]
