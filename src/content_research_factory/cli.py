@@ -12,6 +12,7 @@ from .adapters.mcp_stdio import MCPStdioConfig
 from .adapters.mediacrawler_mcp import MediaCrawlerMCPAdapter
 from .adapters.moneyprinterturbo import MoneyPrinterTurboAdapter, MoneyPrinterTurboConfig
 from .adapters.trendradar import TrendRadarAdapter
+from .consensus.collector import ConsensusCollector, write_jsonl
 from .consensus.discovery import build_discovery_plan, plan_as_dicts
 from .consensus.runner import score_observation_file
 from .doctor import run_doctor
@@ -119,6 +120,32 @@ def main(argv: list[str] | None = None) -> int:
         help="Optional same-day dynamic term; may be repeated.",
     )
 
+    collect = subparsers.add_parser("consensus-collect")
+    collect.add_argument(
+        "--config",
+        default="config/consensus/lithium_carbonate.yaml",
+        help="Consensus asset configuration.",
+    )
+    collect.add_argument(
+        "--output",
+        default="outputs/consensus/raw/lithium_carbonate.jsonl",
+        help="Append-only raw evidence JSONL.",
+    )
+    collect.add_argument(
+        "--max-queries",
+        type=int,
+        default=None,
+        help="Optional cap for smoke/testing; production should normally run the full plan.",
+    )
+    collect.add_argument(
+        "--dynamic-term",
+        action="append",
+        default=[],
+        help="Optional same-day dynamic term; may be repeated.",
+    )
+    collect.add_argument("--comments-limit", type=int, default=50)
+    collect.add_argument("--deep-posts-per-query", type=int, default=2)
+
     consensus = subparsers.add_parser("consensus-score")
     consensus.add_argument("input", help="JSON observations file.")
     consensus.add_argument(
@@ -149,6 +176,32 @@ def main(argv: list[str] | None = None) -> int:
             dynamic_terms=args.dynamic_term,
         )
         print(json.dumps(plan_as_dicts(plan_items), ensure_ascii=False, indent=2))
+        return 0
+
+    if args.command == "consensus-collect":
+        plan_items = build_discovery_plan(
+            args.config,
+            dynamic_terms=args.dynamic_term,
+        )
+        if args.max_queries is not None:
+            plan_items = plan_items[: max(0, args.max_queries)]
+        pipeline = build_pipeline(enable_video=False)
+        collector = ConsensusCollector(
+            trend_radar=pipeline.trend_radar,
+            agent_reach=pipeline.agent_reach,
+            media_crawler=pipeline.media_crawler,
+        )
+        records = collector.collect(
+            plan_items,
+            comments_limit=args.comments_limit,
+            deep_posts_per_query=args.deep_posts_per_query,
+        )
+        target = write_jsonl(records, args.output)
+        print(json.dumps({
+            "output": str(target),
+            "queries": len(plan_items),
+            "records": len(records),
+        }, ensure_ascii=False, indent=2))
         return 0
 
     if args.command == "consensus-score":
