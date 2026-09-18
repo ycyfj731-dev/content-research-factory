@@ -1,34 +1,35 @@
-from content_research_factory.adapters.agent_reach import AgentReachAdapter
+from content_research_factory.adapters.agent_reach import AgentReachAdapter, AgentReachConfig
 from content_research_factory.adapters.trendradar import TrendRadarAdapter
 
 
-class FakeRPC:
-    def __init__(self, result):
-        self.result = result
+class FakeMCP:
+    def __init__(self, responses):
+        self.responses = list(responses)
         self.calls = []
 
     def call(self, method, params):
         self.calls.append((method, params))
-        return self.result
+        return self.responses.pop(0)
 
 
-def test_trendradar_adapter_normalizes_items():
+def test_trendradar_uses_real_tool_names_and_merges_results():
     adapter = object.__new__(TrendRadarAdapter)
-    adapter.rpc = FakeRPC({"items": [{"id": "1", "title": "trend"}]})
-    adapter.discover_method = "discover"
+    adapter.mcp = FakeMCP([
+        {"items": [{"id": "1", "title": "query hit"}]},
+        {"topics": [{"title": "hot topic"}]},
+    ])
+    adapter.search_tool = "search_news"
+    adapter.trending_tool = "get_trending_topics"
 
-    rows = adapter.discover("AI")
+    rows = adapter.discover("AI", limit=10)
 
-    assert rows == [{"id": "1", "title": "trend"}]
-    assert adapter.rpc.calls[0][0] == "discover"
+    assert rows[0]["title"] == "query hit"
+    assert rows[1]["title"] == "hot topic"
+    assert adapter.mcp.calls[0][0] == "search_news"
+    assert adapter.mcp.calls[1][0] == "get_trending_topics"
 
 
-def test_agent_reach_adapter_passes_candidates():
-    adapter = object.__new__(AgentReachAdapter)
-    adapter.rpc = FakeRPC([{"id": "v1"}])
-    adapter.verify_method = "verify"
-
-    rows = adapter.verify("AI", candidates=[{"id": "t1"}])
-
-    assert rows == [{"id": "v1"}]
-    assert adapter.rpc.calls[0][1]["candidates"] == [{"id": "t1"}]
+def test_agent_reach_bilibili_uses_documented_cli():
+    adapter = AgentReachAdapter(AgentReachConfig(platforms=("bilibili",)))
+    command = adapter._command_for("bilibili", None, "AI")
+    assert command == ["bili", "search", "AI", "--type", "video", "-n", "5"]
