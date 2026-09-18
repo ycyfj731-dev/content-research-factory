@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import re
 from dataclasses import asdict, dataclass
+from datetime import datetime, timezone
 from typing import Any, Iterable, Protocol
 
 
@@ -179,10 +180,35 @@ def _infer_group(record: dict[str, Any]) -> str:
     platform = str(record.get("platform") or "")
     if platform in {"institution_web", "research", "broker"}:
         return "institution"
-    origin_tool = str(record.get("origin_tool") or "")
-    if origin_tool == "TrendRadar" and not platform:
-        return "institution"
     return "kol"
+
+
+def _normalize_timestamp(value: Any, fallback: str) -> str:
+    if value in (None, ""):
+        return fallback
+
+    if isinstance(value, (int, float)):
+        numeric = float(value)
+    else:
+        raw = str(value).strip()
+        if re.fullmatch(r"\d{10,13}", raw):
+            numeric = float(raw)
+        else:
+            normalized = raw.replace("Z", "+00:00")
+            try:
+                parsed = datetime.fromisoformat(normalized)
+            except ValueError:
+                return fallback
+            if parsed.tzinfo is None:
+                parsed = parsed.replace(tzinfo=timezone.utc)
+            return parsed.astimezone(timezone.utc).isoformat()
+
+    if numeric > 10_000_000_000:
+        numeric /= 1000.0
+    try:
+        return datetime.fromtimestamp(numeric, tz=timezone.utc).isoformat()
+    except (OverflowError, OSError, ValueError):
+        return fallback
 
 
 def _infer_horizon(text: str) -> str:
@@ -355,11 +381,17 @@ class HeuristicLCClassifier:
 
         platform = str(record.get("platform") or "unknown")
         source_group = _infer_group(record)
-        published_at = str(
-            record.get("published_at")
-            or record.get("captured_at")
+        captured_at_raw = str(
+            record.get("captured_at") or datetime.now(timezone.utc).isoformat()
         )
-        captured_at = str(record.get("captured_at") or published_at)
+        captured_at = _normalize_timestamp(
+            record.get("captured_at"),
+            captured_at_raw,
+        )
+        published_at = _normalize_timestamp(
+            record.get("published_at"),
+            captured_at,
+        )
         raw_hash = str(
             record.get("raw_hash")
             or hashlib.sha256(text.encode("utf-8")).hexdigest()
