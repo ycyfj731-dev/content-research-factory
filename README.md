@@ -202,3 +202,37 @@ V0.1 deliberately separates scoring from collection. The existing fixed routing 
     TrendRadar -> Agent-Reach -> MediaCrawler -> Consensus classification/scoring
 
 Historical scores must be append-only and must not be relabeled with hindsight.
+
+
+### Web-wide LC collection
+
+Preview the deterministic daily query plan:
+
+    crf consensus-plan
+
+Add same-day dynamic terms without changing the core baseline:
+
+    crf consensus-plan --dynamic-term 枧下窝复产 --dynamic-term 宁德时代
+
+Run the web-wide collector and append raw evidence:
+
+    crf consensus-collect
+
+Smoke-test only the first few queries:
+
+    crf consensus-collect --max-queries 3 --comments-limit 10
+
+Default raw ledger:
+
+    outputs/consensus/raw/lithium_carbonate.jsonl
+
+The collection architecture is **web-wide first**. The fixed panel is a calibration
+anchor, not the market universe.
+
+Daily scoring stores both:
+
+- Raw Consensus: exact-deduped captured stream before semantic/concentration controls
+- Normalized Consensus: semantic-repeat discounted, platform/author/post capped,
+  then Institution/KOL/Crowd balanced
+
+Never compare daily scores without checking platform coverage and effective sample size.
