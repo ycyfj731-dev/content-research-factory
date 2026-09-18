@@ -135,3 +135,36 @@ Run:
     pytest -q
 
 GitHub Actions configuration is in .github/workflows/test.yml.
+
+
+## Health check
+
+After bootstrap, run:
+
+    crf doctor
+
+Expected status classes:
+
+- READY
+- PARTIAL
+- NOT_CONFIGURED
+- FAIL
+
+MoneyPrinterTurbo may be NOT_CONFIGURED when only research is needed.
+
+## First smoke test
+
+The repository has one fixed first smoke-test topic:
+
+    AI 生成四格漫画：普通人如何用 AI 做连续角色、持续更新并变现
+
+Run:
+
+    crf smoke-test
+
+The smoke test intentionally uses smaller limits than a full research run and writes:
+
+    outputs/smoke-test/research.json
+    outputs/smoke-test/brief.md
+
+Run `crf doctor` first. Do not treat a smoke test as successful unless the real upstreams execute and the generated research package contains actual retrieved evidence.
