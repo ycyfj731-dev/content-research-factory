@@ -7,6 +7,7 @@ from typing import Any
 import yaml
 
 from .classifier import HeuristicLCClassifier, classify_records
+from .external_classifier import ExternalJSONClassifier
 from .narratives import cluster_observations, narrative_summary
 
 
@@ -30,12 +31,21 @@ def process_raw_evidence(
     narratives_path: str | Path | None = None,
     model_version: str = "heuristic-lc-v0.1",
     similarity_threshold: float = 0.52,
+    classifier_command: str | None = None,
+    classifier_timeout_seconds: int = 60,
 ) -> dict[str, Any]:
     config = yaml.safe_load(Path(config_path).read_text(encoding="utf-8"))
     asset_id = str(config["asset"]["id"])
     raw_rows = read_jsonl(input_path)
 
-    classifier = HeuristicLCClassifier()
+    classifier = (
+        ExternalJSONClassifier(
+            classifier_command,
+            timeout_seconds=classifier_timeout_seconds,
+        )
+        if classifier_command
+        else HeuristicLCClassifier()
+    )
     classified = classify_records(
         raw_rows,
         classifier=classifier,
@@ -52,6 +62,7 @@ def process_raw_evidence(
     output = {
         "asset_id": asset_id,
         "model_version": model_version,
+        "classifier_mode": "external_json" if classifier_command else "heuristic",
         "input_record_count": len(raw_rows),
         "observation_count": len(clustered),
         "observations": clustered,
