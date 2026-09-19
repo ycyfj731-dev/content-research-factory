@@ -134,6 +134,27 @@ Never use an abstract term to explain another abstract term.
 
 ---
 
+# CHINESE NATIVE PROSE — FROZEN
+
+Before finalizing any public lesson, apply:
+`references/CHINESE_NATIVE_PROSE_GATE.md`
+
+Use English-language philosophy writers only for reasoning structure, source caution, and explanatory sequencing. Do not translate their syntax into Chinese.
+
+For Chinese prose, prefer a restrained cultural-essay register: natural unfolding, clear judgment, measured rhythm, minimal translationese, and no imitation of any living writer's distinctive phrasing.
+
+Preferred logical order when appropriate:
+
+```
+fact
+→ question
+→ explanation
+```
+
+Do not repeat the same question before and after the evidence.
+
+---
+
 # WRITING STYLE — FROZEN
 
 These are hard editorial rules for this course.
