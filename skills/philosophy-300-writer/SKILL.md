@@ -1,10 +1,10 @@
 ---
 name: philosophy-300-writer
 description: Produce source-grounded, zero-baseline philosophy lessons for the Philosophy 300 course while preserving frozen canonical cores, approved prose, source boundaries, and surgical revision discipline.
-version: 0.1.9
+version: 0.1.10
 ---
 
-# PHILOSOPHY-300-WRITER v0.1.9
+# PHILOSOPHY-300-WRITER v0.1.10
 
 ## Purpose
 
@@ -34,7 +34,7 @@ Before drafting a lesson, check the relevant frozen course artifacts.
 Required course sources:
 - `docs/philosophy-300/LECTURE_002_XHS_PAGINATION_v1.0.md` for frozen Lecture 002 Xiaohongshu pagination.
 - `docs/philosophy-300/SOCIAL_PUBLISHING_CONTRACT_v1.0.md` for frozen full-prose-to-Xiaohongshu publishing rules.
-- `docs/philosophy-300/LECTURE_002_FINAL_FROZEN_v1.2.md` for frozen Lecture 002 prose and local wording corrections.
+- `docs/philosophy-300/LECTURE_002_FINAL_FROZEN_v1.3.md` for frozen Lecture 002 prose and local wording corrections.
 - `docs/philosophy-300/COVER_TITLES_001_030_v1.0.md` for frozen social cover titles for lectures 001–030.
 - `docs/philosophy-300/CANONICAL_CORES_001_030_v1.0.md` for lectures 001–030.
 - `docs/philosophy-300/SOURCE_SCREEN_001_010.md`
@@ -346,6 +346,19 @@ For example, prefer:
 > 这些看起来完全不同的东西，会不会其实来自同一种更基本的东西？
 
 before introducing a term like “principle”.
+
+## W11 — No colon staging
+
+Do not use repeated AI-like setup patterns that announce a point and then place the real sentence after a colon.
+
+Avoid habitual forms such as:
+- “真正发生的是：”
+- “真正需要继续追问的是：”
+- “问题是：”
+- “值得注意的是：”
+- “这意味着：”
+
+Use a direct sentence instead unless the colon is genuinely needed for a quotation, definition, list, or grammatical relation.
 
 ## W10 — Do not steal later lessons
 
