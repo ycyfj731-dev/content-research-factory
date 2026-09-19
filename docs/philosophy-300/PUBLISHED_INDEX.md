@@ -7,7 +7,7 @@ Historical versions remain in the repository but are not treated as current.
 
 | No. | Current frozen prose | Current pagination | Published deck | Status |
 |---|---|---|---|---|
-| 001 | `LECTURE_001_FINAL_FROZEN_v1.0.md` | — | — | FROZEN PROSE |
+| 001 | `LECTURE_001_FINAL_FROZEN_v1.1.md` | `LECTURE_001_XHS_PAGINATION_v1.1.md` | `published/001/001-deck.html` | CURRENT |
 | 002 | `LECTURE_002_FINAL_FROZEN_v1.3.md` | `LECTURE_002_XHS_PAGINATION_v1.1.md` | `published/002/002-deck.html` | CURRENT |
 | 003 | — | — | — | TODO |
 
