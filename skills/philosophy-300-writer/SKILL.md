@@ -1,10 +1,10 @@
 ---
 name: philosophy-300-writer
 description: Produce source-grounded, zero-baseline philosophy lessons for the Philosophy 300 course while preserving frozen canonical cores, approved prose, source boundaries, and surgical revision discipline.
-version: 0.1.3
+version: 0.1.4
 ---
 
-# PHILOSOPHY-300-WRITER v0.1.3
+# PHILOSOPHY-300-WRITER v0.1.4
 
 ## Purpose
 
@@ -83,6 +83,46 @@ Examples:
 - Plato presenting Socrates ≠ automatic access to the historical Socrates.
 - A modern reconstruction ≠ an ancient thinker’s stated motive.
 - A course bridge may be pedagogically useful but must not be attributed to the historical thinker.
+
+---
+
+# COVER TITLE / COURSE TITLE SPLIT — FROZEN
+
+Philosophy 300 uses two title layers when useful:
+
+1. **Cover title** — optimized for immediate comprehension and curiosity on social platforms.
+2. **Course title** — preserves the formal lesson question and curriculum structure.
+
+Core rule:
+
+> **封面标题负责制造认知冲突；正文标题负责保留课程问题。**
+
+The cover title should normally begin from the most surprising, contradictory, concrete, or counterintuitive thing about the thinker/problem — not merely from the philosopher's name or a technical term.
+
+Bad cover style:
+- 泰勒斯与西方哲学的开端
+- 泰勒斯｜自然哲学
+- 巴门尼德的存在论
+
+Preferred cover style:
+- 为什么西方哲学史总要从一个“万物都是水”的人讲起？
+- 哲学真的是从人们“不再相信神”开始的吗？
+- 巴门尼德为什么会认为“变化”本身就有问题？
+
+Hard rules:
+- The cover must be understandable even if the reader has never heard the philosopher's name.
+- Do not manufacture clickbait, false controversy, or claims stronger than the evidence.
+- The cover question must be answered by the lesson.
+- The formal course title may remain more precise and historiographical.
+- A strong social title must not distort the canonical core.
+
+Example for Lecture 002:
+
+Cover:
+> 为什么西方哲学史总要从一个“万物都是水”的人讲起？
+
+Course title:
+> 002｜为什么泰勒斯被叫作“第一位哲学家”？
 
 ---
 
