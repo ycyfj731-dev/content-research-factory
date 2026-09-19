@@ -1,0 +1,18 @@
+{
+  "deck": "002-deck.html",
+  "source_prose": "LECTURE_002_FINAL_FROZEN_v1.3.md",
+  "pagination": "LECTURE_002_XHS_PAGINATION_v1.1.md",
+  "master_system": "v1.1",
+  "pageCount": 10,
+  "accountChrome": "@每天读一点哲学",
+  "sectionNumbers": ["01","02","03","04","05","06","07","08","09"],
+  "mastersUsed": ["cover","essay","statement","evidence","credits"],
+  "checks": {
+    "PAGE_COUNT_10": "PASS",
+    "ACCOUNT_CHROME_ALL_PAGES": "PASS",
+    "SECTION_SEQUENCE": "PASS",
+    "NO_STANDALONE_TOOL_PAGE": "PASS",
+    "NO_INTERNAL_FREEZE_METADATA": "PASS"
+  },
+  "verdict": "PASS"
+}
