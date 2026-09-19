@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Philosophy 002 — MASTER TEMPLATE SYSTEM v1.1</title>
+<style>
+:root{--paper:#fff;--ink:#111;--meta:#6b6b6b;--rule:#d9d9d9;--red:#8f1d1d;--gold:#a98352;--serif:"Noto Serif CJK SC","Source Han Serif SC","Songti SC",serif;--sans:"Noto Sans CJK SC","Source Han Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#fff}.editorial-page{position:relative;width:1080px;height:1440px;overflow:hidden;background:#fff;color:var(--ink);font-family:var(--serif)}
+.masthead{position:absolute;top:46px;left:72px;right:72px;height:34px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--sans);font-size:13px;letter-spacing:.25em}.masthead .series{color:var(--meta);font-weight:600}.page-footer{position:absolute;left:72px;right:72px;bottom:46px;height:34px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:flex-start;font-family:var(--sans);font-size:13px;letter-spacing:.20em;color:var(--meta)}
+.content{position:absolute;top:136px;left:72px;width:936px;height:1190px}.kicker{font-family:var(--sans);font-size:23px;line-height:1.35;font-weight:700;display:flex;align-items:baseline;gap:16px}.section-no{font-size:26px;line-height:1;font-weight:800}.section-title{color:var(--ink)}.headline{margin-top:28px;max-width:880px;font-size:44px;line-height:1.42;font-weight:800}.body{margin-top:32px;max-width:776px;font-size:30px;line-height:1.78}.body.compact{font-size:27px;line-height:1.70}.body.tight{font-size:25px;line-height:1.64}.body p{margin-bottom:20px}.display{margin-top:120px;max-width:776px;font-size:64px;line-height:1.32;font-weight:900}.cover-display{margin-top:190px;max-width:936px;font-size:82px;line-height:1.20;font-weight:900}.deck{margin-top:58px;max-width:776px;font-size:30px;line-height:1.78}.cover-meta{position:absolute;left:72px;bottom:120px;font-family:var(--sans);font-size:13px;letter-spacing:.20em;color:var(--meta)}.quote-plate{margin-top:32px;width:776px;padding:44px 48px;border:1px solid var(--rule)}.quote-plate .eng{font-size:34px;line-height:1.58;font-weight:700}.quote-plate .src{margin-top:26px;font-family:var(--sans);font-size:15px;color:var(--meta)}.term-block{margin-top:36px;max-width:776px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:32px 0 34px}.term-word{font-size:62px;font-weight:900}.term-roman{margin-top:8px;font-family:var(--sans);font-size:18px;color:var(--gold)}.term-explain{margin-top:20px;font-size:28px;line-height:1.68}.credit-list{margin-top:46px;max-width:776px;font-family:var(--sans);font-size:15px}.credit{display:flex;gap:28px;padding:22px 0;border-top:1px solid var(--rule)}.credit .cnum{flex:0 0 44px;color:var(--gold);font-weight:700}.credit .ct{font-size:20px;font-weight:700;font-family:var(--serif)}.credit .cn{margin-top:7px;font-size:16px}.credit .cc{margin-top:5px;font-size:13px;color:var(--meta)}.credit-note{margin-top:28px;font-family:var(--sans);font-size:13px;color:var(--meta)}
+[data-accent="red"] .section-no{color:var(--red)}[data-accent="gold"] .section-no{color:var(--gold)}[data-accent="gold"] .issue{color:var(--gold)}
+</style>
+</head><body>
+
+<section class="editorial-page" data-master="cover" data-accent="gold">
+<header class="masthead"><span class="series">PHILOSOPHY 300</span><span class="issue">002 / 300</span></header>
+<div class="content"><h1 class="cover-display">为什么西方哲学史<br>总要从一个<br>“万物都是水”的人讲起？</h1><p class="deck">002｜为什么泰勒斯被叫作“第一位哲学家”？</p><div class="cover-meta">《西方哲学，从0开始》· 002</div></div>
+<footer class="page-footer"><span>《西方哲学，从0开始》 · @每天读一点哲学</span><span>002 / 300 · PAGE 01</span></footer></section>
+
+<section class="editorial-page" data-master="essay" data-accent="red">
+<header class="masthead"><span class="series">PHILOSOPHY 300</span><span>002 / 300</span></header>
+<div class="content"><div class="kicker"><span class="section-no">01</span><span class="section-title">泰勒斯是谁</span></div>
+<h1 class="headline">如果你翻开一本西方哲学史，<br>第一个出现的名字，<br>常常是泰勒斯。</h1>
+<div class="body compact"><p>他大约生活在公元前六世纪，来自米利都。米利都在爱琴海东岸，也就是今天土耳其西部沿海一带。</p><p>和泰勒斯一起被后人放在哲学史早期的，还有阿那克西曼德和阿那克西美尼。他们都来自米利都，所以哲学史通常把这几个人放在一起，称为<strong>米利都学派</strong>。</p><p>这里的“学派”，不要理解成今天有校舍、有组织、有统一纲领的学校。我们甚至不能确定三个人真有后来传说中那么明确的师承关系。它主要是后人为了讨论方便，把几个来自米利都、研究问题又有相似之处的人放在一起。</p></div></div>
+<footer class="page-footer"><span>《西方哲学，从0开始》 · @每天读一点哲学</span><span>002 / 300 · PAGE 02</span></footer></section>
+
+<section class="editorial-page" data-master="essay" data-accent="red">
+<header class="masthead"><span class="series">PHILOSOPHY 300</span><span>002 / 300</span></header>
+<div class="content"><div class="kicker"><span class="section-no">02</span><span class="section-title">自然哲学</span></div>
+<h1 class="headline">泰勒斯也常被称为早期的<br><strong>自然哲学家</strong>。</h1>
+<div class="body"><p>“自然哲学”听起来很专业，其实先抓住“自然”两个字就行。</p><p>这类人关心的是自然世界里的东西从哪里来，为什么会变化，世界为什么会是现在这个样子。</p><p>后来，这些问题的一部分进入了我们今天所谓的哲学，另一部分又逐渐发展成物理学、天文学等学科。但在泰勒斯的时代，这些界线都还没有后来那么清楚。</p></div></div>
+<footer class="page-footer"><span>《西方哲学，从0开始》 · @每天读一点哲学</span><span>002 / 300 · PAGE 03</span></footer></section>
+
+<section class="editorial-page" data-master="statement" data-accent="red">
+<header class="masthead"><span class="series">PHILOSOPHY 300</span><span>002 / 300</span></header>
+<div class="content"><div class="kicker"><span class="section-no">03</span><span class="section-title">“万物都是水”</span></div>
+<h1 class="display">万物都是水。</h1><div class="body compact"><p>那么，泰勒斯到底说了什么？最有名的当然是“水”。</p><p>很多入门书会把他的观点概括成“万物都是水”。</p><p>但严格说，这不是我们从泰勒斯自己的书里读到的一句话。</p><p>因为我们没有他的书。</p><p>今天关于泰勒斯思想最重要的材料之一，来自比他晚两百多年的亚里士多德。</p></div></div>
+<footer class="page-footer"><span>《西方哲学，从0开始》 · @每天读一点哲学</span><span>002 / 300 · PAGE 04</span></footer></section>
+
+<section class="editorial-page" data-master="evidence" data-accent="gold">
+<header class="masthead"><span class="series">PHILOSOPHY 300</span><span class="issue">002 / 300</span></header>
+<div class="content"><div class="kicker"><span class="section-no">04</span><span class="section-title">亚里士多德怎么写</span></div>
+<h1 class="headline">亚里士多德在《形而上学》第一卷<br>回顾更早的思想家时，直接写道</h1>
+<div class="quote-plate"><div class="eng">“Thales, the founder of this type of philosophy, says the principle is water.”</div><div class="src">Aristotle, <em>Metaphysics</em>, Book I.3</div></div><div class="body compact"><p>在亚里士多德的叙述里，泰勒斯已经被放在这一类哲学研究的开头。</p></div></div>
+<footer class="page-footer"><span>《西方哲学，从0开始》 · @每天读一点哲学</span><span>002 / 300 · PAGE 05</span></footer></section>
+
+<section class="editorial-page" data-master="essay" data-accent="red">
+<header class="masthead"><span class="series">PHILOSOPHY 300</span><span>002 / 300</span></header>
+<div class="content"><div class="kicker"><span class="section-no">05</span><span class="section-title">本原 archē</span></div>
+<div class="term-block"><div class="term-word">本原</div><div class="term-roman">archē</div><div class="term-explain">这里的 <strong>principle</strong>，对应希腊语 <em>archē</em>，通常译作<strong>本原</strong>。</div></div>
+<div class="body compact"><p>亚里士多德前面解释这类“本原”时，谈的是万物由什么构成，从什么产生，毁灭时又回到什么。</p><p>但这是亚里士多德描述前人的方式。我们不能因此确定，泰勒斯本人当时也用同样的概念来表述自己的想法。</p><p>这也是研究泰勒斯最麻烦、也最有意思的地方。</p><p><strong>我们认识他，主要是通过别人。</strong></p><p>但“没有原著”并不等于“什么都不能说”。至少从古代留下来的传统看，“水”长期和泰勒斯联系在一起。亚里士多德在回顾比自己更早的自然研究时，也确实从泰勒斯讲起。</p></div></div>
+<footer class="page-footer"><span>《西方哲学，从0开始》 · @每天读一点哲学</span><span>002 / 300 · PAGE 06</span></footer></section>
+
+<section class="editorial-page" data-master="essay" data-accent="red">
+<header class="masthead"><span class="series">PHILOSOPHY 300</span><span>002 / 300</span></header>
+<div class="content"><div class="kicker"><span class="section-no">06</span><span class="section-title">为什么是泰勒斯</span></div>
+<h1 class="headline">这就解释了为什么泰勒斯后来会被放到<br>西方哲学史的第一页。</h1>
+<div class="body tight"><p>并不是因为有人查遍了全世界，证明泰勒斯就是人类历史上第一个哲学家。这样的证明根本不存在。</p><p>也不是因为“水”这个答案今天看来仍然正确。</p><p>后来的西方哲学传统在回顾自己的早期历史时，一再从泰勒斯开始讲。</p><p>而泰勒斯身上恰好集中出现了几个后来会变得非常重要的问题。</p><p><strong>世界最基本的东西是什么？</strong></p><p><strong>看起来完全不同的事物之间，会不会存在某种共同的根据？</strong></p><p><strong>自然发生变化，能不能从自然本身去找解释？</strong></p><p>这也是为什么后来的哲学史常把泰勒斯放进早期自然哲学的叙述里。</p></div></div>
+<footer class="page-footer"><span>《西方哲学，从0开始》 · @每天读一点哲学</span><span>002 / 300 · PAGE 07</span></footer></section>
+
+<section class="editorial-page" data-master="essay" data-accent="red">
+<header class="masthead"><span class="series">PHILOSOPHY 300</span><span>002 / 300</span></header>
+<div class="content"><div class="kicker"><span class="section-no">07</span><span class="section-title">神话没有因此消失</span></div>
+<h1 class="headline">但不能因此说，泰勒斯从此抛弃了神话，<br>只相信理性。</h1>
+<div class="body compact"><p>古代关于泰勒斯的记载里，也有“磁石有灵魂”和“万物充满神”这类说法。</p><p>所以，不能把泰勒斯简单理解成一个已经完全摆脱神话和宗教解释的人。</p><p>他仍然生活在一个神、灵魂、自然和宇宙秩序没有被彻底分开的思想世界里。</p></div></div>
+<footer class="page-footer"><span>《西方哲学，从0开始》 · @每天读一点哲学</span><span>002 / 300 · PAGE 08</span></footer></section>
+
+<section class="editorial-page" data-master="statement" data-accent="red">
+<header class="masthead"><span class="series">PHILOSOPHY 300</span><span>002 / 300</span></header>
+<div class="content"><div class="kicker"><span class="section-no">08</span><span class="section-title">下一讲</span></div>
+<h1 class="headline">把泰勒斯放在哲学史的开头，<br>并不等于说从他开始，神话就消失了。</h1>
+<div class="display" style="font-size:58px;margin-top:84px">哲学出现以后，<br>神话到底有没有退场？</div>
+<div class="body"><p>下一讲，我们继续追问这个问题。</p></div></div>
+<footer class="page-footer"><span>《西方哲学，从0开始》 · @每天读一点哲学</span><span>002 / 300 · PAGE 09</span></footer></section>
+
+<section class="editorial-page" data-master="credits" data-accent="gold">
+<header class="masthead"><span class="series">PHILOSOPHY 300</span><span class="issue">002 / 300</span></header>
+<div class="content"><div class="kicker"><span class="section-no">09</span><span class="section-title">资料来源</span></div>
+<div class="credit-list"><div class="credit"><span class="cnum">01</span><div><div class="ct">Aristotle</div><div class="cn"><em>Metaphysics</em>, Book I.3, 983b</div><div class="cc">泰勒斯、水、本原，以及亚里士多德如何把他放进早期哲学叙述。</div></div></div><div class="credit"><span class="cnum">02</span><div><div class="ct">Stanford Encyclopedia of Philosophy</div><div class="cn">“Presocratic Philosophy”</div><div class="cc">米利都思想家、史料限制，以及用后来的概念解释早期思想时需要注意的边界。</div></div></div></div><p class="credit-note">本页只列本讲实际依赖的核心来源。</p></div>
+<footer class="page-footer"><span>《西方哲学，从0开始》 · @每天读一点哲学</span><span>002 / 300 · PAGE 10</span></footer></section>
+
+</body></html>
