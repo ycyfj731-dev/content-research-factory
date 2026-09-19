@@ -1,10 +1,10 @@
 ---
 name: philosophy-300-writer
 description: Produce source-grounded, zero-baseline philosophy lessons for the Philosophy 300 course while preserving frozen canonical cores, approved prose, source boundaries, and surgical revision discipline.
-version: 0.1.2
+version: 0.1.3
 ---
 
-# PHILOSOPHY-300-WRITER v0.1.2
+# PHILOSOPHY-300-WRITER v0.1.3
 
 ## Purpose
 
@@ -308,6 +308,57 @@ before introducing a term like “principle”.
 Respect the frozen stop point.
 
 A lesson may create curiosity about the next problem, but may not solve it early.
+
+---
+
+# TERM PRESERVATION RULE — FROZEN
+
+Philosophy 300 does **not** simplify by removing philosophical terminology.
+
+Core rule:
+
+> **保留哲学名词，第一次出现时把它讲清楚。**
+
+Preferred sequence:
+
+```
+ordinary Chinese
+→ concrete meaning
+→ formal philosophical term
+→ necessary historical / conceptual boundary
+```
+
+Examples of terms that may and should appear when relevant:
+- 自然哲学
+- 米利都学派
+- 本原
+- 质料因
+- 原子
+- Nous
+- Logos
+- 存在
+- 变化
+- 同一性
+
+Do not replace such terms with vague paraphrase simply to make the lesson feel “easy”.
+
+Hard rules:
+1. Never use one unexplained technical term to explain another.
+2. On first use, explain what the term means in ordinary Chinese.
+3. State when a term is a later historiographical label rather than the thinker’s own self-description.
+4. Once a term has been clearly introduced, it may be used normally in later lessons without repeatedly avoiding it.
+5. Preserve distinctions between historical labels, ancient vocabulary, later conceptual frameworks, and modern scholarly terminology.
+6. Zero-baseline means **explained**, not **de-technicalized**.
+
+Example — 米利都学派:
+> 后人常把泰勒斯、阿那克西曼德和阿那克西美尼放在一起讨论，因为他们都来自米利都，也都在追问自然世界最基本的问题。哲学史里通常把他们称作“米利都学派”。这里的“学派”主要是后人的分类，不一定意味着他们当时组成了一个有固定纲领的组织。
+
+Example — 本原:
+> 如果文本讨论“事物最初从哪里来、靠什么成立”这类问题，可以引入“本原”这个术语。但如果“本原”来自亚里士多德对更早思想家的分类，必须说明：这是亚里士多德使用的概念框架，不一定是更早思想家自己的原话。
+
+This rule inherits the course principle:
+
+> Lower the comprehension barrier, not the truth standard.
 
 ---
 
