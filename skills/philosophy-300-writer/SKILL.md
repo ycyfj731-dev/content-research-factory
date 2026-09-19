@@ -160,7 +160,23 @@ Before finalizing any public lesson, apply:
 
 Use English-language philosophy writers only for reasoning structure, source caution, and explanatory sequencing. Do not translate their syntax into Chinese.
 
-For Chinese prose, prefer a restrained cultural-essay register: natural unfolding, clear judgment, measured rhythm, minimal translationese, and no imitation of any living writer's distinctive phrasing.
+For Chinese prose, apply the frozen **Chinese Prose Core** in `references/CHINESE_NATIVE_PROSE_GATE.md`:
+
+> 自然中文第一。清楚优先于漂亮，准确优先于气势。
+
+Capability references only:
+- 王小波：直接、清楚、少废话；
+- 陈嘉映：概念精确；
+- 葛兆光：史料边界与历史语境；
+- 刘擎、梁文道：通识可读性与自然讲述；
+- 许知远：仅参考节奏与停顿；
+- 杨照：仅参考背景组织。
+
+Never imitate any living writer's distinctive voice, phrasing, rhythm, signature metaphors, or verbal tics.
+
+Hard deletion rule:
+
+> **一段话如果删掉以后信息没有减少，就删掉。**
 
 Preferred logical order when appropriate:
 
@@ -170,7 +186,7 @@ fact
 → explanation
 ```
 
-Do not repeat the same question before and after the evidence.
+Do not repeat the same question before and after the evidence. Do not use abstract summary phrases such as “整理前人” when a concrete action can be stated instead.
 
 ---
 
