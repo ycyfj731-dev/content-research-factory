@@ -1,10 +1,10 @@
 ---
 name: philosophy-300-writer
 description: Produce source-grounded, zero-baseline philosophy lessons for the Philosophy 300 course while preserving frozen canonical cores, approved prose, source boundaries, and surgical revision discipline.
-version: 0.1.0
+version: 0.1.1
 ---
 
-# PHILOSOPHY-300-WRITER v0.1
+# PHILOSOPHY-300-WRITER v0.1.1
 
 ## Purpose
 
@@ -381,6 +381,26 @@ By the end the reader must know:
 Do not end with a cliffhanger before the current question is complete.
 
 A next-lesson hook, if used, comes **after** closure and clearly opens a new question.
+
+---
+
+# SOURCE WORDING DISCIPLINE — FROZEN
+
+Before drafting or revising source-grounded passages, apply:
+`references/SOURCE_DISCIPLINE.md`
+
+Hard rules:
+- quote or closely paraphrase what the source actually says;
+- do not invent compressed slogans from nuanced scholarship;
+- clearly separate source wording from course explanation;
+- a sourced paragraph must still serve the lesson's central question;
+- accurate but irrelevant background must be moved or deleted.
+
+For Lecture 002 specifically:
+- “why Thales is called first philosopher” remains the central question;
+- source-transmission problems support that answer but do not replace it;
+- myth/reason belongs to 003;
+- why water belongs to 005.
 
 ---
 
