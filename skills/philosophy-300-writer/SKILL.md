@@ -134,6 +134,25 @@ Never use an abstract term to explain another abstract term.
 
 ---
 
+# ANTI-AI PROSE — HARD GATE
+
+Before public delivery, apply:
+`references/ANTI_AI_PROSE_GATE.md`
+
+The goal is not to add personality or imitate a writer. Remove model habits:
+- repetition;
+- empty transitions;
+- fake dramatic rhythm;
+- generic profundity;
+- over-signposting;
+- abstract noun inflation;
+- forced symmetry;
+- unearned “golden sentences”.
+
+Delete before rewriting whenever possible.
+
+---
+
 # CHINESE NATIVE PROSE — FROZEN
 
 Before finalizing any public lesson, apply:
