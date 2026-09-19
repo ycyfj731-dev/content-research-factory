@@ -1,0 +1,122 @@
+version: "1.1"
+name: philosophy-300-editorial
+
+canvas:
+  width: 1080
+  height: 1440
+  ratio: "3:4"
+
+content_mode: preserve
+
+color_system:
+  background:
+    default: "#FFFFFF"
+    rule: "整页背景仅允许纯白；禁止米白、奶油色、暖纸色背景"
+  ink:
+    primary: "#111111"
+    secondary: "#161616"
+    neutral_scale: "灰阶一律由黑派生，不允许暖灰"
+  accents:
+    red: "#8F1D1D"
+    gold: "#A98352"
+    per_page: "one"
+    red_gold_coexistence: "红金不能同时大面积出现"
+
+forbid:
+  gradients: true
+  glow_gold: true
+  cream_or_warm_paper_background: true
+  rounded_card_ui: true
+  shadows: true
+  emoji_decoration: true
+  filler_images: true
+  equal_tile_grids: true
+  centered_hero_default: true
+  paper_texture_default: true
+  fake_data: true
+  meaningless_english_badges: true
+  colored_knowledge_cards: true
+
+typography:
+  max_font_families: 2
+  max_sizes_per_page: 5
+  rules:
+    - "中文标题按语义断行"
+    - "同页最多 2 个字体家族"
+    - "不允许为了塞字缩正文"
+    - "中英文混排单独检查 baseline / spacing"
+
+masters:
+  list:
+    - essay
+    - statement
+    - evidence
+    - cover
+    - credits
+  distribution:
+    essay_min_ratio: 0.5
+    statement_max: 2
+    evidence_max: 2
+    cover_exact: 1
+    credits_exact: 1
+  free_composition: false
+
+pagination:
+  regular_target_min: 8
+  regular_target_max: 10
+  hard_default_max: 10
+  rule: "优先合并相邻认知动作和提高页面利用率，不得为了页数删冻结正文"
+
+grid:
+  columns: 6
+  col_width: 136
+  gutter: 24
+  margin: 72
+  body_x: 72
+  body_width: 776
+  headline_measure: 936
+  grid_lines: [72, 232, 392, 552, 712, 872]
+  rule: "正文页主栏 x/width 固定；禁止为差异化改变正文宽度"
+
+chrome:
+  masthead:
+    position: "top-left + top-right"
+    series: "PHILOSOPHY 300"
+    issue: "NNN / 300"
+  footer:
+    chapter: "《西方哲学，从0开始》 · @每天读一点哲学"
+    folio: "NNN / 300 · PAGE NN"
+  rule: "页眉/页码/账号名一旦选定就锁死，不允许每页漂移"
+
+section_marker:
+  format: "two-digit-arabic"
+  example: "01  泰勒斯是谁"
+  number_size_px: 26
+  title_size_px: 23
+  number_color: "page accent"
+  title_color: "#111111"
+  separator: "spacing only; no middle dot"
+  scope: "regular content pages; cover excluded"
+  rule: "两位阿拉伯数字连续编号；数字权重大于旧 kicker、低于主标题；禁止一页一个样式"
+
+lesson_value_frontend:
+  internal_only:
+    - KNOW
+    - CORRECT
+    - TOOL
+    - PERSON
+  rule: "后台验收维度不得机械转成前台独立卡片；只有在文章逻辑自然需要时才显性出现"
+
+source_page:
+  public_sources_only: true
+  internal_metadata_visible: false
+  rule: "资料来源页只展示读者需要的真实文献来源；内部版本、工程文件名、测试信息不占发布页"
+
+image_policy:
+  functional_only: true
+  decorative_default: false
+  no_fake_historical_evidence: true
+
+revision_policy:
+  local_feedback_local_revision: true
+  preserve_approved_pages: true
