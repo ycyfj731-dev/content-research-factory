@@ -1,10 +1,10 @@
 ---
 name: philosophy-300-writer
 description: Produce source-grounded, zero-baseline philosophy lessons for the Philosophy 300 course while preserving frozen canonical cores, approved prose, source boundaries, and surgical revision discipline.
-version: 0.1.4
+version: 0.1.5
 ---
 
-# PHILOSOPHY-300-WRITER v0.1.4
+# PHILOSOPHY-300-WRITER v0.1.5
 
 ## Purpose
 
@@ -32,6 +32,7 @@ Third principle:
 Before drafting a lesson, check the relevant frozen course artifacts.
 
 Required course sources:
+- `docs/philosophy-300/COVER_TITLES_001_030_v1.0.md` for frozen social cover titles for lectures 001–030.
 - `docs/philosophy-300/CANONICAL_CORES_001_030_v1.0.md` for lectures 001–030.
 - `docs/philosophy-300/SOURCE_SCREEN_001_010.md`
 - `docs/philosophy-300/SOURCE_SCREEN_011_030.md`
