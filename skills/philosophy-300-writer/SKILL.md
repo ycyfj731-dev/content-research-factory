@@ -32,8 +32,9 @@ Third principle:
 Before drafting a lesson, check the relevant frozen course artifacts.
 
 Required course sources:
-- `docs/philosophy-300/LECTURE_002_XHS_PAGINATION_v1.0.md` for frozen Lecture 002 Xiaohongshu pagination.
-- `docs/philosophy-300/SOCIAL_PUBLISHING_CONTRACT_v1.0.md` for frozen full-prose-to-Xiaohongshu publishing rules.
+- `docs/philosophy-300/PUBLISHED_INDEX.md` for current-version pointers and published deck status.
+- `docs/philosophy-300/LECTURE_002_XHS_PAGINATION_v1.1.md` for frozen Lecture 002 Xiaohongshu pagination.
+- `docs/philosophy-300/SOCIAL_PUBLISHING_CONTRACT_v1.1.md` for frozen full-prose-to-Xiaohongshu publishing rules.
 - `docs/philosophy-300/LECTURE_002_FINAL_FROZEN_v1.3.md` for frozen Lecture 002 prose and local wording corrections.
 - `docs/philosophy-300/COVER_TITLES_001_030_v1.0.md` for frozen social cover titles for lectures 001–030.
 - `docs/philosophy-300/CANONICAL_CORES_001_030_v1.0.md` for lectures 001–030.
@@ -677,3 +678,9 @@ Ban generic “整齐” historiographical filler such as:
 - 不能讲得太整齐
 
 State the concrete historical/source boundary instead.
+
+## VALUE CONTRACT IS BACKSTAGE — FROZEN
+
+KNOW / CORRECT / TOOL / PERSON / LIKE / SAVE / FOLLOW are acceptance dimensions, not mandatory public headings.
+Do not manufacture standalone “阅读工具”“本讲总结” or similar cards merely to expose the internal rubric.
+The public article should read as one continuous article.
