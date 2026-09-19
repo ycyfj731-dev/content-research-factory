@@ -1,10 +1,10 @@
 ---
 name: philosophy-300-writer
 description: Produce source-grounded, zero-baseline philosophy lessons for the Philosophy 300 course while preserving frozen canonical cores, approved prose, source boundaries, and surgical revision discipline.
-version: 0.1.5
+version: 0.1.6
 ---
 
-# PHILOSOPHY-300-WRITER v0.1.5
+# PHILOSOPHY-300-WRITER v0.1.6
 
 ## Purpose
 
@@ -32,6 +32,7 @@ Third principle:
 Before drafting a lesson, check the relevant frozen course artifacts.
 
 Required course sources:
+- `docs/philosophy-300/LECTURE_002_FINAL_FROZEN_v1.0.md` for frozen Lecture 002 prose and local wording corrections.
 - `docs/philosophy-300/COVER_TITLES_001_030_v1.0.md` for frozen social cover titles for lectures 001–030.
 - `docs/philosophy-300/CANONICAL_CORES_001_030_v1.0.md` for lectures 001–030.
 - `docs/philosophy-300/SOURCE_SCREEN_001_010.md`
@@ -650,3 +651,14 @@ When a lesson is approved:
 5. later changes use version increments when they alter meaning, source framing, or structure.
 
 Visual production is downstream and may not rewrite frozen prose unless explicitly authorized.
+
+
+## LOCAL PROSE BAN — FROZEN
+
+Ban generic “整齐” historiographical filler such as:
+- 历史没这么整齐
+- 古代材料里的某某没有这么整齐
+- 故事没这么整齐
+- 不能讲得太整齐
+
+State the concrete historical/source boundary instead.
