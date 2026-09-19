@@ -1,8 +1,30 @@
-# Philosophy 300 — Chinese Native Prose Gate v0.1
+# Philosophy 300 — Chinese Native Prose Gate v0.2
 
 Status: **FROZEN STYLE GATE**
 
 Purpose: ensure the course is written as natural Chinese prose rather than translated English.
+
+## Chinese prose core — FROZEN
+
+> 自然中文第一。清楚优先于漂亮，准确优先于气势。
+
+Borrow capability dimensions, never surface voice:
+- 王小波：直接、清楚、少废话；
+- 陈嘉映：概念精确，尤其注意日常语言与哲学术语之间的转换；
+- 葛兆光：史料边界、历史语境、不过度替古人说话；
+- 刘擎、梁文道：面向普通读者的可读性与自然讲述；
+- 许知远：只参考节奏与停顿，不参考其个人化表达；
+- 杨照：只参考背景组织与思想史脉络。
+
+These are capability references only.
+
+**Do not imitate any living writer's distinctive phrasing, rhythm, signature metaphors, verbal tics, or recognizable voice.**
+
+Hard deletion rule:
+
+> **一段话如果删掉以后信息没有减少，就删掉。**
+
+This rule outranks the desire for smooth transitions, literary polish, or rhetorical atmosphere.
 
 ## Core rule
 
@@ -15,7 +37,7 @@ The course may draw on:
 
 Chinese prose must be written natively in Chinese.
 
-A restrained Chinese cultural-essay register is acceptable as a tonal reference: natural unfolding, clear judgment, measured rhythm, some room for reflection, but no imitation of any living writer's distinctive phrasing or signature voice.
+A restrained Chinese cultural-essay register is acceptable only when it remains concrete, controlled, and explanatory.
 
 ## Preferred Chinese qualities
 
@@ -39,8 +61,11 @@ Flag and rewrite phrases like:
 - “在某种意义上”
 - “从这个角度来看”
 - “值得注意的是”
+- “整理前人”
+- “构建谱系”
+- “塑造历史叙事”
 
-These are not universally banned, but they must justify themselves.
+These phrases are not universally banned, but they fail unless the sentence says concretely what the person did, said, classified, compared, or inferred.
 
 Prefer ordinary Chinese verbs over nominalized structures.
 
@@ -50,22 +75,56 @@ Bad:
 Better:
 > 后来的哲学史，常常从泰勒斯讲起。
 
+Bad:
+> 亚里士多德同时也在整理前人。
+
+Better:
+> 亚里士多德不是把更早思想家的话原样记下来，而是会用自己的问题和概念去理解他们。
+
 ## Fact → Question → Explanation
 
 When possible, let the question grow out of a concrete fact.
 
 Preferred pattern:
 
-> 我们今天关于泰勒斯最重要的一条记载，来自两百多年后的亚里士多德。
+> 我们今天之所以会把“水”跟泰勒斯联系在一起，主要是因为亚里士多德。
 >
-> 亚里士多德说，泰勒斯认为万物的根本是水。
+> 他在《形而上学》回顾更早的思想家时，把泰勒斯放进了自己关于“本原”的讨论里。
 >
-> 为什么这样一句现在听来颇古怪的话，会让泰勒斯在哲学史里占据这么重要的位置？
+> 但“本原”是亚里士多德使用的概念。泰勒斯本人当时是不是这样提问、这样表述，我们并不知道。
 
 This pattern is preferred over:
+- presenting later testimony as a direct quotation from the earlier thinker;
 - asking the same question twice;
 - explaining importance before showing the evidence;
-- repeating “why he is placed first” in several formulations.
+- repeating the same historiographical caution in several formulations.
+
+## Concrete action over abstract summary
+
+If a sentence uses an abstract phrase such as:
+- 整理前人
+- 重构问题
+- 建立传统
+- 塑造形象
+- 形成范式
+
+ask:
+
+> 具体做了什么？
+
+If the sentence cannot answer that immediately, rewrite it with a concrete verb or delete it.
+
+## One claim once
+
+Once a point has landed, move on.
+
+Do not state the same point as:
+1. explanation;
+2. paraphrase;
+3. dramatic short sentence;
+4. summary.
+
+If two paragraphs perform the same intellectual job, merge or delete one.
 
 ## Back-translation test
 
@@ -89,10 +148,14 @@ Do not borrow:
 - idiosyncratic metaphors;
 - repeated rhetorical habits.
 
-## Final test
+## Final tests
 
 Ask:
 
-> Would an educated Chinese reader feel this was originally written in Chinese?
+1. Would an educated Chinese reader feel this was originally written in Chinese?
+2. Did every paragraph add information, a distinction, evidence, or a necessary boundary?
+3. Can any paragraph be deleted without losing information?
+4. Did later terminology get silently projected back onto an earlier thinker?
+5. Did the prose become more literary at the cost of precision?
 
-If no, FAIL.
+If any answer fails, revise before publication.
