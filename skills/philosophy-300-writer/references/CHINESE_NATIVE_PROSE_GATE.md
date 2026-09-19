@@ -1,4 +1,4 @@
-# Philosophy 300 — Chinese Native Prose Gate v0.2
+# Philosophy 300 — Chinese Native Prose Gate v0.3
 
 Status: **FROZEN STYLE GATE**
 
@@ -25,6 +25,49 @@ Hard deletion rule:
 > **一段话如果删掉以后信息没有减少，就删掉。**
 
 This rule outranks the desire for smooth transitions, literary polish, or rhetorical atmosphere.
+
+## Human-language and topic-lock rules — HARD
+
+### Say the obvious plainly
+
+Do not turn a simple fact into an abstract sentence.
+
+Bad:
+> 但这个位置不是泰勒斯自己留下来的。
+
+Why it fails:
+- nobody expects a historical figure to award themselves “first philosopher”;
+- the sentence creates a fake distinction instead of adding information.
+
+Prefer:
+> “第一位哲学家”是后人对泰勒斯的称呼。
+
+### Do not answer a different question
+
+The article title controls the article.
+
+If the title asks:
+> 为什么泰勒斯被叫作“第一位哲学家”？
+
+then every major paragraph must help answer that question.
+
+Do not drift into:
+- “我们怎么知道泰勒斯想过什么？” as the new central question;
+- source criticism for its own sake;
+- myth/reason discussion that belongs to another lesson.
+
+Supporting questions may appear only when they serve the main question.
+
+### No model-made polished summaries
+
+Do not manufacture elegant-sounding formulations from several source claims.
+
+If a source says something nuanced, either:
+- quote it;
+- paraphrase it literally and narrowly;
+- or omit it.
+
+Do not create “literary” abstractions to make the prose feel finished.
 
 ## Core rule
 
