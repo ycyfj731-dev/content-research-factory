@@ -160,7 +160,6 @@ public class MainActivity extends Activity {
             paint.setTypeface(sans);
             paint.setTextSize(8.2f * s);
             paint.setColor(muted);
-            paint.setLetterSpacingCompat(0f);
 
             drawSpacedText(c, "A SMALL COIN", 16f * s, h * .058f, 1.75f * s, paint, false);
             drawSpacedText(c, "A BIGGER YOU", 16f * s, h * .077f, 1.75f * s, paint, false);
