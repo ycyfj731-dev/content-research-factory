@@ -9,7 +9,7 @@ from dataclasses import asdict, dataclass
 from datetime import datetime
 from typing import Callable, Iterable, Sequence
 
-from candidate_pool import MatchSnapshot, eligible_at_decision_time
+from candidate_pool import MatchSnapshot, anchor_match_ids, eligible_at_decision_time
 from optimizer import MatchProb, Selection, optimize_joint
 
 
@@ -36,11 +36,20 @@ def run_decision(
             status="NOT_EXECUTABLE",
         )
 
+    anchors = anchor_match_ids(pool, decision_time)
+    if not anchors:
+        return BacktestDecision(
+            decision_time=decision_time,
+            candidate_count=len(pool),
+            selection=None,
+            status="NOT_EXECUTABLE_NO_ANCHOR",
+        )
+
     probs = [
         MatchProb(match_id=m.match_id, probabilities=m.probabilities)
         for m in pool
     ]
-    selection = optimize_joint(probs)
+    selection = optimize_joint(probs, required_any_match_ids=anchors)
     return BacktestDecision(
         decision_time=decision_time,
         candidate_count=len(pool),
