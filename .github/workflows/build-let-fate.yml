@@ -30,9 +30,9 @@ jobs:
       - name: Build installable debug APK
         run: gradle --no-daemon :app:assembleDebug
       - name: Rename APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk LetFate-v1.0.apk
+        run: cp app/build/outputs/apk/debug/app-debug.apk LetFate-v1.1.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: LetFate-v1.0-APK
-          path: apps/let-fate/LetFate-v1.0.apk
+          name: LetFate-v1.1-APK
+          path: apps/let-fate/LetFate-v1.1.apk
           if-no-files-found: error
