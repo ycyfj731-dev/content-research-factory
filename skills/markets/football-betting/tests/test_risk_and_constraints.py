@@ -3,9 +3,9 @@ import sys
 import unittest
 
 HERE = os.path.dirname(__file__)
-PARENT = os.path.dirname(HERE)
-if PARENT not in sys.path:
-    sys.path.insert(0, PARENT)
+SCRIPTS = os.path.join(os.path.dirname(HERE), "scripts")
+if SCRIPTS not in sys.path:
+    sys.path.insert(0, SCRIPTS)
 
 from constraints import MatchMarket, optimize_min_path_gross
 from optimizer import MatchProb, optimize_fixed_matches
@@ -37,8 +37,6 @@ class RiskTests(unittest.TestCase):
 class ConstraintTests(unittest.TestCase):
     def test_min_path_gross_filters_before_top8(self):
         matches = [mp(f"m{i}", .6, .3, .1) for i in range(1, 8)]
-        # H is short-priced; D/A are longer. A sufficiently high gross-return
-        # threshold forces the constrained ticket away from the pure COVER Top8.
         markets = [
             MatchMarket(m, {"H": 1.20, "D": 5.0, "A": 9.0})
             for m in matches

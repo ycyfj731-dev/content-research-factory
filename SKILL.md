@@ -1,72 +1,37 @@
 ---
 name: content-research-factory
-description: Orchestrate topic discovery, cross-platform verification, Chinese social-media deep research, comments analysis, and video-production handoff.
+description: Route requests to independent skills and shared research infrastructure. Concrete skill rules live only inside their own skill directories.
 ---
 
-# CONTENT-RESEARCH-FACTORY
+# CONTENT-RESEARCH-FACTORY Router
 
-## Purpose
+This file is a lightweight router. It must not duplicate detailed rules from individual skills.
 
-Turn a content-research request into a traceable research package and, when requested, a production handoff.
+## Skill registry
 
-## Fixed tool routing
+### Content
+- `skills/content/complex-to-clear/SKILL.md` — turn complex material into clear, readable content.
+- `skills/content/editorial-visual-system/SKILL.md` — editorial visual and publishing system.
 
-The routing below is mandatory:
+### Markets
+- `skills/markets/market-consensus-radar/SKILL.md` — financial-market consensus research and scoring.
+- `skills/markets/football-betting/SKILL.md` — football 7-leg ticket research, optimization and validation.
 
-- **TrendRadar** = 热点发现
-- **Agent-Reach** = 跨平台验证
-- **MediaCrawler** = 中文社媒深抓和评论
-- **MoneyPrinterTurbo** = 视频生产
+## Shared research infrastructure
 
-Do not reassign these responsibilities without an explicit repository-level change.
+TrendRadar, Agent-Reach, MediaCrawler and MoneyPrinterTurbo are currently shared runtime adapters, not standalone skills:
 
-## Default execution order
+- TrendRadar = 热点发现
+- Agent-Reach = 跨平台验证
+- MediaCrawler = 中文社媒深抓和评论
+- MoneyPrinterTurbo = 视频生产
 
-```text
-TrendRadar
-  -> Agent-Reach
-  -> MediaCrawler
-  -> evidence synthesis
-  -> MoneyPrinterTurbo
-```
+Their implementation remains under `src/content_research_factory/adapters/` and their routing contract remains in `config/routing.yaml`.
 
-A stage may be skipped only when the user request clearly does not require it.
+Do not invent a standalone skill directory for an adapter unless it gains its own invocation contract, rules and tests.
 
-## Research contract
+## Isolation rule
 
-Every research item should preserve, when available:
+When working on one skill, read and modify that skill's directory first. Do not copy its detailed rules into another skill or into this router.
 
-- query/topic
-- platform
-- source URL or source identifier
-- author/account
-- title/text
-- published timestamp
-- engagement signals
-- comments
-- retrieval timestamp
-- originating tool
-- verification status
-
-## Evidence rules
-
-1. Discovery is not verification.
-2. A cross-platform mention is not automatically an independent source.
-3. MediaCrawler is the deep-retrieval layer for Chinese social platforms and comments.
-4. Keep raw source identity so later synthesis can trace claims back to evidence.
-5. Separate observed source content from model inference.
-6. Do not hand a topic to video production until the research package is explicit enough to support a script.
-
-## MediaCrawler adapter contract
-
-The adapter must expose normalized operations for:
-
-- search
-- detail/deep fetch
-- comments
-
-It may translate these operations into the concrete MediaCrawler MCP method names configured for the environment.
-
-## Output boundary
-
-The research layer should produce structured evidence first. Creative packaging and video generation belong downstream.
+Long references belong in `references/`, executable helpers in `scripts/`, tests in `tests/`, and historical material in `archive/` or a clearly named reference file.

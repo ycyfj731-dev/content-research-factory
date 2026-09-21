@@ -180,8 +180,8 @@ Initial asset:
 
 Key files:
 
-    skills/market-consensus-radar/SKILL.md
-    skills/market-consensus-radar/SCORING.md
+    skills/markets/market-consensus-radar/SKILL.md
+    skills/markets/market-consensus-radar/SCORING.md
     config/consensus/lithium_carbonate.yaml
     schemas/consensus_observation.schema.json
     schemas/daily_consensus_report.schema.json
@@ -309,3 +309,26 @@ BERTopic can be added as a discovery-only layer:
 
 The semantic/topic layer may group and discover narratives, but it does not directly
 assign bullish/bearish stance.
+
+
+## Skill layout
+
+Concrete skills are isolated by domain. The root `SKILL.md` is routing-only and must not duplicate detailed skill rules.
+
+```text
+skills/
+├── content/
+│   ├── complex-to-clear/
+│   └── editorial-visual-system/
+└── markets/
+    ├── market-consensus-radar/
+    │   ├── SKILL.md
+    │   └── references/
+    └── football-betting/
+        ├── SKILL.md
+        ├── scripts/
+        ├── tests/
+        └── references/
+```
+
+TrendRadar, Agent-Reach, MediaCrawler and MoneyPrinterTurbo remain shared runtime adapters under `src/content_research_factory/adapters/`; they are not presented as standalone skills until they have independent skill contracts.
