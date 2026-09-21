@@ -278,15 +278,17 @@ W_ir 是该分支承载的无条件覆盖概率质量；P_cover>0 时 W_ir/P_cov
 - `candidate_pool.py`：统一执行 `T_ticket = 最早开赛 - 30分钟`，并拒绝 `available_at > T_ticket` 的未来信息；
 - `optimizer.py`：使用标准库枚举路径，固定7场时取概率最高8条，并对候选池中的7场组合做正确性优先的精确联合搜索；
 - `backtest.py`：从时间戳快照构造 as-of 候选池并调用 COVER 基线，不内置任何历史结果；
+- `risk.py`：计算每场每个结果的 `W_ir`、`N_ir` 与覆盖质量占比；
+- `constraints.py`：已实现固定7场下 `MIN_PATH_GROSS` 的精确约束求解；组合级 `CONDITIONAL_MEAN_GROSS` 与 `EXPECTED_NET` 尚未实现，禁止用无最优性保证的贪心替代；
 - `archive/README.md`：定义逐票 append-only 档案字段；
-- `tests/`：覆盖 Top8 正确性、互斥路径概率相加、选场反例和统一截止时间泄漏检查。
+- `tests/`：覆盖 Top8 正确性、互斥路径概率相加、选场反例、统一截止时间泄漏、`W_ir` 恒等式及收益约束行为。
 
 尚未完成：
 
 - 真实历史赔率/特征快照接入；
 - 大候选池的性能优化与最优性等价校验；
-- RETURN-CONSTRAINED 求解器；
-- W_ir 与敏感性计算模块；
+- RETURN-CONSTRAINED 的组合级 `CONDITIONAL_MEAN_GROSS` 与 `EXPECTED_NET` 精确求解器；
+- 概率扰动敏感性模块；
 - 真实逐票回测、校准与模型增量验证。
 
 在上述验证完成前，Market Baseline 只作为可复现基准，不作为盈利系统背书。
