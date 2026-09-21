@@ -55,6 +55,16 @@ class OptimizerTests(unittest.TestCase):
         self.assertIn("B", [m.match_id for m in best.matches])
         self.assertNotIn("A", [m.match_id for m in best.matches])
 
+    def test_joint_search_can_require_anchor_match(self):
+        base = [mp(f"m{i}", .70, .20, .10) for i in range(1, 7)]
+        anchor = mp("anchor", .40, .30, .30)
+        late = mp("late", .90, .05, .05)
+        best = optimize_joint(
+            base + [anchor, late],
+            required_any_match_ids={"anchor"},
+        )
+        self.assertIn("anchor", [m.match_id for m in best.matches])
+
 
 if __name__ == "__main__":
     unittest.main()
