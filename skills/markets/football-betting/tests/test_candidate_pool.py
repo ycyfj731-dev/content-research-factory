@@ -4,9 +4,9 @@ import unittest
 from datetime import datetime, timedelta, timezone
 
 HERE = os.path.dirname(__file__)
-PARENT = os.path.dirname(HERE)
-if PARENT not in sys.path:
-    sys.path.insert(0, PARENT)
+SCRIPTS = os.path.join(os.path.dirname(HERE), "scripts")
+if SCRIPTS not in sys.path:
+    sys.path.insert(0, SCRIPTS)
 
 from candidate_pool import MatchSnapshot, TimedValue, filter_candidate_pool, ticket_time, validate_probabilities
 
@@ -43,7 +43,6 @@ class CandidatePoolTests(unittest.TestCase):
         )
         pool = filter_candidate_pool([legal, leaked], cutoff)
         self.assertEqual([m.match_id for m in pool], ["legal"])
-
 
     def test_nan_probability_is_rejected(self):
         with self.assertRaises(ValueError):

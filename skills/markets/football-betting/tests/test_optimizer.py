@@ -3,9 +3,9 @@ import sys
 import unittest
 
 HERE = os.path.dirname(__file__)
-PARENT = os.path.dirname(HERE)
-if PARENT not in sys.path:
-    sys.path.insert(0, PARENT)
+SCRIPTS = os.path.join(os.path.dirname(HERE), "scripts")
+if SCRIPTS not in sys.path:
+    sys.path.insert(0, SCRIPTS)
 
 from optimizer import MatchProb, coverage, optimize_fixed_matches, optimize_joint, top_k_paths
 
@@ -39,9 +39,6 @@ class OptimizerTests(unittest.TestCase):
         )
 
     def test_joint_search_counterexample(self):
-        # First six matches are identical. Candidate A has higher max single-result
-        # probability than B, but B's second branch is much larger and therefore
-        # gives better Top-8 ticket coverage.
         base = [mp(f"m{i}", .70, .20, .10) for i in range(1, 7)]
         a = mp("A", .60, .20, .20)
         b = mp("B", .59, .40, .01)
