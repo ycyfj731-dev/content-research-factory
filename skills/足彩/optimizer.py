@@ -97,6 +97,7 @@ def optimize_joint(
     candidates: Sequence[MatchProb],
     choose: int = 7,
     k: int = 8,
+    required_any_match_ids: set[str] | None = None,
 ) -> Selection:
     """Exact joint search over every choose-match subset.
 
@@ -109,6 +110,10 @@ def optimize_joint(
 
     best: Selection | None = None
     for subset in combinations(candidates, choose):
+        if required_any_match_ids is not None:
+            subset_ids = {m.match_id for m in subset}
+            if not (subset_ids & required_any_match_ids):
+                continue
         current = optimize_fixed_matches(subset, k=k)
         if best is None:
             best = current
@@ -120,5 +125,6 @@ def optimize_joint(
             ids_best = tuple(m.match_id for m in best.matches)
             if ids_current < ids_best:
                 best = current
-    assert best is not None
+    if best is None:
+        raise ValueError("no feasible 7-match subset satisfies the joint-search constraints")
     return best
