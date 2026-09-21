@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
+from math import isfinite
 from typing import Any, Iterable, Mapping, Sequence
 
 
@@ -22,7 +23,9 @@ class MatchSnapshot:
     match_id: str
     kickoff_time: datetime
     probabilities: Mapping[str, float]
+    probability_available_at: datetime
     execution_odds: Mapping[str, float] | None = None
+    execution_odds_available_at: datetime | None = None
     features: Mapping[str, TimedValue] = field(default_factory=dict)
     executable: bool = True
 
@@ -39,7 +42,7 @@ def validate_probabilities(probabilities: Mapping[str, float], tol: float = 1e-9
     if keys != {"H", "D", "A"}:
         raise ValueError(f"probabilities must have H/D/A, got {sorted(keys)}")
     vals = list(probabilities.values())
-    if any((not isinstance(x, (int, float))) or x < 0 for x in vals):
+    if any((not isinstance(x, (int, float))) or (not isfinite(float(x))) or x < 0 for x in vals):
         raise ValueError("probabilities must be finite non-negative numbers")
     total = float(sum(vals))
     if abs(total - 1.0) > tol:
@@ -51,6 +54,13 @@ def snapshot_is_usable(match: MatchSnapshot, cutoff: datetime) -> bool:
     validate_probabilities(match.probabilities)
     if not match.executable:
         return False
+    if match.probability_available_at > cutoff:
+        return False
+    if match.execution_odds is not None:
+        if match.execution_odds_available_at is None:
+            return False
+        if match.execution_odds_available_at > cutoff:
+            return False
     return all(tv.available_at <= cutoff for tv in match.features.values())
 
 
@@ -77,3 +87,17 @@ def eligible_at_decision_time(
         m for m in filter_candidate_pool(matches, decision_time)
         if m.kickoff_time >= min_kickoff
     ]
+
+
+def anchor_match_ids(
+    matches: Iterable[MatchSnapshot],
+    decision_time: datetime,
+) -> set[str]:
+    """Matches whose kickoff is exactly decision_time + 30 minutes.
+
+    V0.3's A_t requires every searched 7-match set to contain at least one
+    such anchor; because all other eligible matches kick off no earlier, this
+    guarantees T_ticket(selected_set) == decision_time.
+    """
+    anchor_time = decision_time + timedelta(minutes=30)
+    return {m.match_id for m in matches if m.kickoff_time == anchor_time}
