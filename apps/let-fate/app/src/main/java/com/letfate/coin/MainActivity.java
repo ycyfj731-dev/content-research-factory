@@ -387,7 +387,7 @@ public class MainActivity extends Activity {
             c.drawText(heads ? "LET FATE" : "TAKE TIME", cx, cy - r * .63f, p);
 
             p.setTextSize(r * .08f);
-            p.setLetterSpacing(0);
+
             c.drawText(heads ? "MMXXVI" : "GOOD THINGS", cx, cy + r * .67f, p);
         }
 
