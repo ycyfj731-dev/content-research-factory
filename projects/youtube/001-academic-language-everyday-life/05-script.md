@@ -95,7 +95,7 @@ It can help someone ask a better question about themselves.
 
 And it can tempt them to answer that question too quickly.
 
-### 2. The other person: “narcissist”
+### 2. The other person: NPD, narcissism, and “narcissist”
 
 Now move from explaining the self to explaining someone else.
 
@@ -115,7 +115,9 @@ A reason the relationship felt the way it did.
 
 And, importantly, a reason that can feel final.
 
-But clinically, narcissistic personality disorder is not simply “a person who treated me badly.” It refers to an enduring pattern of traits and impairment assessed in a psychological evaluation. [C12]
+But clinically, **narcissistic personality disorder—NPD—is not simply “a person who treated me badly.”** It refers to an enduring pattern of traits and impairment assessed in a psychological evaluation. [C12]
+
+And this is where the vocabulary begins to split. **Narcissistic traits** are not the same thing as **NPD**. “Narcissist” in everyday speech may refer to neither with any precision. And phrases such as **narcissistic abuse** can circulate widely online even when the academic literature around the construct is still comparatively thin. [C15]
 
 APA experts have warned that casual labeling can collapse that distinction. One person may be arrogant. Another may be emotionally immature. Another may behave badly in one particular relationship. None of those descriptions automatically establish a personality disorder. [C13]
 
@@ -357,6 +359,7 @@ Not give us a reason to stop looking.
 - C11 ADHD clinical boundary
 - C12 NPD clinical boundary
 - C13 popular “narcissist” labeling / therapy-speak interpretation
+- C15 popular circulation of “narcissistic abuse” exceeds current academic consolidation
 
 ## Timing
 
