@@ -6,7 +6,7 @@
 - Version: 0.1
 - Date: 2026-09-24
 - Requested scope: run `youtube-intellectual-essay` through Stage 06 only
-- Full script: NOT_RUN
+- Full script: DRAFT V0.2 complete; Evidence Gate PASS
 - Voice/video generation: NOT_RUN
 - Paid generation/publishing authorization: none assumed
 
@@ -16,10 +16,10 @@
 |---|---|---|---|
 | 01 Topic Gate | `01-topic.md` | PASS | 23/24; false “all academic” premise corrected |
 | 02 Competitor Research | `02-competitors.md` | REVISE | usable angle identified, but established-channel sample remains thin |
-| 03 Source Research | `03-sources.md` | PASS | four-case evidence map built; explicit gaps retained |
-| 04 Packaging | `04-packaging.md` | PASS (provisional) | Pair B selected; recheck after broader competitor sample |
-| 05 Script | `05-script.md` | REVISE / PARTIAL | argument outline only by user request; no complete narration |
-| 06 Evidence Gate | `06-evidence.md` | PASS for research claim set | C01–C10 reviewed; full-script gate remains NOT_RUN |
+| 03 Source Research | `03-sources.md` | PASS | ADHD / narcissist / patriarchy main cases + PUA counterexample; gaslighting supporting only |
+| 04 Packaging | `04-packaging.md` | PASS (provisional) | Pair B selected; thumbnail updated to ADHD / NARCISSIST / PATRIARCHY |
+| 05 Script | `05-script.md` | DRAFT | full ~1,850-word English narration V0.2 complete |
+| 06 Evidence Gate | `06-evidence.md` | PASS | full Script V0.2 reviewed; C01–C14 frozen |
 | 07 AV Storyboard | — | NOT_RUN | requires frozen full script |
 | 08 Assets | — | NOT_RUN | downstream |
 | 09 Voiceover | — | NOT_RUN | downstream |
@@ -37,10 +37,11 @@ The defensible framing is:
 > Different concepts from medicine, psychology, social theory, drama and subculture migrate into everyday language through different routes. Once ordinary people adopt them, they can become portable tools for naming experience, while also being reinterpreted, broadened or stripped of context.
 
 Case design:
-- ADHD — diagnostic language / online self-description
-- gaslighting — drama → colloquial/psychological relationship language
-- patriarchy — feminist/social theory → digital meme culture
-- PUA — pickup-artist subculture → Chinese semantic expansion toward emotional manipulation/control
+- ADHD — “what is happening to me?” / diagnostic language and self-description
+- narcissist — “what kind of person are you?” / clinical-personality language becoming a relationship label
+- patriarchy — “what kind of system is this?” / feminist-social theory becoming a public structural lens
+- PUA — cross-language counterexample showing semantic reconstruction
+- gaslighting — retained only as an opening/supporting example
 
 ## Next recommended work
 
