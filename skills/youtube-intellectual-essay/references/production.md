@@ -6,6 +6,10 @@ Write synchronized audio/visual rows, not a narration file with a B-roll wishlis
 
 Prefer explanatory movement: reveal a relation, highlight a passage, compare two choices, add one variable to a diagram. Use a restrained palette, at most two main type families and consistent labels as defaults. Run planned Anti-Slop Gate before asset production. A failed sequence returns to the visual explanation, not to indiscriminate generation.
 
+For generated or staged scenes, add a **scene packet** only when the beat genuinely needs generation. The packet records scene duration, shot progression, composition, camera movement, continuity constraints, sound intent and negative constraints. Preserve identity, wardrobe, props, geography, lighting direction and time of day across panels/shots. Do not generate a storyboard sheet merely to decorate a documentary/evidence beat that is better served by a real document, archive item or original diagram.
+
+Storyboard timing must add up to the scene duration. Each panel/shot advances action, information or perspective; avoid near-duplicate frames. For recurring generated characters or locations, use the approved visual reference when one exists rather than relying on text-only descriptions.
+
 ## 08 Visual Source Plan
 
 For each asset, record its source/creation method, creator, item URL, local path when acquired, visual family, intended beat, rights basis, license terms/link, attribution, restrictions and fallback. Status is `lead`, `verified`, `acquired` or `rejected`. A collection homepage, “found on Google,” age alone, or download availability does not establish reuse permission.
@@ -26,11 +30,19 @@ Transcribe/align the actual audio to make SRT/VTT; compare against the verified 
 
 ## 10 Video Assembly
 
-Use an available editor or FFmpeg workflow; this skill does not ship an assembler. The edit manifest must resolve each asset ID to a real file and timeline interval, with explicit trims, scaling/cropping, layering and audio levels. Check gaps, overlaps, zero-length shots and missing files before rendering. Do not automatically choose the newest unrelated audio file.
+Treat the **approved narration/audio as the timing spine** for a faceless essay. Visual edits follow speech structure unless a deliberate silent beat, archive sequence or sound-led transition justifies otherwise. Once real audio exists, update the storyboard and asset intervals from measured timing before assembly.
+
+Use an explicit edit decision list or timeline manifest as the contract for assembly. Each row/entry resolves a beat to real source files, in/out points, output-timeline position, crop/scale behavior, overlays, captions and audio treatment. Do not let shell glob order, “latest file” heuristics or ad-hoc editor state determine sequence order.
+
+Source files are read-only. Render cuts and intermediates into a dedicated edit/output directory. Prefer deterministic mechanical execution (for example FFmpeg for trims/concat and Remotion or equivalent for programmatic overlays) after the editorial decisions are frozen. AI decides what the beat means and what should stay; the renderer should execute those decisions reproducibly.
+
+For source-video cuts, never cut inside a spoken word. Snap cut edges to transcript/word boundaries when available and leave small safety padding where timestamp drift would otherwise create clipped phonemes or pops. Add short audio fades at hard segment boundaries when needed. Build subtitle timing against the **output timeline**, not original-source timestamps, and apply captions after overlays so graphics do not cover them.
+
+Use an available editor or FFmpeg workflow; this skill does not ship an assembler. The edit manifest must resolve each asset ID to a real file and timeline interval, with explicit trims, scaling/cropping, layering and audio levels. Check gaps, overlaps, zero-length shots and missing files before rendering.
 
 Default delivery profile: 1920×1080, 16:9, H.264/AAC MP4 with a consistent frame rate suited to source footage (typically 24 or 30 fps). Choose a speech-forward mix; around -16 to -14 LUFS integrated and true peak at or below -1 dBTP are house starting targets, not mandatory platform policy. Measure the final mix, listen on headphones and ordinary speakers, and fix clipping or music masking.
 
-Preserve aspect ratio; inspect crops, captions, source labels and diagram text. Probe the actual output's duration, streams and frame size; compare audio/video ends and subtitle timing. Extract representative frames and inspect them, then watch the full export for sync, accidental black frames, bad joins, missing sources and repetitive visuals. Record tool output and review limitations. Run rendered Anti-Slop Gate; planned PASS is insufficient.
+Before delivery, inspect the actual render rather than trusting the manifest. Probe duration/streams/frame size; compare audio/video ends and subtitle timing; inspect frames around cut boundaries plus the first, last and several midpoints; check grade consistency, hidden captions, overlay timing, black frames, missing assets and repetitive visual patterns. Fix and rerender before presenting a final artifact. Run rendered Anti-Slop Gate; planned PASS is insufficient.
 
 ## 11 Thumbnail
 
