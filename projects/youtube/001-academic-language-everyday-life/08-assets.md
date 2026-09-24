@@ -54,43 +54,43 @@ Rights status vocabulary:
 | A02 | B01/B36 | Relationship text/conflict tableau | Original typography/interface, explicitly fictional | GREEN | planned | pure typography |
 | A03 | B01/B19/B36 | Dinner-table division tableau | Self-shot or licensed domestic B-roll; no dialogue, no identifiable claim | GREEN if licensed/self-shot | lead | original still-life plates/hands-only setup |
 | A04 | B02 | Vocabulary list title sequence | Original editorial typography | GREEN | planned | none |
-| A05 | B03 | Behavior → mechanism / action → type / event → structure comparison | Original diagram | GREEN | planned | static split cards |
+| A05 | B03 | Behavior → mechanism / action → type / event → structure comparison | Original diagram | GREEN | production-spec-ready | static split cards |
 | A06 | B04/B22 | SELF / OTHER / SYSTEM orientation cards | Original graphic; brief use only | GREEN | planned | typography-only |
 | A07 | B05 | CDC ADHD clinical-page excerpt | SRC-CDC-ADHD | YELLOW | verified-source | re-typeset key wording + citation |
 | A08 | B05 | “lazy / no discipline / why can everyone else…” notebook page | Original editorial composition | GREEN | planned | typography |
 | A09 | B06 | Executive dysfunction / time blindness / hyperfocus / ADHD paralysis path | Original search/autocomplete-style UI, labeled editorial reconstruction | GREEN | planned | kinetic typography |
 | A10 | B07 | Homework paralysis hypothetical scene | Self-shot or licensed faceless desk scene; clock / worksheet / unmoving hands | GREEN if license verified | lead | generated illustrative shot clearly labeled hypothetical |
 | A11 | B08 | Medicalization two-column diagram | Original | GREEN | planned | text-only comparison |
-| A12 | B09 | Recognition vs diagnosis pathway | Original diagram using sourced clinical boundary | GREEN | planned | static flow |
-| A13 | B10 | ADHD 600-comment chart | Original chart from S05 verified values: 36.7% behavior identification; 5.3% explicit ADHD attribution | GREEN with source citation | planned | numeric typography |
+| A12 | B09 | Recognition vs diagnosis pathway | Original diagram using sourced clinical boundary | GREEN | production-spec-ready | static flow |
+| A13 | B10 | ADHD 600-comment chart | Original chart from S05 verified values: 36.7% behavior identification; 5.3% explicit ADHD attribution | GREEN with source citation | production-spec-ready | numeric typography |
 | A14 | B11 | MYSELF → SOMEONE ELSE transition | Original typography | GREEN | planned | none |
 | A15 | B12 | APA therapy-speak page | SRC-APA-THERAPY | YELLOW | verified-source | re-typeset APA question + source footer |
 | A16 | B12 | “selfish” vs “narcissist” behavior/type comparison | Original typography | GREEN | planned | none |
-| A17 | B13/B25 | Search-chain interface: narcissist → narcissistic abuse → trauma bond → no contact | Original reconstructed search UI; no fabricated search results | GREEN | planned | branching diagram |
+| A17 | B13/B25 | Search-chain interface: narcissist → narcissistic abuse → trauma bond → no contact | Original reconstructed search UI; no fabricated search results | GREEN | production-spec-ready | branching diagram |
 | A18 | B14/B15 | Relationship retrospective timeline | Original schematic; events intentionally generic | GREEN | planned | typography timeline |
-| A19 | B16 | Everyday label / traits / formal NPD boundary | Original diagram based on S19 clinical distinction | GREEN | planned | stacked cards |
+| A19 | B16 | Everyday label / traits / formal NPD boundary | Original diagram based on S19 clinical distinction | GREEN | production-spec-ready | stacked cards |
 | A20 | B17 | Foucault bibliographic/source texture | Use bibliographic page/title page rather than copyrighted portrait if practical | TBD/YELLOW | lead | original citation card with title/author/date |
 | A21 | B18 | UNDERSTANDING? hold card | Original typography | GREEN | planned | none |
 | A22 | B19 | Holiday dinner cleanup scene | Reuse A03 with alternate crop/continuation | GREEN if A03 cleared | dependent | original still-life setup |
-| A23 | B20 | Home / office / childcare / work-calendar structural field | Original composite diagram using simple icons/shapes plus licensed/self-shot inserts if available | GREEN/TBD | planned | fully original iconographic field |
+| A23 | B20 | Home / office / childcare / work-calendar structural field | Original composite diagram using simple icons/shapes plus licensed/self-shot inserts if available | GREEN/TBD | production-spec-ready | fully original iconographic field |
 | A24 | B21 | Hill & Allen article page / bibliographic record | SRC-HILL-ALLEN | YELLOW | verified-source | citation card + re-typeset abstract phrase |
 | A25 | B21 | “SMASH THE PATRIARCHY” phrase treatment | Original typography, sourced as discussed phrase rather than copied meme | GREEN | planned | none |
-| A26 | B23 | Compression animation: paragraph → label → paragraph | Original motion graphic | GREEN | planned | static before/after |
+| A26 | B23 | Compression animation: paragraph → label → paragraph | Original motion graphic | GREEN | production-spec-ready | static before/after |
 | A27 | B24 | Recognition paragraph → personal timeline | Original editorial page and timeline | GREEN | planned | typography-only |
 | A28 | B25 | Searchability branch map | Original diagram | GREEN | planned | static mind-map |
 | A29 | B26 | Same ambiguous scene, two interpretive overlays | Self-shot/original still + original labels; no claim that either interpretation is correct | GREEN | lead | abstract shapes with spotlight/highlight animation |
 | A30 | B27 | Modern UI → 1960s print transition | Original motion using cleared print texture / public-domain scan | TBD | lead | generated paper texture + original typesetting, explicitly non-documentary |
 | A31 | B28 | Moscovici 1961 bibliographic/source material | **SELECTED:** Google Books bibliographic page for *La psychanalyse, son image et son public* (PUF, 1961); WorldCat as metadata backup | YELLOW for screenshot; GREEN fallback for original bibliographic card using verified metadata | selected-source | original bibliographic card: author/title/year + original newspaper-style typography |
 | A32 | B28 | Psychoanalytic vocabulary migration into everyday print | Original motion typography; no fake quotation | GREEN | planned | static flow |
-| A33 | B29 | Specialist article → creator → comments → search → conversation acceleration path | Original diagram/interface montage | GREEN | planned | static pathway |
-| A34 | B30 | Hacking looping-effect diagram | Original diagram based on sourced concept | GREEN | planned | static loop |
+| A33 | B29 | Specialist article → creator → comments → search → conversation acceleration path | Original diagram/interface montage | GREEN | production-spec-ready | static pathway |
+| A34 | B30 | Hacking looping-effect diagram | Original diagram based on sourced concept | GREEN | production-spec-ready | static loop |
 | A35 | B30 | Hacking bibliographic/source card | **SELECTED:** Ian Hacking, “Making Up People,” *London Review of Books*, Vol. 28 No. 16, 17 Aug 2006; primary article page explicitly explains classifications affecting classified people and names the “looping effect” | YELLOW for brief article-page screenshot; GREEN fallback for original citation card | selected-source | original citation card |
-| A36 | B31 | PUA English→Chinese semantic timeline | Original bilingual timeline based on S11–S15 | GREEN with citations | planned | none |
+| A36 | B31 | PUA English→Chinese semantic timeline | Original bilingual timeline based on S11–S15 | GREEN with citations | production-spec-ready | none |
 | A37 | B31 | Chinese PUA source fragments | SRC-PUA-SIXTHTONE + SRC-PUA-CNKI-1/2 + The Paper source from S14 | YELLOW | verified-source/lead | re-typeset translated headline summaries + URLs in source notes |
 | A38 | B32 | *Gas Light* historical artifact | **SELECTED SAFE SUBSTITUTE:** Smithsonian NMAAHC 1951 *Angel Street* program; object page states original name is *Gas Light* and media is public domain / no known copyright restrictions. Use as historical theatrical artifact, not as a 1938-original program. | GREEN subject to Smithsonian attribution/usage record | selected-source | original *Gas Light* 1938 title/year card + APA etymology source |
 | A39 | B32 | APA gaslight etymology/reference page | SRC-GASLIGHT-APA | YELLOW | verified-source | re-typeset short historical route with citation |
-| A40 | B33 | Four-origin pipeline: medicine / social theory / popular culture / subculture-language transfer | Original diagram | GREEN | planned | none |
-| A41 | B34 | ADOPT → SPREAD → RESHAPE synthesis | Original motion built from existing diagram language | GREEN | planned | static three-stage graphic |
+| A40 | B33 | Four-origin pipeline: medicine / social theory / popular culture / subculture-language transfer | Original diagram | GREEN | production-spec-ready | none |
+| A41 | B34 | ADOPT → SPREAD → RESHAPE synthesis | Original motion built from existing diagram language | GREEN | production-spec-ready | static three-stage graphic |
 | A42 | B35 | Concept mutates across specialist → creator → comments → self → conversation | Original motion graphic; wording changes are illustrative, not quotations | GREEN | planned | reuse A33 with altered states |
 | A43 | B36 | Opening-scene return with labels removed | Reuse A01/A02/A03; final crop and focus shift | GREEN if source assets cleared | dependent | original typography fade to black |
 
@@ -293,3 +293,24 @@ Selected/verified source path now exists for:
 
 **Tier 1 source discovery is complete.**
 Acquisition/capture and local-file inspection remain outstanding.
+
+
+## Tier 2 diagram system — 2026-09-24
+
+Production specification created:
+`assets/diagrams/00-visual-system.md`
+
+The file freezes:
+- composition grammar;
+- typography hierarchy;
+- line/shape rules;
+- motion grammar;
+- reusable motifs;
+- evidence footer treatment;
+- Anti-Slop visual test;
+- production order.
+
+Core assets now have production-ready specifications:
+A05, A12, A13, A17, A19, A23, A26, A33, A34, A36, A40, A41.
+
+This is a specification milestone, not a rendered-asset milestone. PNG/SVG/Remotion/Canva outputs remain NOT_RUN.
