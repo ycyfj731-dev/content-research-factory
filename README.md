@@ -317,6 +317,10 @@ Concrete skills are isolated by domain. The root `SKILL.md` is routing-only and 
 
 ```text
 skills/
+├── youtube-intellectual-essay/
+│   ├── SKILL.md
+│   ├── references/
+│   └── tests/
 ├── content/
 │   ├── complex-to-clear/
 │   └── editorial-visual-system/
@@ -332,3 +336,5 @@ skills/
 ```
 
 TrendRadar, Agent-Reach, MediaCrawler and MoneyPrinterTurbo remain shared runtime adapters under `src/content_research_factory/adapters/`; they are not presented as standalone skills until they have independent skill contracts.
+
+The user-requested `skills/youtube-intellectual-essay/` path is a deliberate layout exception. Its [V0.1 workflow](skills/youtube-intellectual-essay/SKILL.md) covers 13 stages for English 10–15 minute faceless essays, with Topic, Evidence and Anti-Slop gates. It is a production instruction skill, not a new runtime adapter or automatic uploader. The [first-episode regression specification](skills/youtube-intellectual-essay/tests/why-we-want-regression.md) exercises the gates without paid generation or publishing.

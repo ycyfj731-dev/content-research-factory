@@ -10,6 +10,7 @@ This file is a lightweight router. It must not duplicate detailed rules from ind
 ## Skill registry
 
 ### Content
+- `skills/youtube-intellectual-essay/SKILL.md` — English faceless intellectual video essays; topic, evidence and visual-quality gates.
 - `skills/content/complex-to-clear/SKILL.md` — turn complex material into clear, readable content.
 - `skills/content/editorial-visual-system/SKILL.md` — editorial visual and publishing system.
 
