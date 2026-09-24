@@ -29,6 +29,7 @@
 | S18 | APA, “The rise of ‘therapy speak’” — narcissism section — https://www.apa.org/news/podcasts/speaking-of-psychology/therapy-speak | 2025 | Full transcript | Uses “Do you think your ex is a narcissist?” as a paradigmatic therapy-speak example; experts distinguish casual labeling from clinical understanding and warn that the label can shut down nuance | Expert discussion, not prevalence estimate |
 | S19 | APA Dictionary / MedlinePlus, narcissistic personality disorder — https://dictionary.apa.org/narcissistic-personality-disorder ; https://medlineplus.gov/ency/article/000934.htm | 2023/2024 | Full entries | Establishes NPD as a personality disorder requiring an enduring pattern/evaluation; provides a clinical boundary against casual synonymy with selfishness | Clinical reference, not evidence about online popularity |
 | S20 | CDC, “ADHD in Adults” / “Diagnosing ADHD” — https://www.cdc.gov/adhd/about/adhd-in-adults.html ; https://www.cdc.gov/adhd/diagnosis/index.html | 2026 | Full pages | Defines ADHD as a neurodevelopmental disorder beginning in childhood and explains diagnosis as a multi-step clinical process; similar symptoms can have other causes | Official clinical overview; not evidence about online discourse |
+| S21 | “Narcissistic Abuse Cycle Deserves Clinical and Research Attention” — https://pmc.ncbi.nlm.nih.gov/articles/PMC13290744/ | 2025 | Full text | Notes that “narcissistic abuse cycle” is widely discussed in social media/popular psychology but has scant academic literature; argues the construct requires empirical testing | Commentary/research agenda; useful to show popular-discourse/academic-evidence gap, not to validate the construct itself |
 
 ## Evidence map by case
 
@@ -43,14 +44,16 @@ Not supported strongly enough:
 - “The algorithm intentionally promotes misinformation.”
 - “Most young adults self-diagnose ADHD.”
 
-### Narcissist / narcissism
+### NPD / narcissist / narcissistic abuse
 Supported:
 - APA's 2025 therapy-speak episode treats “my ex is a narcissist” as a representative example of contemporary popular psychological labeling (S18);
 - NPD is a clinical personality disorder with enduring patterns and formal evaluation requirements; casual selfishness is not equivalent to diagnosis (S19);
-- APA experts explicitly warn that casual “narcissist” labeling can flatten relational nuance and is often used without knowledge of the clinical definition (S18).
+- APA experts explicitly warn that casual “narcissist” labeling can flatten relational nuance and is often used without knowledge of the clinical definition (S18);
+- “narcissistic abuse cycle” has a large popular/social-media footprint but remains thinly represented in academic literature, making it a useful example of public vocabulary outrunning research consensus (S21).
 
 Boundary:
-- distinguish **narcissistic traits**, **narcissism as a personality dimension**, and **narcissistic personality disorder**. The episode should not imply that every popular use of “narcissist” claims a formal diagnosis.
+- distinguish **narcissistic traits**, **narcissism as a personality dimension**, **narcissistic personality disorder (NPD)**, and the popular construct **narcissistic abuse**.
+- Do not present “narcissistic abuse cycle” as an established DSM/ICD diagnosis or a settled scientific construct.
 
 ### Gaslighting — supporting example, not a main case
 Supported:
