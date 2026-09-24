@@ -1,6 +1,6 @@
 # Episode 001 — Source Research
 
-- Version: 0.1
+- Version: 0.2
 - State: PASS for research package
 - Access date: 2026-09-24
 - Scope: evidence sufficient to build an argument outline; full narration still requires claim-level recheck.
@@ -28,6 +28,7 @@
 | S17 | Squires, “Enregistering internet language” — https://www.cambridge.org/core/journals/language-in-society/article/enregistering-internet-language/F8A79BB74879D022D911F3B818B727BF | 2010 | Abstract/full page | Shows internet language is socially recognized and stabilized through metadiscourse; warns against simple technological determinism | General internet-language framework, not specific to expert terms |
 | S18 | APA, “The rise of ‘therapy speak’” — narcissism section — https://www.apa.org/news/podcasts/speaking-of-psychology/therapy-speak | 2025 | Full transcript | Uses “Do you think your ex is a narcissist?” as a paradigmatic therapy-speak example; experts distinguish casual labeling from clinical understanding and warn that the label can shut down nuance | Expert discussion, not prevalence estimate |
 | S19 | APA Dictionary / MedlinePlus, narcissistic personality disorder — https://dictionary.apa.org/narcissistic-personality-disorder ; https://medlineplus.gov/ency/article/000934.htm | 2023/2024 | Full entries | Establishes NPD as a personality disorder requiring an enduring pattern/evaluation; provides a clinical boundary against casual synonymy with selfishness | Clinical reference, not evidence about online popularity |
+| S20 | CDC, “ADHD in Adults” / “Diagnosing ADHD” — https://www.cdc.gov/adhd/about/adhd-in-adults.html ; https://www.cdc.gov/adhd/diagnosis/index.html | 2026 | Full pages | Defines ADHD as a neurodevelopmental disorder beginning in childhood and explains diagnosis as a multi-step clinical process; similar symptoms can have other causes | Official clinical overview; not evidence about online discourse |
 
 ## Evidence map by case
 
