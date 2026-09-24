@@ -26,6 +26,8 @@
 | S15 | 2024/2025 Douban research excerpt, “A Girlfriend Gaze on Romantic Feelings...” — https://www.researchgate.net/publication/385621221_A_girlfriend_gaze_on_romantic_feelings_Coconstructing_postfeminist_selfhood_on_Douban | 2024/25 | Excerpt | Explicitly notes PUA in Chinese social media has evolved beyond narrow pickup-artist meaning toward a synonym for gaslighting/emotional manipulation | Secondary access copy; verify publisher version before quoting |
 | S16 | Xiao et al., “Have the concepts of anxiety and depression been normalized or pathologized?” — https://pubmed.ncbi.nlm.nih.gov/37384729/ | 2023 | Abstract + PMC link | Corpus study situated in broader research showing mental-health concept meanings can shift over time | Not about our four cases directly |
 | S17 | Squires, “Enregistering internet language” — https://www.cambridge.org/core/journals/language-in-society/article/enregistering-internet-language/F8A79BB74879D022D911F3B818B727BF | 2010 | Abstract/full page | Shows internet language is socially recognized and stabilized through metadiscourse; warns against simple technological determinism | General internet-language framework, not specific to expert terms |
+| S18 | APA, “The rise of ‘therapy speak’” — narcissism section — https://www.apa.org/news/podcasts/speaking-of-psychology/therapy-speak | 2025 | Full transcript | Uses “Do you think your ex is a narcissist?” as a paradigmatic therapy-speak example; experts distinguish casual labeling from clinical understanding and warn that the label can shut down nuance | Expert discussion, not prevalence estimate |
+| S19 | APA Dictionary / MedlinePlus, narcissistic personality disorder — https://dictionary.apa.org/narcissistic-personality-disorder ; https://medlineplus.gov/ency/article/000934.htm | 2023/2024 | Full entries | Establishes NPD as a personality disorder requiring an enduring pattern/evaluation; provides a clinical boundary against casual synonymy with selfishness | Clinical reference, not evidence about online popularity |
 
 ## Evidence map by case
 
@@ -40,14 +42,20 @@ Not supported strongly enough:
 - “The algorithm intentionally promotes misinformation.”
 - “Most young adults self-diagnose ADHD.”
 
-### Gaslighting
+### Narcissist / narcissism
+Supported:
+- APA's 2025 therapy-speak episode treats “my ex is a narcissist” as a representative example of contemporary popular psychological labeling (S18);
+- NPD is a clinical personality disorder with enduring patterns and formal evaluation requirements; casual selfishness is not equivalent to diagnosis (S19);
+- APA experts explicitly warn that casual “narcissist” labeling can flatten relational nuance and is often used without knowledge of the clinical definition (S18).
+
+Boundary:
+- distinguish **narcissistic traits**, **narcissism as a personality dimension**, and **narcissistic personality disorder**. The episode should not imply that every popular use of “narcissist” claims a formal diagnosis.
+
+### Gaslighting — supporting example, not a main case
 Supported:
 - term derives from the 1938 play and later film adaptations (S01);
 - APA notes the term is now used more generally than its earlier extreme sense (S01);
-- therapy-speak coverage documents broad everyday circulation and concerns about misuse (S02–S04).
-
-Boundary:
-- gaslighting did not originate in psychology; it is a strong counterexample to a simple academy→internet pathway.
+- useful in the opening montage and as proof that not all “therapy-speak” came from clinics.
 
 ### Patriarchy
 Supported:
