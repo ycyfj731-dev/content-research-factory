@@ -25,6 +25,7 @@
 | C12 | Narcissistic personality disorder is a clinical personality disorder involving enduring patterns; casual selfishness or one bad relationship does not establish the diagnosis. | textual/clinical | S19 | APA Dictionary + MedlinePlus | PASS |
 | C13 | “My ex is a narcissist” is a representative therapy-speak formulation; APA experts warn that casual use of the label can flatten nuance and is often disconnected from clinical understanding. | attributed interpretation | S18 | APA 2025 transcript, narcissism section | PASS |
 | C14 | Digital media changed the speed, visibility and mutability of concept circulation, but current evidence does not justify a single “algorithm caused this” explanation. | modern-application / our argument | S07, S17, C05 | Online meme circulation + internet-language framework + causal limitation from C05 | PASS as synthesis with limitation |
+| C15 | “Narcissistic abuse” / “narcissistic abuse cycle” has substantial popular and social-media circulation while remaining comparatively underdeveloped in academic literature. | empirical/interpretation | S21 | Full-text commentary explicitly contrasts widespread popular discussion with scant academic literature | PASS with limitation: does not validate the construct as a diagnosis |
 
 ## Script V0.2 review
 
