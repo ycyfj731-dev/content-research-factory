@@ -80,14 +80,14 @@ Rights status vocabulary:
 | A28 | B25 | Searchability branch map | Original diagram | GREEN | planned | static mind-map |
 | A29 | B26 | Same ambiguous scene, two interpretive overlays | Self-shot/original still + original labels; no claim that either interpretation is correct | GREEN | lead | abstract shapes with spotlight/highlight animation |
 | A30 | B27 | Modern UI → 1960s print transition | Original motion using cleared print texture / public-domain scan | TBD | lead | generated paper texture + original typesetting, explicitly non-documentary |
-| A31 | B28 | Moscovici 1961 bibliographic/source material | Prefer library/catalog/title-page metadata; verify specific scan rights before use | TBD/YELLOW | lead | original bibliographic card: author/title/year + original newspaper-style typography |
+| A31 | B28 | Moscovici 1961 bibliographic/source material | **SELECTED:** Google Books bibliographic page for *La psychanalyse, son image et son public* (PUF, 1961); WorldCat as metadata backup | YELLOW for screenshot; GREEN fallback for original bibliographic card using verified metadata | selected-source | original bibliographic card: author/title/year + original newspaper-style typography |
 | A32 | B28 | Psychoanalytic vocabulary migration into everyday print | Original motion typography; no fake quotation | GREEN | planned | static flow |
 | A33 | B29 | Specialist article → creator → comments → search → conversation acceleration path | Original diagram/interface montage | GREEN | planned | static pathway |
 | A34 | B30 | Hacking looping-effect diagram | Original diagram based on sourced concept | GREEN | planned | static loop |
-| A35 | B30 | Hacking bibliographic/source card | Prefer primary essay/book bibliographic page; no portrait required | TBD/YELLOW | lead | original citation card |
+| A35 | B30 | Hacking bibliographic/source card | **SELECTED:** Ian Hacking, “Making Up People,” *London Review of Books*, Vol. 28 No. 16, 17 Aug 2006; primary article page explicitly explains classifications affecting classified people and names the “looping effect” | YELLOW for brief article-page screenshot; GREEN fallback for original citation card | selected-source | original citation card |
 | A36 | B31 | PUA English→Chinese semantic timeline | Original bilingual timeline based on S11–S15 | GREEN with citations | planned | none |
 | A37 | B31 | Chinese PUA source fragments | SRC-PUA-SIXTHTONE + SRC-PUA-CNKI-1/2 + The Paper source from S14 | YELLOW | verified-source/lead | re-typeset translated headline summaries + URLs in source notes |
-| A38 | B32 | *Gas Light* 1938 historical artifact | Find item-level public-domain/cleared program/poster/title-page; rights must be verified before inclusion | TBD | lead | original title/year card only |
+| A38 | B32 | *Gas Light* historical artifact | **SELECTED SAFE SUBSTITUTE:** Smithsonian NMAAHC 1951 *Angel Street* program; object page states original name is *Gas Light* and media is public domain / no known copyright restrictions. Use as historical theatrical artifact, not as a 1938-original program. | GREEN subject to Smithsonian attribution/usage record | selected-source | original *Gas Light* 1938 title/year card + APA etymology source |
 | A39 | B32 | APA gaslight etymology/reference page | SRC-GASLIGHT-APA | YELLOW | verified-source | re-typeset short historical route with citation |
 | A40 | B33 | Four-origin pipeline: medicine / social theory / popular culture / subculture-language transfer | Original diagram | GREEN | planned | none |
 | A41 | B34 | ADOPT → SPREAD → RESHAPE synthesis | Original motion built from existing diagram language | GREEN | planned | static three-stage graphic |
@@ -228,15 +228,68 @@ Each acquired item should have:
 
 ## Current blockers to Stage 08 PASS
 
-1. A31 Moscovici exact visual source not yet selected.
-2. A35 Hacking exact visual source not yet selected.
-3. A38 *Gas Light* archival item and rights basis not yet selected.
-4. Lived-scene B-roll A01/A03/A10/A29 not acquired or licensed.
-5. No local asset files have been inspected.
-6. Final narration audio is not yet available, so asset durations remain estimated.
+1. Lived-scene B-roll A01/A03/A10/A29 not acquired or licensed.
+2. No local asset files have been inspected.
+3. Selected editorial screenshots still need local capture and asset-level rights notes.
+4. Final narration audio is not yet available, so asset durations remain estimated.
 
 ## Stage decision
 
 **DRAFT — acquisition ready.**
 
 The plan fully covers all 36 beats and no beat depends on an uncleared third-party social-media clip. Stage 08 may move to **PASS** only after the assets used in the final edit have real file paths and source/rights records, with unresolved items replaced by cleared fallbacks.
+
+
+## Tier 1 source selections — 2026-09-24
+
+### A31 — Moscovici
+Selected visual reference:
+- Google Books: *La psychanalyse, son image et son public: étude sur la représentation sociale de la psychanalyse*
+- Serge Moscovici
+- Presses universitaires de France, 1961
+- 650 pages
+- WorldCat independently confirms author / publisher / Paris / 1961.
+
+Editorial use plan:
+- Prefer a short crop of the bibliographic page only if the page design contributes historical texture.
+- Otherwise build an original 1961-style bibliographic card from verified metadata and avoid reproducing book interior pages.
+
+### A35 — Hacking
+Selected visual reference:
+- Ian Hacking, “Making Up People”
+- *London Review of Books*, Vol. 28 No. 16
+- 17 August 2006
+
+The primary LRB page directly states the core mechanism needed for B30: classifications can affect the people classified, whose responses can in turn change the classifications; Hacking explicitly calls this the “looping effect.”
+
+Editorial use plan:
+- Brief source-identifying page crop if needed.
+- Main explanatory visual remains our original loop diagram, not a long article screenshot.
+
+### A38 — Gas Light
+The search did not produce a rights-cleared original 1938 programme suitable for immediate reuse.
+Selected safe historical substitute:
+- Smithsonian National Museum of African American History and Culture
+- 1951 *Angel Street* program, Shearer Players
+- Object page explicitly notes that the show's original name is *Gas Light*.
+- Smithsonian marks the media public domain / no known copyright restrictions.
+
+Important representation rule:
+- Never caption this item as “1938 original programme.”
+- Caption it as a later *Angel Street* theatrical program connected to Patrick Hamilton's *Gas Light*.
+- Use APA Dictionary / other verified history text for the actual 1938 origin claim.
+
+## Tier 1 current status
+
+Selected/verified source path now exists for:
+- A07 CDC ADHD
+- A15 APA therapy-speak
+- A24 Hill & Allen
+- A31 Moscovici
+- A35 Hacking
+- A37 Chinese PUA source family
+- A38 Gas Light / Angel Street historical artifact
+- A39 APA gaslight reference
+
+**Tier 1 source discovery is complete.**
+Acquisition/capture and local-file inspection remain outstanding.
