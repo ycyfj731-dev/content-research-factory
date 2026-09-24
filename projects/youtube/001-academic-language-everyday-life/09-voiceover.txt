@@ -1,359 +1,510 @@
-Episode 001 — Clean Voiceover Script
-Working title: Why Does Everyone Speak in Concepts Now?
-Version: 0.1
-Status: PASS for TTS text derivation from evidence-approved script
-Target voice: calm, intelligent, conversational; neutral American English
-Target pace: 138–145 WPM
-Estimated duration: ~13–14 minutes
+Episode 001 — Voiceover Master
+Title: Why Does Everything Have a Name Now?
+Version: 0.2
+State: PASS_FOR_TEXT_HANDOFF
+Audio generation: NOT_RUN
+Audio QC: NOT_RUN
+Measured duration: NOT_RUN
 
-PRONUNCIATION NOTES
+VOICE
+- Language: English
+- Accent: neutral American English
+- Character: calm, intelligent, observant, slightly dry; never therapeutic or inspirational
+- Energy: restrained; increase slightly in concrete examples, reduce in theory passages
+- Pace target: 138–145 WPM overall
+- Delivery rule: examples slightly faster, theory slightly slower, data neutral, final two lines distinctly slower
+- Avoid “podcast smile,” motivational cadence, and over-emphasized rhetorical questions
+
+PRONUNCIATION
 - ADHD: say each letter, “A-D-H-D”
 - NPD: say each letter, “N-P-D”
 - narcissist: NAR-suh-sist
 - narcissistic: nar-suh-SIS-tik
 - patriarchy: PAY-tree-ar-kee
-- hermeneutic: her-muh-NOO-tik
+- Serge Moscovici: SURZH moss-koh-VEE-chee
+- Foucault: foo-KOH
+- Ian Hacking: EE-un HACK-ing
 - PUA: say each letter, “P-U-A”
-- Bilibili: BEE-lee-BEE-lee
+- gaslighting: GAS-light-ing
 - TikTok: standard American pronunciation
+- Reddit: RED-it
+- medicalization: med-ih-kuh-luh-ZAY-shun
 
 DELIVERY NOTES
-- Do not sound therapeutic or inspirational.
-- Avoid “podcast smile.”
-- Use slightly longer pauses after the standalone terms in the opening.
-- Emphasize contrasts: recognition vs diagnosis; behavior vs identity; theory vs lens.
-- The ending should become quieter and more reflective, not dramatic.
+- Opening list: leave a small pause between each standalone term.
+- “The real shift isn’t just about words.”: slight emphasis on “real shift.”
+- ADHD personal scene: soften and slow on “I was lazy.”
+- Study numbers: read cleanly, without dramatic emphasis.
+- Narcissist sequence (“Then narcissistic abuse. Then trauma bond. Then no contact.”): steady, incremental rhythm.
+- Foucault section: slow slightly; do not perform it like a lecture.
+- Patriarchy dinner scene: let the visual carry the emotion; keep voice neutral.
+- Compression / recognition / search: conversational, not enumerative.
+- Moscovici section: reflective, slightly slower than the surrounding section.
+- Hacking section: emphasize the contrast in “A rock does not care… People do.”
+- PUA / gaslighting: slightly more animated; these are discovery beats.
+- Final paragraph: progressively quieter. Pause before the final sentence.
+- Final line “They shape what we see.” should land without dramatic music swell.
 
 ---
 
-Ten years ago, if someone couldn't focus, they might have called themselves lazy.
+Ten or fifteen years ago, if someone forgot appointments, missed deadlines, and could never seem to start a task on time, people might have called them lazy, careless, or undisciplined.
 
-If an ex was selfish and manipulative, they might have said exactly that.
+If a boyfriend was selfish, manipulative, and impossible to argue with, you might have said he was controlling.
 
-If a woman felt that the rules of work, dating, or family life seemed to favor men, she might have described the situation without reaching for a theory.
+Or toxic.
 
-Today, the vocabulary is different.
+Or simply an asshole.
 
-A-D-H-D.
+If women kept running into the same double standards at home and at work, we might have called those situations sexist.
+
+We still use those words.
+
+But now we have another vocabulary sitting right alongside them.
+
+ADHD.
+
+NPD.
 
 Narcissist.
 
 Gaslighting.
 
-Trauma.
+Trauma response.
 
 Attachment style.
 
 Patriarchy.
 
-And in Chinese internet culture, even P-U-A — originally short for pick-up artist — can now describe forms of emotional manipulation and control.
+It’s tempting to say old words are just being swapped out for newer, fancier terms.
 
-At some point, ordinary life started sounding strangely conceptual.
+But I don’t think that’s quite what’s happening.
 
-But the obvious explanation — that TikTok simply took academic jargon and made it viral — falls apart almost immediately.
+ADHD hasn’t “replaced” the word lazy.
 
-A-D-H-D is a clinical diagnosis.
+Certain behaviors once written off as laziness, carelessness, or poor self-control are now sometimes framed through ADHD.
 
-“Narcissist” sits awkwardly between a personality trait, a clinical disorder, and a casual insult.
+The real shift isn’t just about words.
 
-Patriarchy has a long history in feminist and social theory.
+It’s about the kind of explanation we reach for.
 
-Gaslighting began in a play before it became psychological language.
+“Lazy” is mostly a judgment about behavior.
 
-And P-U-A did not begin in a university at all.
+ADHD asks whether there might be a cognitive or clinical mechanism behind some of that behavior.
 
-So these words did not come from the same place.
+“Selfish” tells you what someone did.
 
-What they have in common is what happened after they entered everyday speech.
+Calling someone a narcissist seems to tell you something about the kind of person who keeps doing it.
 
-They became tools for interpretation.
+And “patriarchy” takes an experience that might once have looked private and connects it to a larger social structure.
 
-And that is the real story.
+So why are these newer concepts so attractive?
 
-Start with A-D-H-D.
+Part of the answer is simple.
 
-Attention-deficit hyperactivity disorder is a neurodevelopmental disorder. It is not a synonym for being distracted, bored, or bad at answering emails.
+They seem to explain more.
 
-But online, A-D-H-D has also become a language of self-recognition.
+Take ADHD.
 
-People watch videos about time blindness, procrastination, hyperfocus, or losing objects, and sometimes see themselves in those descriptions.
+ADHD is a clinical diagnosis, not another word for being distracted, disorganized, or bad at answering emails.
 
-That can matter.
+But online, it has also become a framework for revisiting experiences that might once have been dismissed as laziness, poor discipline, or personal failure.
 
-A person who has spent years thinking, “I'm lazy,” may encounter a different possibility: maybe there is a pattern here worth understanding.
+“I’m lazy.”
 
-But recognition and diagnosis are not the same thing.
+“I have no discipline.”
 
-One recent study examined comments on popular A-D-H-D TikTok videos. In a sample of six hundred comments, forty-two percent were coded as some form of A-D-H-D-related self-attribution or self-diagnosis.
+“Why can everyone else just get things done?”
 
-Another study comparing A-D-H-D content on TikTok and Bilibili found that videos with higher self-diagnosis risk were also associated with higher engagement.
+Then someone stumbles across terms like executive dysfunction, time blindness, hyperfocus, ADHD paralysis.
 
-But that study was cross-sectional.
+Suddenly, experiences that once felt scattered start to form a pattern.
 
-It cannot tell us that the algorithm caused people to diagnose themselves.
+Imagine someone watching a short video about ADHD paralysis and remembering years of sitting in front of homework, knowing exactly what needed to be done...
 
-That distinction matters.
+and still being unable to start.
 
-The internet can make a clinical category more visible without making every use of it clinically accurate.
+For years, maybe that memory meant one thing:
 
-And once a diagnosis becomes part of everyday language, it can do two things at once.
+I was lazy.
 
-It can help someone ask a better question about themselves.
+Now it might mean something else.
 
-And it can tempt them to answer that question too quickly.
+Instead of asking:
 
-Now move from explaining the self to explaining someone else.
+“What is wrong with me?”
 
-“My ex is a narcissist.”
+they start wondering whether there is another explanation.
 
-That sentence is so culturally familiar that the American Psychological Association used it as one of the opening examples in a twenty-twenty-five discussion of “therapy speak.”
+Sociologists call the broader process medicalization: experiences once interpreted mainly through character, morality, or ordinary social expectations begin to be understood through medical or psychological categories.
 
-The attraction of the word is obvious.
+You can see why the shift is appealing.
 
-“Narcissist” does more than say someone is selfish.
+“Lazy” sounds like blame.
 
-It suggests a pattern.
+ADHD at least opens another possibility.
 
-A type of person.
+None of this means seeing yourself described in an online post counts as a real diagnosis.
 
-A reason the relationship felt the way it did.
+But even the possibility of a diagnosis gives people somewhere to turn.
 
-And, importantly, a reason that can feel final.
+Something to investigate.
 
-But clinically, narcissistic personality disorder — N-P-D — is not simply “a person who treated me badly.”
+Something to talk through with a clinician.
 
-It refers to an enduring pattern of traits and impairment assessed in a psychological evaluation.
+It may also change how years of frustration are remembered.
 
-And this is where the vocabulary begins to split.
+I keep seeing the same reaction in ADHD discussions online:
 
-Narcissistic traits are not the same thing as N-P-D.
+“Wait, this is ADHD too? I thought ADHD just meant being hyperactive or unable to focus.”
 
-“Narcissist” in everyday speech may refer to neither with any precision.
+That reaction interests me because the label is doing more than naming a symptom.
 
-And phrases such as “narcissistic abuse” can circulate widely online even when the academic literature around the construct is still comparatively thin.
+It is changing the way someone reads their own past.
 
-Experts have warned that casual labeling can collapse these distinctions.
+A recent study examined 600 comments on popular ADHD TikTok videos.
 
-One person may be arrogant.
+Around 36.7 percent involved people identifying with ADHD-related behaviors.
 
-Another may be emotionally immature.
+Another 5.3 percent went further and suggested that they themselves might have ADHD.
 
-Another may behave badly in one particular relationship.
+That doesn’t tell us TikTok is somehow creating ADHD.
 
-None of those descriptions automatically establish a personality disorder.
+What it shows is how quickly people can take a professional framework and test it against their own life.
 
-This is where a concept becomes powerful.
+Now turn the same process outward.
 
-A sentence like “he was selfish and dismissive” describes behavior.
+“My ex was selfish.”
 
-“He is a narcissist” describes identity.
+“My ex was a narcissist.”
 
-It can feel more explanatory because it turns a messy history into a category.
+Those sentences do not land the same way.
 
-Sometimes that category may point toward something real.
+The American Psychological Association now discusses this kind of language under the heading of “therapy speak.”
 
-But the category can also stop the inquiry.
+One of its own introductions asks whether your ex might be a narcissist...
 
-Once a label feels like the answer, we may stop asking what exactly happened.
+or your boss might be gaslighting you.
 
-Then there is a much bigger jump.
+That vocabulary is no longer niche.
 
-From “What is wrong with me?”
+Why does “narcissist” feel so much more powerful than “selfish”?
 
-To “What is wrong with you?”
+Because it seems to explain more.
 
-To “What kind of system are we living in?”
+Picture someone after a breakup, searching one strange behavior late at night.
 
-That is where patriarchy enters.
+They find “narcissist.”
 
-Unlike A-D-H-D or narcissistic personality disorder, patriarchy is not a diagnosis of an individual.
+Then narcissistic abuse.
 
-It is a structural concept.
+Then trauma bond.
 
-In feminist theory, the term was used extensively to describe systematic forms of women's oppression, although feminists disagreed about exactly how patriarchy worked and later criticized versions of the concept that failed to account adequately for differences of class, race, and other forms of power.
+Then no contact.
 
-Then something interesting happened.
+And suddenly the whole relationship starts reorganizing itself around one label.
 
-The term lost some of its academic centrality — but found a new life online.
+A string of confusing or hurtful incidents begins to look like signs of one underlying personality pattern.
 
-Researchers Rosemary Lucy Hill and Kim Allen describe a resurgence of “patriarchy” in digital culture, particularly through memes such as “smash the patriarchy.”
+The charm at the beginning.
 
-That transformation matters because a theory that once required pages of explanation can now travel in three words.
+The contempt later.
 
-That is enormously useful.
+The manipulation.
 
-A portable concept allows people to connect events that might otherwise look unrelated: domestic labor, workplace authority, sexual norms, expectations around motherhood, beauty standards.
+The withdrawal.
 
-But portability comes with a cost.
+The refusal to apologize.
 
-Memes are brief.
+Once there is a category, those events begin to line up.
 
-The shorter the form, the less room there is for theoretical complexity, including intersectional differences and disagreements about what patriarchy actually means.
+Real relationships are rarely that clean.
 
-The concept becomes easier to carry precisely because some of its baggage has been removed.
+People contradict themselves.
 
-That does not make the concept meaningless.
+They can be loving and cruel in the same relationship.
 
-It changes the way the concept works.
+Motives overlap.
 
-It becomes less like a full theory and more like a lens you can hold up to a situation.
+Memory is unreliable.
 
-And then there is P-U-A, which complicates the story even further.
+Sometimes someone behaves terribly without fitting neatly into a single personality category.
 
-In English, P-U-A originally referred to the pick-up artist scene: a male subculture built around techniques for attracting and seducing women.
+Still, the category is tempting precisely because real life is not.
 
-But in Chinese internet culture, the word traveled.
+Once someone becomes “a narcissist,” the past can feel easier to read.
 
-By the late twenty-tens and early twenty-twenties, Chinese journalism and scholarship were already using P-U-A in discussions of emotional manipulation, verbal abuse, and coercive relationship tactics.
+Sometimes the future does too.
 
-Today, depending on context, someone in Chinese may say they were “P-U-A'd” in a relationship or even at work.
+Of course he did that.
 
-That is not merely translation.
+That is what narcissists do.
 
-It is semantic reconstruction.
+It’s worth noting that the way “narcissist” gets used online often has very little to do with a formal diagnosis of NPD.
 
-The imported term survived, but its everyday meaning expanded far beyond the original subculture.
+This impulse — to sort people into types instead of only judging individual acts — is something Foucault wrote about.
 
-And P-U-A gives us a useful warning.
+He observed a broader shift in modern societies: institutions increasingly judged people not only by what they did, but by whether they were normal or abnormal, healthy or pathological.
 
-Concepts do not always move neatly from experts to the public.
+That helps explain why “he acted selfishly” and “he’s a narcissist” land so differently.
 
-Sometimes they move from subculture to journalism, from one language to another, from one social problem to a much broader category.
+One describes an action.
 
-The public does not simply receive language.
+The other classifies a person.
 
-It edits it.
+I don’t think the interesting takeaway is that diagnoses are fake, or psychiatric categories are simply made up.
 
-There is a sociological idea that helps here.
+The better question is why classification feels so satisfying.
 
-Social scientists sometimes call this a double hermeneutic: concepts developed to describe social life can be taken up by the people being described, who then use those concepts to understand and change their own behavior.
+Why does putting a label on someone feel so much like understanding them?
 
-Research on the term “emotional labour,” for example, has examined how a social-science concept was appropriated and stretched in everyday use.
+Then there is a third move.
 
-Something similar happens across our examples, even though the origins are different.
+Not from self to other...
 
-A term moves into public life.
+but from the individual to the system.
 
-People use it because it names something that previously felt vague.
+Think about patriarchy.
 
-Then repeated use changes the term.
+A woman notices that women in her family do most of the unpaid care work.
 
-Sometimes the category widens.
+At work, women are expected to be agreeable in ways men are not.
 
-Psychologist Nick Haslam and colleagues use the phrase “concept creep” for the historical expansion of some harm-related concepts into broader ranges of experience.
+Motherhood is treated as a private choice, while work, income, law, and social expectations quietly shape what that choice costs.
 
-Again, this does not mean every expanded use is wrong.
+Or take something smaller.
 
-Language changes because people need language to do things.
+A holiday dinner ends.
 
-To recognize.
+The men leave the table.
 
-To accuse.
+The women stay behind to clean up.
 
-To explain.
+On its own, that might look like a family habit.
 
-To belong.
+Once you have a structural concept, the scene can begin to look like part of something larger.
 
-To tell a story about themselves.
+That’s what structural concepts can do.
 
-The interesting question is what a word allows you to see — and what it makes easier to ignore.
+They connect experiences that once seemed entirely separate.
 
-There is a real benefit to this new vocabulary.
+A study of “patriarchy” online traced how a dense and contested feminist concept found new life through internet memes and phrases such as “smash the patriarchy.”
 
-Psychological language can reduce stigma and give people ways to talk about experiences they previously struggled to name.
+A theory that once took pages to unpack could now travel in three words.
 
-Psychologists have explicitly described that increased accessibility as one of the positive sides of therapy speak.
+So these three examples are doing different things.
 
-The same can be true outside psychology.
+ADHD can give someone a new way to understand themselves.
 
-A structural concept like patriarchy can tell someone that an experience they thought was purely personal may have a social dimension.
+“Narcissist” can give them a way to classify somebody else.
 
-That can be clarifying.
+“Patriarchy” can connect a private experience to a wider structure.
 
-But every concept is also a compression.
+Different scales.
 
-A-D-H-D compresses a complicated clinical pattern into four letters.
+Same appeal.
 
-“Narcissist” can compress years of relationship conflict into one identity label.
+Each one makes something messy feel more legible.
 
-Patriarchy can compress multiple institutions and power relations into a single structural word.
+And that is the first answer to why we adopt these concepts.
 
-P-U-A can compress a wide range of manipulative behavior into one imported acronym.
+They offer more than description.
 
-Compression is why these words travel.
+They offer a pattern.
 
-And compression is also why they can mislead.
+But that raises another question.
 
-The problem is not that ordinary people are using “big words” they do not deserve to use.
+Why do some concepts travel so much better than others?
 
-That would be a strange conclusion.
+Part of the answer is compression.
 
-The deeper problem is that a useful concept can begin to feel complete.
+A complicated explanation is difficult to repeat.
 
-A lens can start pretending to be the whole view.
+A label is easy.
 
-And none of this began with short-form video.
+“Narcissist” can compress an entire relationship story into one word.
 
-Psychological language has been entering popular culture for decades.
+“Anxious attachment” can summarize a pattern that might otherwise take ten minutes to describe.
 
-In the American Psychological Association's discussion of therapy speak, experts point to terms like “codependent” becoming part of public vocabulary long before TikTok existed.
+“Patriarchy” can carry a structural argument in one familiar term.
 
-Psychoanalysis gave earlier generations words like ego, repression, and projection.
+Compression does not necessarily make an idea false.
 
-Self-help culture generated its own vocabulary.
+But it makes the idea much easier to carry from one person to another — through conversation, headlines, hashtags, memes, search boxes, and short videos.
 
-The internet did not invent the desire to explain life through concepts.
+Then there is recognition.
 
-What digital platforms changed was the speed, scale, and visibility of circulation.
+People rarely adopt a new concept because they have carefully studied the original literature.
 
-And even there, we should be careful.
+More often, they hear somebody describe a life that sounds suspiciously like their own.
 
-We have evidence that concepts spread online.
+“Wait.
 
-We have evidence that meanings broaden.
+I do that too.”
 
-We have evidence that some high-risk self-diagnosis content attracts engagement.
+An abstract category becomes personal.
 
-What we do not yet have is one simple causal story in which “the algorithm” explains everything.
+Someone reads one relatable paragraph, and suddenly a messy decade-long relationship has a name.
 
-That story would be satisfying.
+And then comes search.
 
-It would also be weaker than the evidence.
+Once a term is searchable, learning it is no longer a one-off encounter.
 
-So why does everyone seem to speak in concepts now?
+Search “narcissist” and you quickly find narcissistic abuse, trauma bond, no contact, grey rock, covert narcissism.
 
-Not because ordinary people suddenly became academics.
+Search ADHD and you move into diagnostic criteria, personal stories, medication debates, memes, coping strategies, and other people comparing their lives with yours.
 
-And not because theory somehow escaped from universities by accident.
+The word becomes an entrance.
 
-These concepts survive because they are useful.
+Not just to information.
 
-They give shape to experience.
+To people who already know how to use it.
 
-They let us say:
+I notice this especially in relationship discussions online.
 
-Maybe this is not just laziness.
+A messy argument that might once have been described as “he was unreasonable” can now be interpreted through attachment styles, narcissistic patterns, trauma responses, boundaries, or emotional abuse.
 
-Maybe this is not just one bad boyfriend.
+Once you know those frameworks, certain details start jumping out at you.
 
-Maybe this is not just my private problem.
+An awkward dating pattern begins to look avoidant.
 
-But the moment a concept becomes portable, it also becomes editable.
+An argument begins to look manipulative.
 
-Its meaning can widen.
+A private frustration begins to look structural.
 
-Its boundaries can blur.
+The concept helps you notice something.
 
-Its history can disappear.
+But it also tells you what to notice.
 
-And perhaps that is the trade.
+Those two things are not quite the same.
 
-The more easily an idea can travel, the less of its original context it can carry with it.
+Sometimes a new term gives someone language for a pattern they genuinely could not articulate before.
 
-So the question is not whether we should stop using words like A-D-H-D, narcissist, or patriarchy.
+Sometimes it makes the pattern easier to see than the evidence really justifies.
 
-The better question is whether we can use a concept without letting the concept do all of our thinking for us.
+Probably both happen.
 
-Because a good concept should help us see more.
+This whole cycle may feel like a product of social media.
 
-Not give us a reason to stop looking.
+But it is far older.
+
+More than sixty years ago, the social psychologist Serge Moscovici studied what happened when psychoanalytic ideas left specialist circles and entered French newspapers, politics, families, and ordinary conversation.
+
+People did not become amateur Freudians.
+
+They picked and chose.
+
+Some ideas stuck.
+
+Others disappeared.
+
+What survived got mixed with things people already believed.
+
+Over time, specialist knowledge became ordinary common sense.
+
+The internet did not create that process.
+
+It accelerated every stage of it.
+
+Expert language can now be reframed almost instantly by therapists, creators, patients, activists, meme accounts, Reddit communities, relationship coaches.
+
+People find a simplified version, see themselves in it, dig deeper, share it, and slowly reshape the term.
+
+The gap between specialist language and everyday speech has collapsed.
+
+And once that happens, concepts can shift very quickly.
+
+Which brings us to the last part of the story.
+
+What happens to a concept after millions of people start using it?
+
+Ian Hacking studied something closely related.
+
+Humans are strange subjects for classification because we can read the labels used to describe us.
+
+A rock does not care what geologists call it.
+
+People do.
+
+Someone may accept a label.
+
+Resist it.
+
+Find other people through it.
+
+Or reinterpret their past because of it.
+
+And those responses can, in turn, change what the label even means.
+
+Hacking called this the looping effect.
+
+You can see an especially vivid version of this when concepts cross languages.
+
+PUA is a good example.
+
+In English, PUA meant “pick-up artist,” part of a dating subculture built around techniques for attracting women.
+
+In Chinese internet culture, the acronym gradually took on a much broader and darker meaning.
+
+It came to refer to emotional manipulation and coercive control.
+
+Eventually, it spread into expressions such as “workplace PUA,” where the dating context has almost disappeared.
+
+The letters survived.
+
+The concept was repurposed.
+
+That is more interesting than simply saying people mistranslated it.
+
+A borrowed term was taken up, stretched, and made useful for describing a different set of experiences.
+
+Gaslighting took another route entirely.
+
+The word did not begin in psychology.
+
+It comes from the 1938 stage play Gas Light, later adapted into films, in which a husband manipulates his wife into doubting her own perception of reality.
+
+Only later did the term move through psychology and into everyday relationship language.
+
+So there is no single pipeline from “academia” into everyday speech.
+
+Some concepts begin in medicine.
+
+Some come from social theory.
+
+Some come from popular culture.
+
+Some cross languages and end up doing a job they never did in the language they came from.
+
+What they share is what happens afterward.
+
+People make them useful.
+
+And in doing so, they change them.
+
+That, to me, is the full cycle.
+
+We adopt these concepts because they seem to explain more than ordinary descriptions.
+
+They spread because they are easy to compress, easy to recognize yourself in, and easy to search.
+
+And once they spread, people reshape them.
+
+The internet did not invent any of that.
+
+It just made the whole cycle faster.
+
+By the time a concept has moved from specialist language to a creator’s video, from the video to a comment section, from there into someone’s self-understanding, and finally into everyday conversation...
+
+it may no longer mean exactly what it meant at the beginning.
+
+Maybe that is the real shift worth paying attention to.
+
+We didn’t just pick up new words.
+
+We adopted new ways to interpret our own experiences.
+
+And once those concepts enter everyday life, ordinary people reshape them right back.
+
+Labels don’t just describe our lives.
+
+They shape what we see.
