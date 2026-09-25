@@ -44,6 +44,17 @@ Topic uncertainty must not become a score of zero or an invented PASS. A failed 
 
 When a claim changes, rerun Evidence Gate and update every dependent beat, spoken line, chart, caption, thumbnail and metadata claim. When audio changes, retime the storyboard, captions, edit and chapters. When an asset changes, recheck rights and Anti-Slop. Mark downstream reviews `NOT_RUN` until checked against the new versions; preserve unaffected approved work.
 
+## Visual execution dependency
+
+For visual design and motion treatment, use [concept-archaeology-visual](../concept-archaeology-visual/SKILL.md) as the channel visual layer.
+
+- Stage 07: use it to classify beats as WORLD / SOURCE / MODEL / BACK TO WORLD and to avoid posterizing every beat.
+- Stage 08: use it to decide whether an asset should be evidence, archive, lived footage, original diagram, typography, or generated illustration.
+- Stage 10: use it to preserve annotation, source treatment, incompleteness, and anti-PPT / anti-AI-infographic rules in the actual cut.
+- Stage 11: its thumbnail mode may shape composition, but packaging promise remains governed by this essay skill.
+
+The episode-specific visual system may extend that skill, but reusable visual principles belong in the skill rather than being trapped in one project folder.
+
 ## Repository integration
 
 The root router links here; keep all detailed rules in this directory. This requested top-level location is intentional despite the existing domain folders. Follow the repository's lowercase-hyphen naming and `references/` / `tests/` conventions.
