@@ -1,5 +1,9 @@
 # Production and delivery
 
+## Visual directing across stages
+
+Read [Script-to-Visual Director](script-to-visual-director.md) for Stages 07–10. Use semantic beats, distinct narration/visual/caption tracks, a caption-safe exclusion band, measured audio timing, and explicit claim-to-asset mappings. Do not generate one illustration per sentence. Final captions default to switchable English SRT/VTT, with a separate burned-in review preview; burn-in delivery is an explicit choice. Inspect deterministic transition frames and both caption preview states before motion/caption PASS.
+
 ## 07 AV Storyboard
 
 Write synchronized audio/visual rows, not a narration file with a B-roll wishlist. Each row specifies beat ID, start/end estimate, spoken text or exact script span, claim IDs, what changes on screen, visual purpose, asset IDs, sound and transition intent. Indicate `estimated` timing until audio exists. Longer arguments may use multiple shots; one sentence need not equal one image.
