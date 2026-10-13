@@ -1,0 +1,12 @@
+{
+  "name": "editorial-motion-engine",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "test": "playwright test",
+    "test:qa": "playwright test --grep 'capture QA frames'"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0"
+  }
+}
