@@ -89,6 +89,15 @@ Useful starting timing:
 - qualifier/data hold: >= 3 sec
 - conceptual frame: roughly 6–18 sec depending on narration
 
+## Deterministic motion and caption-safe visual design
+
+- Episode-specific locked styles supersede general color defaults. YouTube Intellectual Essay uses pure white rather than off-white/dark red.
+- Render each frame from absolute time, not CSS activation/interval state; direct seek must match sequential playback.
+- Measure actual font bounds before rendering. Reserve caption space; distinguish on-screen insight words from spoken captions.
+- Use a single approved, versioned, layered Border Collie asset where needed; never redraw it as generic SVG primitives.
+- Inspect first/middle/last frames of every movement plus reading holds for clipping, overlap and required labels.
+- Check caption-on and caption-off layouts; do not automatically reprint full narration on the main visual.
+
 ## 7. Reusable motifs
 
 ### M01 Annotation
