@@ -30,6 +30,7 @@ jobs:
           npm install
           npx playwright install --with-deps chromium
           python -m pip install playwright
+          python -m playwright install chromium
           sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Regression tests
         run: npm test
