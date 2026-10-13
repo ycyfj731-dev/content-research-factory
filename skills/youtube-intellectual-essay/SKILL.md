@@ -100,3 +100,11 @@ If the task needs deeper explanation review, use the existing [complex-to-clear]
 ## Verification
 
 Use [tests/v0.2-regression.md](tests/v0.2-regression.md) for the new engine test matrix and [tests/why-we-want-regression.md](tests/why-we-want-regression.md) for the minimal first-episode behavioral test and adversarial variations. It deliberately distinguishes a planning sample from a source-verified, produced video. [references/design-provenance.md](references/design-provenance.md) documents upstream ideas, inspected URLs and deliberate departures; upstream skills are not runtime dependencies.
+
+## Episode 001 — locked production script (2026-10-13)
+
+**Authoritative script:** [Episode 001 V6.1 production locked](../../projects/youtube/001-therapy-speak/episode-001-v6.1-production-locked.md). This is the user-provided six-chapter V6.1 copy with the approved Production Pass 02 edits; it supersedes the old V0.2 draft at `projects/youtube/001-academic-language-everyday-life/05-script.md` for all Episode 001 production work. Do not silently substitute, rewrite, or mix the old script into this cut.
+
+**Evidence / audio edits locked:** (1) Ginapp et al. (2023): 43 adults reporting an ADHD diagnosis; do not imply all 43 diagnoses were independently verified (27 verified); include both support and misinformation concerns. (2) Brady et al. (2017): political-tweet research, not proof therapy-speak receives more engagement; keep social diffusion inference qualified and distinguish it from Isern-Mas & Almagro's philosophical authority account. (3) Outro: use the final "thirty-second clip" sentence rather than the ambiguous pronoun "one."
+
+**Next production gate:** Build a paragraph-by-paragraph Visual Coverage Map from this exact script, then a complete editable 16:9 visual storyboard deck with evidence screens, illustrative scenes, and static key states before any motion pass. VO, screen content and captions must be separate; real VO timestamps replace estimates. Depictions of online comments must be labeled illustrative, research graphics sourced and qualified, and all proposed source screenshots rights-checked for commercial video use. No generic text-slide montage, and no reuse of V0.2's 36-beat storyboard as if it matched V6.1.
