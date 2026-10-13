@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editorial Motion Engine — regression scenes</title>
+<style>
+html,body{margin:0;background:#ddd;font-family:Arial,Helvetica,sans-serif}#wrap{max-width:1200px;margin:24px auto;padding:0 12px}svg{width:100%;height:auto;display:block;background:#fff;box-shadow:0 0 0 1px #aaa}button,input{font:inherit}#panel{background:#fff;padding:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}#seek{flex:1;min-width:200px} .heading{font-size:28px;letter-spacing:4px;fill:#777;font-weight:700}.body{font-size:43px;fill:#111}.keyword{font-size:64px;font-weight:700;fill:#111}.question{font-size:46px;fill:#111}.line{stroke:#aaa;stroke-width:2}
+</style>
+<div id="wrap">
+<svg id="canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Deterministic editorial animation preview"><rect width="1920" height="1080" fill="#fff"/>
+<g id="extract">
+<text class="heading" x="140" y="165">THE ACCOUNT</text>
+<text class="body" x="140" y="340">He kept <tspan id="source-denying" font-weight="700">denying</tspan> what he said.</text>
+<text class="body" x="140" y="440">He told her she was <tspan id="source-overreacting" font-weight="700">overreacting</tspan>.</text>
+<path class="line" d="M140 545 H1780"/>
+<text class="heading" x="140" y="635">WORDS SELECTED FROM THE ACCOUNT</text>
+<g id="token-denying"><rect x="200" y="695" width="410" height="115" rx="16" fill="#fff" stroke="#111" stroke-width="3"/><text class="keyword" x="230" y="770">denying</text></g>
+<g id="token-overreacting"><rect x="720" y="695" width="575" height="115" rx="16" fill="#fff" stroke="#111" stroke-width="3"/><text class="keyword" x="750" y="770">overreacting</text></g>
+<text x="140" y="940" font-size="30" fill="#666">Only quoted words are extracted. No diagnosis is established.</text>
+</g>
+<g id="compare">
+<text class="heading" x="170" y="270">JUDGMENT</text>
+<text class="heading" x="1070" y="270">EVIDENCE</text>
+<path class="line" d="M970 240 V800"/>
+<text class="body" x="170" y="410" font-weight="700">Textbook</text>
+<text class="body" x="170" y="475" font-weight="700">gaslighting.</text>
+<text id="q1" class="question" x="1070" y="405">What happened?</text>
+<text id="q2" class="question" x="1070" y="495">How often?</text>
+<text id="q3" class="question" x="1070" y="585">What do we know?</text>
+</g>
+<text x="170" y="1010" fill="#888" font-size="25">ILLUSTRATIVE EXAMPLE</text>
+</svg>
+<div id="panel"><button id="play">Play</button><button id="previous">Extract</button><button id="next">Compare</button><input aria-label="Seek animation" id="seek" type="range" min="0" max="12" step=".0333333" value="0"><output id="time">0.00s / 12.00s</output></div>
+</div>
+<script>
+(function(){
+'use strict';
+const svg=document.getElementById('canvas'),seek=document.getElementById('seek'),timer=document.getElementById('time'),play=document.getElementById('play');
+const refs=Object.fromEntries(['extract','compare','token-denying','token-overreacting','q1','q2','q3'].map(id=>[id,document.getElementById(id)]));
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const ease=v=>{v=clamp(v);return v*v*(3-2*v)};
+const lerp=(a,b,k)=>a+(b-a)*k;
+const duration=12;let seconds=0,raf=0,start=null;
+function seekTo(value){
+seconds=clamp(Number(value),0,duration);const t=seconds;const extraction=t<6;
+refs.extract.setAttribute('visibility',extraction?'visible':'hidden');refs.compare.setAttribute('visibility',extraction?'hidden':'visible');
+const move=ease((t-1.2)/2.2);
+[['token-denying',-45],['token-overreacting',45]].forEach(([id,delta])=>{
+refs[id].setAttribute('transform','translate('+lerp(0,delta,move)+',0)');
+refs[id].setAttribute('opacity',String(lerp(.15,1,ease((t-.3)/.8))));
+});
+for(let i=1;i<=3;i++){
+// Never hide a required question on direct seek: questions are progressively emphasized, then persist.
+const opacity=t<6?1:lerp(.55,1,ease((t-(6.2+(i-1)*.65))/.35));
+refs['q'+i].setAttribute('opacity',String(opacity));
+}
+seek.value=seconds.toFixed(4);timer.value=seconds.toFixed(2)+'s / 12.00s';
+svg.dataset.frame=String(Math.round(t*30));return seconds;
+}
+function pause(){if(raf)cancelAnimationFrame(raf);raf=0;start=null;play.textContent='Play'}
+function tick(now){if(start===null)start=now-seconds*1000;seekTo((now-start)/1000);if(seconds>=duration){pause();return}raf=requestAnimationFrame(tick)}
+play.onclick=()=>{if(raf){pause();return}if(seconds===duration)seekTo(0);play.textContent='Pause';raf=requestAnimationFrame(tick)};
+seek.oninput=()=>{pause();seekTo(seek.value)};
+document.getElementById('previous').onclick=()=>{pause();seekTo(3)};
+document.getElementById('next').onclick=()=>{pause();seekTo(9)};
+window.motionEngine={seek:seekTo,duration,frame:(n)=>seekTo(n/30)};
+seekTo(0);
+})();
+</script>
+</html>
