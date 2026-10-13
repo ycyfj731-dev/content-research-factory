@@ -1,0 +1,61 @@
+name: Editorial Motion MP4 Release
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/editorial-motion-release.yml'
+      - 'skills/editorial-motion-engine/**'
+
+permissions:
+  contents: write
+
+jobs:
+  render-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: skills/editorial-motion-engine
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install browser and video dependencies
+        run: |
+          npm install
+          npx playwright install --with-deps chromium
+          python -m pip install playwright
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Regression tests
+        run: npm test
+      - name: Render the 12-second MP4
+        run: python render.py --html demo/index.html --out editorial-motion-preview.mp4 --fps 24
+      - name: Verify MP4 streams, dimensions and duration
+        run: |
+          test -s editorial-motion-preview.mp4
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,width,height,pix_fmt -of default=nw=1 editorial-motion-preview.mp4
+          ffprobe -v error -show_entries format=duration -of default=nw=1 editorial-motion-preview.mp4
+      - name: Store test frames and MP4 as Actions artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: editorial-motion-preview
+          path: |
+            skills/editorial-motion-engine/editorial-motion-preview.mp4
+            skills/editorial-motion-engine/test-results/*.png
+          if-no-files-found: error
+      - name: Publish downloadable MP4 to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="editorial-motion-v0.1.0"
+          notes="Automated 12-second prototype render. Two regression scenes; silent video, not final Episode 001."
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" editorial-motion-preview.mp4 --clobber
+          else
+            gh release create "$tag" editorial-motion-preview.mp4 --title "Editorial Motion Engine v0.1.0 preview" --notes "$notes" --target "${GITHUB_SHA}"
+          fi
