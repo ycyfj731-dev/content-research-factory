@@ -2,10 +2,10 @@
 name: youtube-intellectual-essay
 description: Plan, research, script and quality-check English faceless YouTube video essays about philosophy, sociology, psychology and modern life. Use for 10–15 minute essay production or revision, including evidence-linked scripts, AV storyboards and mixed-media production handoffs.
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
-# YouTube Intellectual Essay V0.2
+# YouTube Intellectual Essay V0.2.1
 
 Turn an everyday question into an original, evidence-grounded English video essay. The audience is curious non-specialists. Start with a recognizable situation, then explain a mechanism and its limits. Default to 10–15 minutes, AI narration, 16:9, archives, documents, diagrams, editorial typography and a small amount of AI video. Viewer-facing copy is English; production notes may follow the user's language.
 
@@ -23,6 +23,15 @@ Turn an everyday question into an original, evidence-grounded English video essa
 Read [V0.2 engine contracts](references/v0.2-engines.md) before performing competitor/topic validation, thesis or counterargument development, script narrative review, or post-publication learning. These four engines **extend rather than replace** the thirteen existing stages and their Evidence/Topic/Anti-Slop, rights, and Final QA gates. Do not imply that offline competitor observations or YouTube Studio metrics were measured. Stage 14 is post-publication analysis, not a prerequisite for Stage 13 video READY.
 
 New outputs: `02-opportunity.md` (market/competitor opportunity); `03-argument-map.md` (original thesis, rivals and boundaries); `05-beats.md` (narrative viewer-state transitions); `14-performance.md`, `14-metrics.csv`, `14-experiments.md`, `14-lessons.md` (actual measured feedback). Gate order before production: existing Topic Gate + Discovery GO, Intellectual Counterargument PASS, packaging promise review, Narrative PASS, Evidence PASS, planned Anti-Slop PASS. Evidence PASS remains mandatory before voiceover. All stages use honest DRAFT/PASS/REVISE/BLOCKED/NOT_RUN states and provenance.
+
+## Mandatory editorial voice and source-to-script citation protocol
+
+For all articles, narration drafts, research-based explanations, storyboards and metadata, read [Editorial Voice and Source-to-Script Contract](references/editorial-voice-and-citations.md). This is a **required** overlay on Stages 03 (research), 05 (script), 06 (Evidence), 07 (AV) and 12–13 (citations and QA), not an optional style suggestion.
+
+- **Voice:** rigorous explanatory journalism modeled on the *editorial methods* of The Economist / NYT / Bloomberg, accessible to non-specialists. A real observed question and evidence precede theory. Mature internet-native English is welcome; limit one-line meme riffs and repetitive rhetorical fragments. Avoid AI-style formulaic transitions, repeated triplets, forced recap and generic CTA.
+- **Sources:** create `03-source-ledger` and `05-claim-script-ledger` with exact source locators, source type, authors, full title, date, URL/DOI, limitations, claim IDs and linked audiovisual references. Include complete `12-references.md` with original links. Every substantive fact, attributed claim, statistic or quote must be traced. Label observational evidence, expert interpretation, original hypothesis, and illustrative scenario separately.
+- **Production:** say concise, listener-friendly attribution in narration when relevant; put author/year/short study title on-screen and full citations in metadata. Never invent testimony or imply a title-only/abstract-only source was fully examined.
+- **Gate:** run the new Editorial Intelligence Gate from that contract together with the existing Evidence, Narrative and Anti-Slop gates; failure of one cannot be compensated by the others.
 
 ## Workflow and required handoffs
 
