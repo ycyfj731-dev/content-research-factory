@@ -76,6 +76,10 @@ When owner-authorized YouTube Studio snapshots exist, append comparable dated me
 
 When a claim changes, rerun Evidence Gate and update every dependent beat, spoken line, chart, caption, thumbnail and metadata claim. When audio changes, retime the storyboard, captions, edit and chapters. When an asset changes, recheck rights and Anti-Slop. Mark downstream reviews `NOT_RUN` until checked against the new versions; preserve unaffected approved work.
 
+## Motion implementation adapter
+
+For deterministic executable motion prototypes and regression tests, use [editorial-motion-engine](../editorial-motion-engine/SKILL.md). It is currently a proof-of-concept for the semantic extraction and JUDGMENT/EVIDENCE shots, not a full MP4 production pipeline. Its tests require actual Playwright execution and screenshot review. Script/caption evidence gates remain owned by this essay skill.
+
 ## Visual execution dependency
 
 For visual design and motion treatment, use [concept-archaeology-visual](../concept-archaeology-visual/SKILL.md) as the channel visual layer.
