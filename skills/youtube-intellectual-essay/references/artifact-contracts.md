@@ -22,6 +22,13 @@ The support rationale says how the inspected passage supports this wording; it c
 
 Include total only when all dimensions are scored, hard-failure checks and the gate decision. A partial sum may be shown only as “known dimensions,” never a normalized PASS score.
 
+## Script-to-Visual Director
+
+Before assembly produce `07-visual-director.json`, keyed by stable beat and shot IDs:
+`beat_id | narration_span | claim_ids | source_ids | beat_type | what_visual_adds | treatment | shot_id | on_screen_text | illustrative | timing_basis | evidence_asset_id | character_asset_id | caption_collision_notes | editorial_status`.
+
+NARRATION, VISUAL and CAPTIONS are three separate tracks. Subtitle timestamps derive from actual audio, not estimates; absent VO means caption alignment NOT_RUN. Timeline manifests must track measured cue timings, safe areas and asset versions. See [Script-to-Visual Director](script-to-visual-director.md).
+
 ## AV storyboard
 
 `beat_id | start_s | end_s | timing_basis | audio/script span | claim_ids | visual action and purpose | primary_family | asset_ids | AI_visible | sound/transition`
