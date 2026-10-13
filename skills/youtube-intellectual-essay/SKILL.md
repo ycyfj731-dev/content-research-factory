@@ -2,10 +2,10 @@
 name: youtube-intellectual-essay
 description: Plan, research, script and quality-check English faceless YouTube video essays about philosophy, sociology, psychology and modern life. Use for 10–15 minute essay production or revision, including evidence-linked scripts, AV storyboards and mixed-media production handoffs.
 metadata:
-  version: "0.2.2"
+  version: "0.3.0"
 ---
 
-# YouTube Intellectual Essay V0.2.2
+# YouTube Intellectual Essay V0.3.0
 
 Turn an everyday question into an original, evidence-grounded English video essay. The audience is curious non-specialists. Start with a recognizable situation, then explain a mechanism and its limits. Default to 10–15 minutes, AI narration, 16:9, archives, documents, diagrams, editorial typography and a small amount of AI video. Viewer-facing copy is English; production notes may follow the user's language.
 
@@ -35,12 +35,16 @@ For all articles, narration drafts, research-based explanations, storyboards and
 
 ## Mandatory visual direction — White Minimal Editorial Comic
 
-Read [Visual Style and Beagle Character Contract](references/visual-style.md) before storyboarding, generating, editing or QA-reviewing visual assets. This is required for Stages 07–13 and augments rather than replaces evidence, rights and accessibility gates.
+Read [Visual Style and Border Collie Character Contract](references/visual-style.md) before storyboarding, generating, editing or QA-reviewing visual assets. This is required for Stages 07–13 and augments rather than replaces evidence, rights and accessibility gates.
 
 - **Fixed language**: pure white (#FFFFFF), near-black editorial typography, generous negative space, minimal black-line editorial comic; meaningful movement only. No collage-heavy, cinematic stock-footage default or decorative charts.
-- **Recurring character**: when a human surrogate is needed in an illustrative scene, use the same appealing brown/white beagle character; keep identifiable markings, ears, proportions and expression consistent. Use an approved character-sheet/reference if available; do not pretend a character identity is pixel-consistent without reference and inspection.
+- **Recurring character**: when a human surrogate is needed in an illustrative scene, use the same black/white Border Collie with round glasses; keep identifiable markings, ears, proportions and expression consistent. Use an approved character-sheet/reference if available; do not pretend a character identity is pixel-consistent without reference and inspection.
 - **Evidence vs illustration**: source documents and independently validated statistics stay factual. Examples/comic comments must be clearly labeled illustrative; never fabricate social accounts, interviews, numerical data or research quotes.
 - **Deliverable discipline**: generate each finished frame separately in native 16:9; contact-sheet storyboards are planning only. Perform `VISUAL_PASS` review against the reference contract on actual assets, with source/claim IDs and rights tracked.
+
+## Mandatory script-to-visual and caption direction
+
+Read [Script-to-Visual Director](references/script-to-visual-director.md) before Stage 07–10 and visual QA in Stage 13. Convert the verified essay into **semantic beats**, not a succession of sentence-length title cards. Plan separate NARRATION / VISUAL / CAPTIONS tracks. Choose image treatment based on what the picture adds beyond spoken text; honor actual research provenance, a locked mascot asset, and an exclusion region for captions. Produce `07-visual-director.json`; caption timings require recorded audio, not estimates. Validate `EDITORIAL_VISUAL_PASS`, `CAPTION_PASS` and `MOTION_PASS` only on their actual corresponding outputs. Do not claim a playable or rendered deliverable from storyboards alone.
 
 ## Workflow and required handoffs
 
@@ -54,7 +58,7 @@ Read [gates.md](references/gates.md) for Stages 01/06 and Anti-Slop review. Read
 | 04 Packaging | `04-packaging.md`: three title/thumbnail pairs, chosen promise and hook | Evidence supports the promise; packaging precedes full script |
 | 05 Script | `05-script.md`: English narration with claim IDs, beat outline and timing estimate | One central question, explanatory progression, counterexample and earned ending |
 | 06 Evidence Gate | `06-evidence.md`: claim-by-claim review and frozen explanation core | All substantive retained claims PASS before VO production |
-| 07 AV Storyboard | `07-av.md`: timed audio/visual rows with beat, claim and asset IDs | Visuals explain each beat; planned Anti-Slop Gate PASS |
+| 07 AV Storyboard | `07-av.md` + `07-visual-director.json`: semantic beats and separate audio/visual/caption tracks with claim and asset IDs | Visuals explain each beat; planned Anti-Slop Gate PASS |
 | 08 Visual Source Plan | `08-assets.md`: acquisition/creation plan and rights ledger | Assets resolved for rendering; unknown rights block the affected asset |
 | 09 Voiceover | `09-voiceover.txt` + settings/pronunciation notes; actual audio and captions when available | Meaning matches the verified script; actual timing measured and listened to |
 | 10 Video Assembly | `10-edit.md`, timeline manifest and rendered video when available | Assets/VO/captions aligned; render inspected; final Anti-Slop review |
