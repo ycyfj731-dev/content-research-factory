@@ -2,7 +2,7 @@
 name: concept-archaeology-visual
 description: Create and quality-check a distinctive visual system for research-driven faceless video essays. Use for video frames, diagrams, source cards, editorial posters, thumbnails, storyboard scenes, and motion prompts when the project should feel documentary, editorial, evidence-led, restrained, and anti-PPT.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Concept Archaeology Visual
@@ -85,6 +85,10 @@ For a requested visual:
 7. revise before delivery if the result fails.
 
 For multi-beat video work, do not generate all beats as posters. Alternate evidence, lived scenes, source material, motion, and diagrams according to the argument.
+
+## Narration, visual argument and subtitles
+
+For video essays, convert semantic beats, not each narrated sentence, into shots. Maintain NARRATION / VISUAL / CAPTIONS as distinct tracks. Visuals should add mechanism, proof, contrast, humor or context rather than reprint full spoken text. A project-specific approved channel style overrides generic visual defaults: the YouTube essay uses pure white and a fixed black/white Border Collie, not generic dark-red and off-white. Reserve a subtitle exclusion zone and inspect captions enabled/disabled. Use [Script-to-Visual Director](../youtube-intellectual-essay/references/script-to-visual-director.md) and do not claim rendered motion has passed QA from static storyboards alone.
 
 ## Relationship to YouTube Intellectual Essay
 
