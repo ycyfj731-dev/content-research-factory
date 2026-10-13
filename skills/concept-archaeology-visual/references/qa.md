@@ -42,6 +42,16 @@ A visual passes only if all applicable checks pass.
 - Does the visual belong to the same grammar as earlier frames?
 - Is the identity coming from recurring rules rather than repeating one template?
 
+## Video-specific acceptance
+
+- Is each shot visually additive instead of repeating the subtitle?
+- Do one- and two-line subtitles leave data, citations, scene text and faces legible?
+- Does direct seek to any frame reproduce the same composition as sequential playback?
+- Were start/mid/end transition frames actually inspected for missing text, overlap and clipping?
+- Does the mascot use the approved reference asset and preserve identity?
+- Are illustrative comment examples labeled and never misrepresented as actual accounts?
+- Without a rendered asset, report motion and caption QA as NOT_RUN, never PASS.
+
 ## Final decision
 
 Use:
