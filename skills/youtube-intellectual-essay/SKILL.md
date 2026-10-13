@@ -2,10 +2,10 @@
 name: youtube-intellectual-essay
 description: Plan, research, script and quality-check English faceless YouTube video essays about philosophy, sociology, psychology and modern life. Use for 10–15 minute essay production or revision, including evidence-linked scripts, AV storyboards and mixed-media production handoffs.
 metadata:
-  version: "0.2.1"
+  version: "0.2.2"
 ---
 
-# YouTube Intellectual Essay V0.2.1
+# YouTube Intellectual Essay V0.2.2
 
 Turn an everyday question into an original, evidence-grounded English video essay. The audience is curious non-specialists. Start with a recognizable situation, then explain a mechanism and its limits. Default to 10–15 minutes, AI narration, 16:9, archives, documents, diagrams, editorial typography and a small amount of AI video. Viewer-facing copy is English; production notes may follow the user's language.
 
@@ -32,6 +32,15 @@ For all articles, narration drafts, research-based explanations, storyboards and
 - **Sources:** create `03-source-ledger` and `05-claim-script-ledger` with exact source locators, source type, authors, full title, date, URL/DOI, limitations, claim IDs and linked audiovisual references. Include complete `12-references.md` with original links. Every substantive fact, attributed claim, statistic or quote must be traced. Label observational evidence, expert interpretation, original hypothesis, and illustrative scenario separately.
 - **Production:** say concise, listener-friendly attribution in narration when relevant; put author/year/short study title on-screen and full citations in metadata. Never invent testimony or imply a title-only/abstract-only source was fully examined.
 - **Gate:** run the new Editorial Intelligence Gate from that contract together with the existing Evidence, Narrative and Anti-Slop gates; failure of one cannot be compensated by the others.
+
+## Mandatory visual direction — White Minimal Editorial Comic
+
+Read [Visual Style and Beagle Character Contract](references/visual-style.md) before storyboarding, generating, editing or QA-reviewing visual assets. This is required for Stages 07–13 and augments rather than replaces evidence, rights and accessibility gates.
+
+- **Fixed language**: pure white (#FFFFFF), near-black editorial typography, generous negative space, minimal black-line editorial comic; meaningful movement only. No collage-heavy, cinematic stock-footage default or decorative charts.
+- **Recurring character**: when a human surrogate is needed in an illustrative scene, use the same appealing brown/white beagle character; keep identifiable markings, ears, proportions and expression consistent. Use an approved character-sheet/reference if available; do not pretend a character identity is pixel-consistent without reference and inspection.
+- **Evidence vs illustration**: source documents and independently validated statistics stay factual. Examples/comic comments must be clearly labeled illustrative; never fabricate social accounts, interviews, numerical data or research quotes.
+- **Deliverable discipline**: generate each finished frame separately in native 16:9; contact-sheet storyboards are planning only. Perform `VISUAL_PASS` review against the reference contract on actual assets, with source/claim IDs and rights tracked.
 
 ## Workflow and required handoffs
 
