@@ -1,6 +1,6 @@
 """Frame-accurate SVG renderer for an HTML scene exposing window.motionEngine.seek(t).
 
-Install: pip install playwright; install system chromium and ffmpeg.
+Install: pip install playwright && python -m playwright install chromium; install ffmpeg.
 Run: python render.py --html demo/index.html --out preview.mp4
 Uses set_content instead of file:// navigation (which can be blocked in sandboxed Chromium).
 """
@@ -12,9 +12,10 @@ from playwright.sync_api import sync_playwright
 
 def render(html: Path, output: Path, fps: int=24, width: int=1280, height: int=720):
     with sync_playwright() as p, tempfile.TemporaryDirectory(prefix="motion_") as temp:
-        browser=p.chromium.launch(headless=True, executable_path="/usr/bin/chromium",args=["--no-sandbox"])
+        browser=p.chromium.launch(headless=True, args=["--no-sandbox"])
         page=browser.new_page(viewport={"width":width,"height":height})
         page.set_content(html.read_text(encoding="utf-8"),wait_until="load")
+        page.evaluate("document.fonts.ready")
         scene=page.locator("#canvas")
         scene.evaluate("(el,w)=>{el.style.width=w+'px';el.style.height=w*9/16+'px'}",width)
         duration=float(page.evaluate("window.motionEngine.duration"))
