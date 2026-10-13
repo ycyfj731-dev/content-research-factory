@@ -2,9 +2,10 @@
 // Playwright requires Chromium: npx playwright install chromium
 const {test,expect}=require('@playwright/test');
 const {resolve}=require('path');
-const url='file://'+resolve(__dirname,'../demo/index.html');
+const {readFileSync}=require('fs');
+const sceneHTML=readFileSync(resolve(__dirname,'../demo/index.html'),'utf8');
 test('direct seek deterministic and required questions remain visible',async({page})=>{
- await page.goto(url);const t=[0,1.3,3,5.8,6,6.5,7.2,9,11.9];
+ await page.setContent(sceneHTML,{waitUntil:'load'});const t=[0,1.3,3,5.8,6,6.5,7.2,9,11.9];
  for(const seconds of t){
   await page.evaluate(s=>window.motionEngine.seek(s),seconds);
   const a=await page.locator('#canvas').evaluate(el=>el.outerHTML);
@@ -29,7 +30,7 @@ test('direct seek deterministic and required questions remain visible',async({pa
  }
 });
 test('source extraction contains only words in source and fits within video frame',async({page})=>{
- await page.goto(url);
+ await page.setContent(sceneHTML,{waitUntil:'load'});
  await page.evaluate(()=>window.motionEngine.seek(3));
  const words=await page.locator('#extract .body').allTextContents();
  for(const id of ['token-denying','token-overreacting']){
@@ -42,7 +43,7 @@ test('source extraction contains only words in source and fits within video fram
  }
 });
 test('capture QA frames for review',async({page})=>{
- await page.goto(url);await page.setViewportSize({width:1920,height:1200});
+ await page.setContent(sceneHTML,{waitUntil:'load'});await page.setViewportSize({width:1920,height:1200});
  for(const second of [0,1.5,3,5.5,6,7,8,9,11.5]){
   await page.evaluate(s=>window.motionEngine.seek(s),second);
   await page.locator('#canvas').screenshot({path:'test-results/frame-'+String(second).replace('.','_')+'.png'});
