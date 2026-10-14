@@ -75,21 +75,25 @@ def main():
         else:d.update(start=None,end=None,verified=False)
         wordout.append(d)
     out.joinpath("word_timestamps.json").write_text(json.dumps(wordout,ensure_ascii=False,indent=2),encoding="utf8")
-    sentenceout=[];uncertain=[]
+    sentenceout=[];uncertain=[];boundary_missing=[]
     for i,sm in enumerate(sentence_meta):
         wids=list(range(sm["first"],sm["last"]))
         verified=[j for j in wids if j in times]
         good=len(verified)==len(wids) and bool(wids)
+        boundaries_ok=bool(wids) and wids[0] in times and wids[-1] in times
         if not good:uncertain.append(i+1)
-        first,last=(round(times[verified[0]][0],3),round(times[verified[-1]][1],3)) if verified else (None,None)
-        sentenceout.append({"index":i+1,"chapter":sm["chapter"],"paragraph":sm["paragraph"],"text":sm["text"],"start":first,"end":last,"verified":good,"matched_words":len(verified),"total_words":len(wids)})
+        if not boundaries_ok:boundary_missing.append(i+1)
+        first,last=(round(times[wids[0]][0],3),round(times[wids[-1]][1],3)) if boundaries_ok else (None,None)
+        missing=[canonical_words[j]["word"] for j in wids if j not in times]
+        sentenceout.append({"index":i+1,"chapter":sm["chapter"],"paragraph":sm["paragraph"],"text":sm["text"],"start":first,"end":last,"all_words_matched":good,"boundary_verified":boundaries_ok,"missing_words":missing,"matched_words":len(verified),"total_words":len(wids)})
     out.joinpath("sentence_timestamps.json").write_text(json.dumps(sentenceout,ensure_ascii=False,indent=2),encoding="utf8")
-    report={"words_total":len(canonical_words),"words_matched":matched,"word_coverage":coverage,"sentences":len(sentenceout),"fully_verified_sentences":len(sentenceout)-len(uncertain),"unverified_sentence_indices":uncertain,"asr_is_not_output_text":True}
+    report={"words_total":len(canonical_words),"words_matched":matched,"word_coverage":coverage,"sentences":len(sentenceout),"fully_verified_sentences":len(sentenceout)-len(uncertain),"unverified_sentence_indices":uncertain,"boundary_missing_indices":boundary_missing,"srt_boundaries_supported":not boundary_missing,"asr_is_not_output_text":True}
     out.joinpath("alignment_report.json").write_text(json.dumps(report,indent=2),encoding="utf8")
-    if coverage < args.min_match or uncertain:
+    if coverage < args.min_match or boundary_missing:
         print("ALIGNMENT REVIEW REQUIRED:",json.dumps(report),file=sys.stderr)
         # Do not emit an apparently finished SRT containing guessed cue times.
         sys.exit(2)
+    # Interior unmatched words remain flagged, but independently measured sentence boundaries are usable.
     cues=[]
     for i,s in enumerate(sentenceout):
         cues.append(f'{i+1}\n{srt_time(s["start"])} --> {srt_time(s["end"])}\n{s["text"]}\n')
