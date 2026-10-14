@@ -1,0 +1,55 @@
+name: Episode 001 - Align Locked Voiceover
+on:
+  workflow_dispatch:
+    inputs:
+      audio_url:
+        description: "HTTPS URL to uploaded master WAV/MP3 (no URL stored in repo)"
+        required: true
+        type: string
+      model:
+        description: "Whisper model for finding speech windows"
+        type: choice
+        options: [small, medium]
+        default: small
+jobs:
+  align:
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          pip install --no-cache-dir whisperx
+      - name: Download master audio
+        env:
+          AUDIO_URL: ${{ inputs.audio_url }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$AUDIO_URL" in https://*) ;; *) echo "HTTPS URL required" >&2; exit 1;; esac
+          curl --fail --location --retry 3 --max-time 300 -o master.mp3 "$AUDIO_URL"
+          test "$(stat -c %s master.mp3)" -gt 100000
+          ffmpeg -hide_banner -loglevel error -y -i master.mp3 -ac 1 -ar 16000 master.wav
+          ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 master.wav
+      - name: Align against locked narration
+        run: |
+          python projects/youtube/001-therapy-speak/audio/forced_align.py \
+            --audio master.wav \
+            --script projects/youtube/001-therapy-speak/episode-001-v6.1-production-locked.md \
+            --outdir alignment-output \
+            --model "${{ inputs.model }}"
+      - name: Upload outputs and review report, including on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: episode001-alignment-results
+          path: alignment-output/
+          if-no-files-found: warn
+          retention-days: 30
