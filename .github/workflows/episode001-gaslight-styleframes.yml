@@ -1,0 +1,35 @@
+name: Episode 001 Gaslight Archive Frames
+on:
+  push:
+    paths:
+      - '.github/workflows/episode001-gaslight-styleframes.yml'
+      - 'projects/youtube/001-therapy-speak/visual-dev/gaslight_styleframes.py'
+  workflow_dispatch:
+jobs:
+  compose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install Pillow
+      - name: Fetch verified original Commons imagery
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd projects/youtube/001-therapy-speak/visual-dev
+          curl -fLsS --retry 3 --max-time 60 --user-agent 'Episode001EditorialStudy/1.0 (documentary research)' -o bergman1944.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Ingrid_Bergman%2C_Gaslight_1944.jpg'
+          curl -fLsS --retry 3 --max-time 60 --user-agent 'Episode001EditorialStudy/1.0 (documentary research)' -o gaslight_poster1944.jpg 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Gaslight_%281944_poster%29.jpg'
+          file *.jpg
+      - name: Render two archive-led frames
+        run: python projects/youtube/001-therapy-speak/visual-dev/gaslight_styleframes.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gaslight-archive-styleframes
+          path: projects/youtube/001-therapy-speak/visual-dev/output/
+          if-no-files-found: warn
