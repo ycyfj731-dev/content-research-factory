@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/episode001-forced-align.yml'
+      - 'projects/youtube/001-therapy-speak/audio/forced_align.py'
   workflow_dispatch:
     inputs:
       audio_url:
