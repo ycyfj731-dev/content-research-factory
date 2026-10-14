@@ -19,14 +19,14 @@ def paper():
   return im
 def label(d,xy,msg,color=(65,64,60),size=23):
   d.text(xy,msg,font=B(size),fill=color,stroke_width=0)
-def archive_card(bg,photo,box,rot=0):
+def archive_card(bg,photo,box,rot=0,caption='ARCHIVAL PUBLICITY PHOTOGRAPH / 1944'):
   x,y,w,h=box
   pic=ImageOps.grayscale(photo).convert('RGB')
   pic=ImageEnhance.Contrast(pic).enhance(1.13)
   pic=fit(pic,w-30,h-55)
   sheet=Image.new('RGB',(w,h),(246,243,235));sheet.paste(pic,(15,15))
   dr=ImageDraw.Draw(sheet);dr.line((14,h-27,w-14,h-27),fill=(55,55,55),width=1)
-  dr.text((17,h-24),'ARCHIVAL PUBLICITY PHOTOGRAPH / 1944',fill=INK,font=B(11))
+  dr.text((17,h-24),caption,fill=INK,font=B(11))
   if rot: sheet=sheet.rotate(rot,resample=Image.Resampling.BICUBIC,expand=True,fillcolor=PAPER)
   shadow=Image.new('RGBA',sheet.size,(0,0,0,55)).filter(ImageFilter.GaussianBlur(13));bg.paste(shadow,(x+18,y+20),shadow)
   bg.paste(sheet,(x,y))
@@ -45,7 +45,7 @@ d.line((104,533,735,533),fill=(90,90,85),width=2)
 d.text((99,595),'1938',font=S(153),fill=(50,48,44))
 label(d,(104,797),'MODERN BIBLIOGRAPHIC LAYOUT',size=17)
 label(d,(104,831),'Not presented as an original theatre programme',size=17)
-archive_card(bg,poster,(865,105,690,855),rot=-2)
+archive_card(bg,poster,(865,105,690,855),rot=-2,caption='ORIGINAL FILM POSTER ART / 1944')
 d=ImageDraw.Draw(bg);d.line((100,1009,1820,1009),fill=INK,width=2)
 label(d,(103,1023),'EDITORIAL DOCUMENTARY  /  RESEARCH MOCKUP',size=16)
 label(d,(1564,1023),'SOURCE: WIKIMEDIA COMMONS',size=15)
