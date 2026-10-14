@@ -94,6 +94,54 @@ def main():
         if len(values)==needed[wi]:
             values.sort()
             times[wi]=(min(v[1] for v in values),max(v[2] for v in values))
+    # Re-align only sentences with a missing first/last word using the EXACT
+    # locked text and the measured time limits of adjacent sentences. This is
+    # acoustic alignment, not an interpolation of duration or invented timestamps.
+    repaired=[]
+    for si,sm in enumerate(sentence_meta):
+        ids=list(range(sm["first"],sm["last"]))
+        if not ids or (ids[0] in times and ids[-1] in times):
+            continue
+        present=[j for j in ids if j in times]
+        if len(present)<max(2,len(ids)//2):
+            continue
+        left=times[ids[0]-1][1] if ids[0]>0 and ids[0]-1 in times else max(0.0,times[present[0]][0]-2.0)
+        right=times[ids[-1]+1][0] if ids[-1]+1<len(canonical_words) and ids[-1]+1 in times else times[present[-1]][1]+2.0
+        start=max(0.,left-0.10)
+        end=min(len(audio)/16000.,right+0.10)
+        if end<=start or end-start>30:
+            continue
+        segment=[{"start":start,"end":end,"text":sm["text"]}]
+        local=whisperx.align(segment,align_model,metadata,audio,device,return_char_alignments=False)
+        local_words=[w for q in local.get("segments",[]) for w in q.get("words",[]) if w.get("start") is not None and w.get("end") is not None and normalize(w["word"])]
+        if not local_words:
+            continue
+        # Same complete-part matching as global pass, but with known local scope.
+        local_atoms=[];local_owner=[]
+        for wi in ids:
+            for part in re.split(r"[-‐‑–]",canonical_words[wi]["word"]):
+                norm=normalize(part)
+                if norm:local_atoms.append(norm);local_owner.append(wi)
+        reco_atoms=[];reco_owner=[]
+        for li,word in enumerate(local_words):
+            for part in re.split(r"[-‐‑–]",word["word"]):
+                norm=normalize(part)
+                if norm:reco_atoms.append(norm);reco_owner.append(li)
+        mm=SequenceMatcher(a=local_atoms,b=reco_atoms,autojunk=False)
+        recovered={}
+        for op,a0,a1,b0,b1 in mm.get_opcodes():
+            if op=="equal":
+                for k in range(a1-a0):
+                    wid=local_owner[a0+k]; word=local_words[reco_owner[b0+k]]
+                    recovered.setdefault(wid,[]).append((a0+k,float(word["start"]),float(word["end"])))
+        required={wi:sum(v==wi for v in local_owner) for wi in ids}
+        for wi,v in recovered.items():
+            if wi in times or len(v)!=required[wi]:continue
+            t=(min(x[1] for x in v),max(x[2] for x in v))
+            if t[0] < start or t[1] > end or t[1]<t[0]:continue
+            times[wi]=t
+            repaired.append({"sentence":si+1,"word":canonical_words[wi]["word"],"start":round(t[0],3),"end":round(t[1],3)})
+    out.joinpath("local_repair_report.json").write_text(json.dumps(repaired,indent=2),encoding="utf8")
     matched=len(times); coverage=matched/len(canonical_words)
     wordout=[]
     for i,w in enumerate(canonical_words):
