@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
     inputs:
       audio_url:
-        description: "HTTPS URL to uploaded master WAV/MP3 (no URL stored in repo)"
-        required: true
+        description: "Optional HTTPS audio override (defaults to the verified Episode 001 release MP3)"
+        required: false
         type: string
       model:
         description: "Whisper model for finding speech windows"
@@ -40,6 +40,7 @@ jobs:
           case "$AUDIO_URL" in https://*) ;; *) echo "HTTPS URL required" >&2; exit 1;; esac
           curl --fail --location --retry 3 --max-time 300 -o master.mp3 "$AUDIO_URL"
           test "$(stat -c %s master.mp3)" -gt 100000
+          echo "Downloaded bytes: $(stat -c %s master.mp3)"
           ffmpeg -hide_banner -loglevel error -y -i master.mp3 -ac 1 -ar 16000 master.wav
           ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 master.wav
       - name: Align against locked narration
