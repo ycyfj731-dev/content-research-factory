@@ -62,11 +62,38 @@ def main():
             for tok in re.findall(r"\S+",sent):
                 if normalize(tok):canonical_words.append({"word":tok,"ch":chapter,"paragraph":pi+1})
             sentence_meta.append({"chapter":chapter,"paragraph":pi+1,"text":sent,"first":start,"last":len(canonical_words)})
-    matches=SequenceMatcher(a=[normalize(w["word"]) for w in canonical_words],b=[normalize(w["word"]) for w in asr_words],autojunk=False)
-    times={}
+    # Speech recognition often writes the canonical compound "therapy-speak" as
+    # two words ("therapy", "speak"). Match the atomic components while retaining
+    # the exact *original* canonical spelling in captions and the output JSON.
+    atomic=[]; owners=[]
+    for wi,w in enumerate(canonical_words):
+        parts=[normalize(part) for part in re.split(r"[-‐‑–]",w["word"])]
+        parts=[part for part in parts if part]
+        for part in parts:
+            atomic.append(part)
+            owners.append(wi)
+    asr_atomic=[]; asr_owners=[]
+    for ai,w in enumerate(asr_words):
+        parts=[normalize(part) for part in re.split(r"[-‐‑–]",w["word"])]
+        for part in parts:
+            if part:
+                asr_atomic.append(part)
+                asr_owners.append(ai)
+    matches=SequenceMatcher(a=atomic,b=asr_atomic,autojunk=False)
+    pieces={}
     for op,a0,a1,b0,b1 in matches.get_opcodes():
         if op=="equal":
-            for k in range(a1-a0):times[a0+k]=(float(asr_words[b0+k]["start"]),float(asr_words[b0+k]["end"]))
+            for k in range(a1-a0):
+                source=asr_words[asr_owners[b0+k]]
+                pieces.setdefault(owners[a0+k],[]).append((a0+k,float(source["start"]),float(source["end"])))
+    needed={}
+    for wi in owners:needed[wi]=needed.get(wi,0)+1
+    times={}
+    for wi,values in pieces.items():
+        # A compound is verified only when *all* of its parts matched.
+        if len(values)==needed[wi]:
+            values.sort()
+            times[wi]=(min(v[1] for v in values),max(v[2] for v in values))
     matched=len(times); coverage=matched/len(canonical_words)
     wordout=[]
     for i,w in enumerate(canonical_words):
