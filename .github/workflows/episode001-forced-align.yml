@@ -1,5 +1,9 @@
 name: Episode 001 - Align Locked Voiceover
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/episode001-forced-align.yml'
   workflow_dispatch:
     inputs:
       audio_url:
@@ -29,7 +33,7 @@ jobs:
           pip install --no-cache-dir whisperx
       - name: Download master audio
         env:
-          AUDIO_URL: ${{ inputs.audio_url }}
+          AUDIO_URL: ${{ inputs.audio_url || 'https://github.com/ycyfj731-dev/content-research-factory/releases/download/episode001-audio-v1/Episode_001_V6_1_full_narration_master.mp3' }}
         shell: bash
         run: |
           set -euo pipefail
@@ -44,7 +48,7 @@ jobs:
             --audio master.wav \
             --script projects/youtube/001-therapy-speak/episode-001-v6.1-production-locked.md \
             --outdir alignment-output \
-            --model "${{ inputs.model }}"
+            --model "${{ inputs.model || 'small' }}"
       - name: Upload outputs and review report, including on failure
         if: always()
         uses: actions/upload-artifact@v4
