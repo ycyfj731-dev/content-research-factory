@@ -4,89 +4,89 @@ scenes:
     chapter: "01"
     function: "internet judgment"
     content: "anonymous contemporary online commentary represented through layered monochrome people and paper fragments"
-    narration_anchor: null
-    status: needs-script-trace
+    narration_anchor: "Apparently, everyone's ex is a narcissist these days."
+    status: script-traced
   - id: CH1-02
     chapter: "01"
     function: "relationship labels"
     content: "a single grayscale portrait surrounded by ambiguous cut-paper fragments, without readable allegations"
-    narration_anchor: null
-    status: needs-script-trace
+    narration_anchor: "A bad relationship is toxic. A difficult conversation becomes gaslighting. And somewhere along the way, half the internet seems to have developed an avoidant attachment style."
+    status: script-traced
   - id: CH1-03
     chapter: "01"
     function: "everyday conversation"
     content: "two people conversing in an everyday environment with overlapping paper fragments"
-    narration_anchor: null
-    status: needs-script-trace
+    narration_anchor: "Trauma bonding. Codependency. Emotional availability. Boundaries."
+    status: script-traced
   - id: CH1-04
     chapter: "01"
     function: "public spectators"
-    content: "an illustrative public audience observing a conversation, no fabricated social metrics"
-    narration_anchor: null
-    status: needs-script-trace
+    content: "A collage of relationship podcasts, celebrity gossip, reality television, and generic comment sections; without invented user accounts"
+    narration_anchor: "You hear these words in relationship podcasts, celebrity gossip, reality television, and comment sections where strangers seem remarkably confident about people they've never met."
+    status: script-traced
   - id: CH1-05
     chapter: "01"
     function: "labels and description"
-    content: "nuanced details of a person partially obscured by oversized abstract torn pieces"
-    narration_anchor: null
-    status: needs-script-trace
+    content: "An ex-partner label contrasted with an abstract suggestion of clinical specificity; no fabricated clinical diagnostic claim"
+    narration_anchor: "And they don't all mean the same thing. Calling an ex a narcissist isn't the same as diagnosing them with narcissistic personality disorder."
+    status: script-traced
   - id: CH2-01
     chapter: "02"
     function: "the 1938 stage play"
     content: "interpretive theatre imagery referencing Patrick Hamilton's 1938 Gas Light play, no forged archive"
-    narration_anchor: null
-    status: needs-script-trace
+    narration_anchor: "It traces back to *Gas Light*, a British play from 1938 about a husband who manipulates his wife into questioning her own perceptions. A Hollywood adaptation starring Ingrid Bergman followed in 1944."
+    status: script-traced
   - id: CH2-02
     chapter: "02"
     function: "the 1944 film"
     content: "interpretive 1944 cinema context, use only independently cleared real stills for authentic visuals"
-    narration_anchor: null
-    status: needs-script-trace
+    narration_anchor: "It traces back to *Gas Light*, a British play from 1938 about a husband who manipulates his wife into questioning her own perceptions. A Hollywood adaptation starring Ingrid Bergman followed in 1944."
+    status: script-traced
   - id: CH2-03
     chapter: "02"
     function: "1990s self-help"
     content: "anonymous shelves, television and advice print media with no fake readable historical titles"
-    narration_anchor: null
-    status: needs-script-trace
+    narration_anchor: "Back then, self-help books, television therapists, and magazine advice columns were bringing psychological ideas into people's homes."
+    status: script-traced
   - id: CH2-04
     chapter: "02"
     function: "changing media"
     content: "printed matter and contemporary screens in a physically layered collage"
-    narration_anchor: null
-    status: needs-script-trace
+    narration_anchor: "It gave that fascination a different distribution system."
+    status: script-traced
   - id: CH2-05
     chapter: "02"
     function: "word transmission"
-    content: "abstract traces of language travelling through networks, no invented statistics"
-    narration_anchor: null
-    status: needs-script-trace
+    content: "Non-quantitative social or geographic network patterns suggested through physically layered media fragments; no invented data points"
+    narration_anchor: "In 2014, Jacob Eisenstein and his colleagues analyzed roughly 107 million tweets to examine how new expressions moved across the United States."
+    status: script-traced
   - id: CH5-01
     chapter: "05"
     function: "weekend message"
     content: "person at home interrupted by a phone, no invented readable work message"
-    narration_anchor: null
-    status: needs-script-trace
+    narration_anchor: "Consider a worker who regularly puts in sixty hours a week, answers messages on weekends, and struggles to get time off."
+    status: script-traced
   - id: CH5-02
     chapter: "05"
     function: "work entering home"
     content: "domestic interior colliding with abstract paperwork and work material"
-    narration_anchor: null
-    status: needs-script-trace
+    narration_anchor: "Consider a worker who regularly puts in sixty hours a week, answers messages on weekends, and struggles to get time off."
+    status: script-traced
   - id: CH5-03
     chapter: "05"
     function: "personal and structural"
     content: "employee in workplace with abstract work pressures, no invented employer action"
-    narration_anchor: null
-    status: needs-script-trace
+    narration_anchor: "What happens when a problem partly created by an organization is addressed mainly through personal behavior?"
+    status: script-traced
   - id: CH5-04
     chapter: "05"
     function: "burnout context"
     content: "an exhausted worker in an ordinary work environment, not an implied clinical diagnosis"
-    narration_anchor: null
-    status: needs-script-trace
+    narration_anchor: "But none of them necessarily changes understaffing, unreasonable deadlines, or a workplace culture that expects people to be constantly available."
+    status: script-traced
   - id: CH5-05
     chapter: "05"
     function: "end of long day"
-    content: "solitary worker at the end of a demanding working day with subdued physical paper textures"
-    narration_anchor: null
-    status: needs-script-trace
+    content: "An abstract composite of circumstances that need to change, focused on workplace conditions rather than an invented late-night work scene"
+    narration_anchor: "And those circumstances won't become less important simply because we've found a psychological name for their effects."
+    status: script-traced
