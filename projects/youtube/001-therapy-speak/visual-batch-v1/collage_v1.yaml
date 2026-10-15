@@ -1,0 +1,11 @@
+version: 1
+status: proposed-not-validated
+model: gemini-3-pro-image-preview
+aspect: "16:9"
+size: 2K
+max_attempts: 3
+references: []
+palette: "cream, charcoal, muted red, faded blue"
+materials: "torn paper, halftone, xerox grain, desaturated photography"
+text_policy: "no added text, headers, footers, captions or readable UI"
+qa: "4 of 5 dimensions must pass; anti_ppt and narration_fit mandatory"
