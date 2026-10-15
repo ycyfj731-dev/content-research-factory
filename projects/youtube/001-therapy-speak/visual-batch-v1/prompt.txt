@@ -1,0 +1,4 @@
+Create ONE experimental mixed-media editorial collage still for a narration-led video essay. 16:9 composition. Desaturated photographic main subject, tactile overlapping torn-paper fragments, photocopy grain, subtle halftone, handmade cut edges and controlled color roles: cream, charcoal, muted red and faded blue. Asymmetrical, one obvious focal subject, a physical artwork rather than a slide.
+Scene: {content}
+Visual goal: {function}
+Avoid all invented factual claims and invented historical archives. Do not create any readable text, UI messages, titles, captions, headers, footers, infographics, regular split-layouts, PowerPoint aesthetics, or fake source documents. Do not fabricate photographs of named historical people.
