@@ -1,0 +1,34 @@
+name: Episode 001 Visual Batch Dry Run
+on:
+  push:
+    paths:
+      - 'projects/youtube/001-therapy-speak/visual-batch-v1/**'
+      - '.github/workflows/episode001-visual-batch.yml'
+  workflow_dispatch:
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pyyaml
+      - run: python projects/youtube/001-therapy-speak/visual-batch-v1/batch.py --mode dry-run
+      - name: Validate fifteen compiled prompts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('projects/youtube/001-therapy-speak/visual-batch-v1/outputs/prompt_manifest.json')
+          rows=json.loads(p.read_text())
+          assert len(rows)==15,len(rows)
+          assert len({r['id'] for r in rows})==15
+          assert all(r['status']=='DRY_RUN' for r in rows)
+          assert all('No typography' not in r['prompt'] or len(r['prompt'])>100 for r in rows)
+          print('PASS: 15 unique prompts compiled; no generation calls')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: episode001-pilot15-prompt-manifest
+          path: projects/youtube/001-therapy-speak/visual-batch-v1/outputs/prompt_manifest.json
