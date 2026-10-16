@@ -55,7 +55,9 @@ class VisualPipelineTests(unittest.TestCase):
     def test_deterministic_drafts_never_become_prompts(self):
         a = batch.compile_records(self.root)
         self.assertEqual(a, batch.compile_records(self.root))
-        self.assertTrue(all(r['prompt'] is None and r['status']=='BLOCKED_DRAFT' for r in a))
+        self.assertEqual(sum(r['status']=='BLOCKED_DRAFT' for r in a), 30)
+        self.assertEqual([r['unit_id'] for r in a if r['status']=='PENDING_APPROVAL'], ['VC-27','VC-28','VC-29','VC-30'])
+        self.assertTrue(all((r['prompt'] is None) == (r['status']=='BLOCKED_DRAFT') for r in a))
         with self.assertRaises(batch.GateError): batch.approval_gate(self.root, a)
 
     def test_source_tamper(self):
