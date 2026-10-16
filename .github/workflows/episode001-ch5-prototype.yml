@@ -1,0 +1,43 @@
+name: Episode 001 - Chapter 5 audiovisual prototype
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'projects/youtube/001-therapy-speak/ch5-prototype/**'
+      - 'tests/test_ch5_prototype.py'
+      - '.github/workflows/episode001-ch5-prototype.yml'
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned renderer dependencies
+        run: python -m pip install -r projects/youtube/001-therapy-speak/ch5-prototype/requirements.txt
+      - name: Check source, timing and deterministic frames
+        run: python -m unittest discover -s tests -p 'test_ch5_prototype.py' -v
+      - name: Fetch checksum-locked real narration and render
+        run: >-
+          python projects/youtube/001-therapy-speak/ch5-prototype/render.py
+          --audio work/narration.mp3 --download-audio --outdir outputs/ch5-prototype
+      - name: Check actual encoded audio and frames
+        run: >-
+          python projects/youtube/001-therapy-speak/ch5-prototype/inspect_export.py
+          --outdir outputs/ch5-prototype
+      - name: Preserve review outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: episode001-ch5-VC27-VC30-review
+          path: |
+            outputs/ch5-prototype/*.mp4
+            outputs/ch5-prototype/*.srt
+            outputs/ch5-prototype/*.json
+            outputs/ch5-prototype/*.log
+            outputs/ch5-prototype/*.png
+            outputs/ch5-prototype/*.jpg
+          retention-days: 30

@@ -1,0 +1,2088 @@
+{
+  "version": "ch5-archived-alignment-extract-v1",
+  "source_run": 38517068375,
+  "artifact_id": 11872935346,
+  "archive_sha256": "adb8faa6183d357eba5a2699486d7d914faaf68377d511af79a84ee2f29af639",
+  "sentences": [
+    {
+      "index": 137,
+      "chapter": 5,
+      "paragraph": 110,
+      "text": "Therapy-speak doesn't only influence how we judge other people.",
+      "start": 640.546,
+      "end": 643.948,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 9,
+      "total_words": 9
+    },
+    {
+      "index": 138,
+      "chapter": 5,
+      "paragraph": 110,
+      "text": "It can also shape the explanations we accept for our own problems.",
+      "start": 644.449,
+      "end": 647.871,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 12,
+      "total_words": 12
+    },
+    {
+      "index": 139,
+      "chapter": 5,
+      "paragraph": 111,
+      "text": "Consider a worker who regularly puts in sixty hours a week, answers messages on weekends, and struggles to get time off.",
+      "start": 648.56,
+      "end": 655.506,
+      "all_words_matched": false,
+      "boundary_verified": true,
+      "missing_words": [
+        "sixty"
+      ],
+      "matched_words": 20,
+      "total_words": 21
+    },
+    {
+      "index": 140,
+      "chapter": 5,
+      "paragraph": 112,
+      "text": "She says she's burned out.",
+      "start": 656.107,
+      "end": 657.288,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 5,
+      "total_words": 5
+    },
+    {
+      "index": 141,
+      "chapter": 5,
+      "paragraph": 113,
+      "text": "Her friends suggest setting boundaries, protecting her energy, and making more time for herself.",
+      "start": 657.688,
+      "end": 663.233,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 14,
+      "total_words": 14
+    },
+    {
+      "index": 142,
+      "chapter": 5,
+      "paragraph": 114,
+      "text": "Those suggestions may help.",
+      "start": 663.934,
+      "end": 665.375,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 4,
+      "total_words": 4
+    },
+    {
+      "index": 143,
+      "chapter": 5,
+      "paragraph": 115,
+      "text": "But suppose the employer expects everyone to maintain the same schedule.",
+      "start": 665.783,
+      "end": 669.425,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 11,
+      "total_words": 11
+    },
+    {
+      "index": 144,
+      "chapter": 5,
+      "paragraph": 116,
+      "text": "What happens when a problem partly created by an organization is addressed mainly through personal behavior?",
+      "start": 669.845,
+      "end": 675.148,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 16,
+      "total_words": 16
+    },
+    {
+      "index": 145,
+      "chapter": 5,
+      "paragraph": 117,
+      "text": "Burnout is a particularly revealing example.",
+      "start": 675.768,
+      "end": 678.53,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 6,
+      "total_words": 6
+    },
+    {
+      "index": 146,
+      "chapter": 5,
+      "paragraph": 118,
+      "text": "The World Health Organization classifies it as an occupational phenomenon connected to chronic workplace stress that hasn't been successfully managed.",
+      "start": 678.91,
+      "end": 687.074,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 20,
+      "total_words": 20
+    },
+    {
+      "index": 147,
+      "chapter": 5,
+      "paragraph": 119,
+      "text": "The WHO doesn't classify burnout itself as a medical condition.",
+      "start": 687.354,
+      "end": 691.256,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 10,
+      "total_words": 10
+    },
+    {
+      "index": 148,
+      "chapter": 5,
+      "paragraph": 120,
+      "text": "And its definition explicitly connects the experience to work.",
+      "start": 691.636,
+      "end": 695.078,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 9,
+      "total_words": 9
+    },
+    {
+      "index": 149,
+      "chapter": 5,
+      "paragraph": 121,
+      "text": "Yet popular advice can place much of the responsibility on the employee.",
+      "start": 695.375,
+      "end": 699.418,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 12,
+      "total_words": 12
+    },
+    {
+      "index": 150,
+      "chapter": 5,
+      "paragraph": 122,
+      "text": "Learn to say no.",
+      "start": 699.618,
+      "end": 700.499,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 4,
+      "total_words": 4
+    },
+    {
+      "index": 151,
+      "chapter": 5,
+      "paragraph": 122,
+      "text": "Take more breaks.",
+      "start": 701.14,
+      "end": 701.86,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 3,
+      "total_words": 3
+    },
+    {
+      "index": 152,
+      "chapter": 5,
+      "paragraph": 122,
+      "text": "Develop a healthier routine.",
+      "start": 702.18,
+      "end": 703.481,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 4,
+      "total_words": 4
+    },
+    {
+      "index": 153,
+      "chapter": 5,
+      "paragraph": 123,
+      "text": "There may be good reasons to do those things.",
+      "start": 703.802,
+      "end": 705.923,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 9,
+      "total_words": 9
+    },
+    {
+      "index": 154,
+      "chapter": 5,
+      "paragraph": 124,
+      "text": "But none of them necessarily changes understaffing, unreasonable deadlines, or a workplace culture that expects people to be constantly available.",
+      "start": 706.344,
+      "end": 715.111,
+      "all_words_matched": false,
+      "boundary_verified": true,
+      "missing_words": [
+        "understaffing,"
+      ],
+      "matched_words": 19,
+      "total_words": 20
+    },
+    {
+      "index": 155,
+      "chapter": 5,
+      "paragraph": 125,
+      "text": "An individual can make better choices while still facing conditions that remain fundamentally unreasonable.",
+      "start": 715.591,
+      "end": 721.556,
+      "all_words_matched": true,
+      "boundary_verified": true,
+      "missing_words": [],
+      "matched_words": 14,
+      "total_words": 14
+    }
+  ],
+  "words": [
+    {
+      "word": "Therapy-speak",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1529,
+      "start": 640.546,
+      "end": 641.307,
+      "verified": true
+    },
+    {
+      "word": "doesn't",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1530,
+      "start": 641.367,
+      "end": 641.667,
+      "verified": true
+    },
+    {
+      "word": "only",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1531,
+      "start": 641.807,
+      "end": 642.027,
+      "verified": true
+    },
+    {
+      "word": "influence",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1532,
+      "start": 642.127,
+      "end": 642.547,
+      "verified": true
+    },
+    {
+      "word": "how",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1533,
+      "start": 642.587,
+      "end": 642.707,
+      "verified": true
+    },
+    {
+      "word": "we",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1534,
+      "start": 642.748,
+      "end": 642.868,
+      "verified": true
+    },
+    {
+      "word": "judge",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1535,
+      "start": 642.908,
+      "end": 643.148,
+      "verified": true
+    },
+    {
+      "word": "other",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1536,
+      "start": 643.328,
+      "end": 643.528,
+      "verified": true
+    },
+    {
+      "word": "people.",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1537,
+      "start": 643.588,
+      "end": 643.948,
+      "verified": true
+    },
+    {
+      "word": "It",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1538,
+      "start": 644.449,
+      "end": 644.489,
+      "verified": true
+    },
+    {
+      "word": "can",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1539,
+      "start": 644.529,
+      "end": 644.649,
+      "verified": true
+    },
+    {
+      "word": "also",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1540,
+      "start": 644.709,
+      "end": 644.969,
+      "verified": true
+    },
+    {
+      "word": "shape",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1541,
+      "start": 645.049,
+      "end": 645.309,
+      "verified": true
+    },
+    {
+      "word": "the",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1542,
+      "start": 645.329,
+      "end": 645.409,
+      "verified": true
+    },
+    {
+      "word": "explanations",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1543,
+      "start": 645.529,
+      "end": 646.31,
+      "verified": true
+    },
+    {
+      "word": "we",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1544,
+      "start": 646.35,
+      "end": 646.47,
+      "verified": true
+    },
+    {
+      "word": "accept",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1545,
+      "start": 646.53,
+      "end": 646.83,
+      "verified": true
+    },
+    {
+      "word": "for",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1546,
+      "start": 646.85,
+      "end": 646.97,
+      "verified": true
+    },
+    {
+      "word": "our",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1547,
+      "start": 647.03,
+      "end": 647.13,
+      "verified": true
+    },
+    {
+      "word": "own",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1548,
+      "start": 647.19,
+      "end": 647.311,
+      "verified": true
+    },
+    {
+      "word": "problems.",
+      "ch": 5,
+      "paragraph": 110,
+      "index": 1549,
+      "start": 647.371,
+      "end": 647.871,
+      "verified": true
+    },
+    {
+      "word": "Consider",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1550,
+      "start": 648.56,
+      "end": 648.96,
+      "verified": true
+    },
+    {
+      "word": "a",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1551,
+      "start": 649.0,
+      "end": 649.02,
+      "verified": true
+    },
+    {
+      "word": "worker",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1552,
+      "start": 649.08,
+      "end": 649.381,
+      "verified": true
+    },
+    {
+      "word": "who",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1553,
+      "start": 649.421,
+      "end": 649.541,
+      "verified": true
+    },
+    {
+      "word": "regularly",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1554,
+      "start": 649.601,
+      "end": 650.141,
+      "verified": true
+    },
+    {
+      "word": "puts",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1555,
+      "start": 650.181,
+      "end": 650.402,
+      "verified": true
+    },
+    {
+      "word": "in",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1556,
+      "start": 650.462,
+      "end": 650.542,
+      "verified": true
+    },
+    {
+      "word": "sixty",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1557,
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "word": "hours",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1558,
+      "start": 650.982,
+      "end": 651.242,
+      "verified": true
+    },
+    {
+      "word": "a",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1559,
+      "start": 651.282,
+      "end": 651.322,
+      "verified": true
+    },
+    {
+      "word": "week,",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1560,
+      "start": 651.363,
+      "end": 651.603,
+      "verified": true
+    },
+    {
+      "word": "answers",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1561,
+      "start": 651.883,
+      "end": 652.163,
+      "verified": true
+    },
+    {
+      "word": "messages",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1562,
+      "start": 652.243,
+      "end": 652.664,
+      "verified": true
+    },
+    {
+      "word": "on",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1563,
+      "start": 652.764,
+      "end": 652.844,
+      "verified": true
+    },
+    {
+      "word": "weekends,",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1564,
+      "start": 652.884,
+      "end": 653.324,
+      "verified": true
+    },
+    {
+      "word": "and",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1565,
+      "start": 653.725,
+      "end": 653.825,
+      "verified": true
+    },
+    {
+      "word": "struggles",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1566,
+      "start": 653.885,
+      "end": 654.325,
+      "verified": true
+    },
+    {
+      "word": "to",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1567,
+      "start": 654.385,
+      "end": 654.465,
+      "verified": true
+    },
+    {
+      "word": "get",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1568,
+      "start": 654.505,
+      "end": 654.665,
+      "verified": true
+    },
+    {
+      "word": "time",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1569,
+      "start": 654.766,
+      "end": 655.086,
+      "verified": true
+    },
+    {
+      "word": "off.",
+      "ch": 5,
+      "paragraph": 111,
+      "index": 1570,
+      "start": 655.366,
+      "end": 655.506,
+      "verified": true
+    },
+    {
+      "word": "She",
+      "ch": 5,
+      "paragraph": 112,
+      "index": 1571,
+      "start": 656.107,
+      "end": 656.227,
+      "verified": true
+    },
+    {
+      "word": "says",
+      "ch": 5,
+      "paragraph": 112,
+      "index": 1572,
+      "start": 656.287,
+      "end": 656.467,
+      "verified": true
+    },
+    {
+      "word": "she's",
+      "ch": 5,
+      "paragraph": 112,
+      "index": 1573,
+      "start": 656.507,
+      "end": 656.707,
+      "verified": true
+    },
+    {
+      "word": "burned",
+      "ch": 5,
+      "paragraph": 112,
+      "index": 1574,
+      "start": 656.767,
+      "end": 657.048,
+      "verified": true
+    },
+    {
+      "word": "out.",
+      "ch": 5,
+      "paragraph": 112,
+      "index": 1575,
+      "start": 657.168,
+      "end": 657.288,
+      "verified": true
+    },
+    {
+      "word": "Her",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1576,
+      "start": 657.688,
+      "end": 657.808,
+      "verified": true
+    },
+    {
+      "word": "friends",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1577,
+      "start": 657.848,
+      "end": 658.129,
+      "verified": true
+    },
+    {
+      "word": "suggest",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1578,
+      "start": 658.169,
+      "end": 658.589,
+      "verified": true
+    },
+    {
+      "word": "setting",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1579,
+      "start": 658.829,
+      "end": 659.129,
+      "verified": true
+    },
+    {
+      "word": "boundaries,",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1580,
+      "start": 659.169,
+      "end": 659.65,
+      "verified": true
+    },
+    {
+      "word": "protecting",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1581,
+      "start": 660.11,
+      "end": 660.591,
+      "verified": true
+    },
+    {
+      "word": "her",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1582,
+      "start": 660.631,
+      "end": 660.751,
+      "verified": true
+    },
+    {
+      "word": "energy,",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1583,
+      "start": 660.831,
+      "end": 661.251,
+      "verified": true
+    },
+    {
+      "word": "and",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1584,
+      "start": 661.792,
+      "end": 661.912,
+      "verified": true
+    },
+    {
+      "word": "making",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1585,
+      "start": 661.952,
+      "end": 662.252,
+      "verified": true
+    },
+    {
+      "word": "more",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1586,
+      "start": 662.272,
+      "end": 662.432,
+      "verified": true
+    },
+    {
+      "word": "time",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1587,
+      "start": 662.472,
+      "end": 662.673,
+      "verified": true
+    },
+    {
+      "word": "for",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1588,
+      "start": 662.693,
+      "end": 662.813,
+      "verified": true
+    },
+    {
+      "word": "herself.",
+      "ch": 5,
+      "paragraph": 113,
+      "index": 1589,
+      "start": 662.853,
+      "end": 663.233,
+      "verified": true
+    },
+    {
+      "word": "Those",
+      "ch": 5,
+      "paragraph": 114,
+      "index": 1590,
+      "start": 663.934,
+      "end": 664.134,
+      "verified": true
+    },
+    {
+      "word": "suggestions",
+      "ch": 5,
+      "paragraph": 114,
+      "index": 1591,
+      "start": 664.174,
+      "end": 664.835,
+      "verified": true
+    },
+    {
+      "word": "may",
+      "ch": 5,
+      "paragraph": 114,
+      "index": 1592,
+      "start": 664.935,
+      "end": 665.095,
+      "verified": true
+    },
+    {
+      "word": "help.",
+      "ch": 5,
+      "paragraph": 114,
+      "index": 1593,
+      "start": 665.155,
+      "end": 665.375,
+      "verified": true
+    },
+    {
+      "word": "But",
+      "ch": 5,
+      "paragraph": 115,
+      "index": 1594,
+      "start": 665.783,
+      "end": 665.923,
+      "verified": true
+    },
+    {
+      "word": "suppose",
+      "ch": 5,
+      "paragraph": 115,
+      "index": 1595,
+      "start": 665.963,
+      "end": 666.343,
+      "verified": true
+    },
+    {
+      "word": "the",
+      "ch": 5,
+      "paragraph": 115,
+      "index": 1596,
+      "start": 666.363,
+      "end": 666.463,
+      "verified": true
+    },
+    {
+      "word": "employer",
+      "ch": 5,
+      "paragraph": 115,
+      "index": 1597,
+      "start": 666.503,
+      "end": 666.984,
+      "verified": true
+    },
+    {
+      "word": "expects",
+      "ch": 5,
+      "paragraph": 115,
+      "index": 1598,
+      "start": 667.064,
+      "end": 667.424,
+      "verified": true
+    },
+    {
+      "word": "everyone",
+      "ch": 5,
+      "paragraph": 115,
+      "index": 1599,
+      "start": 667.604,
+      "end": 667.964,
+      "verified": true
+    },
+    {
+      "word": "to",
+      "ch": 5,
+      "paragraph": 115,
+      "index": 1600,
+      "start": 667.984,
+      "end": 668.044,
+      "verified": true
+    },
+    {
+      "word": "maintain",
+      "ch": 5,
+      "paragraph": 115,
+      "index": 1601,
+      "start": 668.084,
+      "end": 668.484,
+      "verified": true
+    },
+    {
+      "word": "the",
+      "ch": 5,
+      "paragraph": 115,
+      "index": 1602,
+      "start": 668.524,
+      "end": 668.624,
+      "verified": true
+    },
+    {
+      "word": "same",
+      "ch": 5,
+      "paragraph": 115,
+      "index": 1603,
+      "start": 668.684,
+      "end": 668.925,
+      "verified": true
+    },
+    {
+      "word": "schedule.",
+      "ch": 5,
+      "paragraph": 115,
+      "index": 1604,
+      "start": 668.965,
+      "end": 669.425,
+      "verified": true
+    },
+    {
+      "word": "What",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1605,
+      "start": 669.845,
+      "end": 670.005,
+      "verified": true
+    },
+    {
+      "word": "happens",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1606,
+      "start": 670.045,
+      "end": 670.385,
+      "verified": true
+    },
+    {
+      "word": "when",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1607,
+      "start": 670.445,
+      "end": 670.585,
+      "verified": true
+    },
+    {
+      "word": "a",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1608,
+      "start": 670.625,
+      "end": 670.645,
+      "verified": true
+    },
+    {
+      "word": "problem",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1609,
+      "start": 670.706,
+      "end": 671.086,
+      "verified": true
+    },
+    {
+      "word": "partly",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1610,
+      "start": 671.146,
+      "end": 671.466,
+      "verified": true
+    },
+    {
+      "word": "created",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1611,
+      "start": 671.526,
+      "end": 671.906,
+      "verified": true
+    },
+    {
+      "word": "by",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1612,
+      "start": 671.966,
+      "end": 672.086,
+      "verified": true
+    },
+    {
+      "word": "an",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1613,
+      "start": 672.126,
+      "end": 672.186,
+      "verified": true
+    },
+    {
+      "word": "organization",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1614,
+      "start": 672.246,
+      "end": 672.887,
+      "verified": true
+    },
+    {
+      "word": "is",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1615,
+      "start": 672.947,
+      "end": 673.027,
+      "verified": true
+    },
+    {
+      "word": "addressed",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1616,
+      "start": 673.087,
+      "end": 673.447,
+      "verified": true
+    },
+    {
+      "word": "mainly",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1617,
+      "start": 673.527,
+      "end": 673.887,
+      "verified": true
+    },
+    {
+      "word": "through",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1618,
+      "start": 673.927,
+      "end": 674.167,
+      "verified": true
+    },
+    {
+      "word": "personal",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1619,
+      "start": 674.247,
+      "end": 674.648,
+      "verified": true
+    },
+    {
+      "word": "behavior?",
+      "ch": 5,
+      "paragraph": 116,
+      "index": 1620,
+      "start": 674.688,
+      "end": 675.148,
+      "verified": true
+    },
+    {
+      "word": "Burnout",
+      "ch": 5,
+      "paragraph": 117,
+      "index": 1621,
+      "start": 675.768,
+      "end": 676.208,
+      "verified": true
+    },
+    {
+      "word": "is",
+      "ch": 5,
+      "paragraph": 117,
+      "index": 1622,
+      "start": 676.328,
+      "end": 676.408,
+      "verified": true
+    },
+    {
+      "word": "a",
+      "ch": 5,
+      "paragraph": 117,
+      "index": 1623,
+      "start": 676.468,
+      "end": 676.508,
+      "verified": true
+    },
+    {
+      "word": "particularly",
+      "ch": 5,
+      "paragraph": 117,
+      "index": 1624,
+      "start": 676.569,
+      "end": 677.349,
+      "verified": true
+    },
+    {
+      "word": "revealing",
+      "ch": 5,
+      "paragraph": 117,
+      "index": 1625,
+      "start": 677.429,
+      "end": 677.929,
+      "verified": true
+    },
+    {
+      "word": "example.",
+      "ch": 5,
+      "paragraph": 117,
+      "index": 1626,
+      "start": 678.009,
+      "end": 678.53,
+      "verified": true
+    },
+    {
+      "word": "The",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1627,
+      "start": 678.91,
+      "end": 679.01,
+      "verified": true
+    },
+    {
+      "word": "World",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1628,
+      "start": 679.05,
+      "end": 679.31,
+      "verified": true
+    },
+    {
+      "word": "Health",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1629,
+      "start": 679.35,
+      "end": 679.61,
+      "verified": true
+    },
+    {
+      "word": "Organization",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1630,
+      "start": 679.71,
+      "end": 680.39,
+      "verified": true
+    },
+    {
+      "word": "classifies",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1631,
+      "start": 680.451,
+      "end": 681.151,
+      "verified": true
+    },
+    {
+      "word": "it",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1632,
+      "start": 681.191,
+      "end": 681.251,
+      "verified": true
+    },
+    {
+      "word": "as",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1633,
+      "start": 681.371,
+      "end": 681.451,
+      "verified": true
+    },
+    {
+      "word": "an",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1634,
+      "start": 681.511,
+      "end": 681.551,
+      "verified": true
+    },
+    {
+      "word": "occupational",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1635,
+      "start": 681.751,
+      "end": 682.432,
+      "verified": true
+    },
+    {
+      "word": "phenomenon",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1636,
+      "start": 682.472,
+      "end": 683.052,
+      "verified": true
+    },
+    {
+      "word": "connected",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1637,
+      "start": 683.112,
+      "end": 683.552,
+      "verified": true
+    },
+    {
+      "word": "to",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1638,
+      "start": 683.612,
+      "end": 683.712,
+      "verified": true
+    },
+    {
+      "word": "chronic",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1639,
+      "start": 683.792,
+      "end": 684.192,
+      "verified": true
+    },
+    {
+      "word": "workplace",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1640,
+      "start": 684.232,
+      "end": 684.693,
+      "verified": true
+    },
+    {
+      "word": "stress",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1641,
+      "start": 684.733,
+      "end": 685.113,
+      "verified": true
+    },
+    {
+      "word": "that",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1642,
+      "start": 685.173,
+      "end": 685.313,
+      "verified": true
+    },
+    {
+      "word": "hasn't",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1643,
+      "start": 685.353,
+      "end": 685.653,
+      "verified": true
+    },
+    {
+      "word": "been",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1644,
+      "start": 685.693,
+      "end": 685.893,
+      "verified": true
+    },
+    {
+      "word": "successfully",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1645,
+      "start": 685.933,
+      "end": 686.594,
+      "verified": true
+    },
+    {
+      "word": "managed.",
+      "ch": 5,
+      "paragraph": 118,
+      "index": 1646,
+      "start": 686.654,
+      "end": 687.074,
+      "verified": true
+    },
+    {
+      "word": "The",
+      "ch": 5,
+      "paragraph": 119,
+      "index": 1647,
+      "start": 687.354,
+      "end": 687.454,
+      "verified": true
+    },
+    {
+      "word": "WHO",
+      "ch": 5,
+      "paragraph": 119,
+      "index": 1648,
+      "start": 687.714,
+      "end": 688.234,
+      "verified": true
+    },
+    {
+      "word": "doesn't",
+      "ch": 5,
+      "paragraph": 119,
+      "index": 1649,
+      "start": 688.295,
+      "end": 688.575,
+      "verified": true
+    },
+    {
+      "word": "classify",
+      "ch": 5,
+      "paragraph": 119,
+      "index": 1650,
+      "start": 688.615,
+      "end": 689.175,
+      "verified": true
+    },
+    {
+      "word": "burnout",
+      "ch": 5,
+      "paragraph": 119,
+      "index": 1651,
+      "start": 689.215,
+      "end": 689.555,
+      "verified": true
+    },
+    {
+      "word": "itself",
+      "ch": 5,
+      "paragraph": 119,
+      "index": 1652,
+      "start": 689.615,
+      "end": 689.975,
+      "verified": true
+    },
+    {
+      "word": "as",
+      "ch": 5,
+      "paragraph": 119,
+      "index": 1653,
+      "start": 690.055,
+      "end": 690.135,
+      "verified": true
+    },
+    {
+      "word": "a",
+      "ch": 5,
+      "paragraph": 119,
+      "index": 1654,
+      "start": 690.175,
+      "end": 690.216,
+      "verified": true
+    },
+    {
+      "word": "medical",
+      "ch": 5,
+      "paragraph": 119,
+      "index": 1655,
+      "start": 690.276,
+      "end": 690.636,
+      "verified": true
+    },
+    {
+      "word": "condition.",
+      "ch": 5,
+      "paragraph": 119,
+      "index": 1656,
+      "start": 690.676,
+      "end": 691.256,
+      "verified": true
+    },
+    {
+      "word": "And",
+      "ch": 5,
+      "paragraph": 120,
+      "index": 1657,
+      "start": 691.636,
+      "end": 691.736,
+      "verified": true
+    },
+    {
+      "word": "its",
+      "ch": 5,
+      "paragraph": 120,
+      "index": 1658,
+      "start": 691.796,
+      "end": 691.936,
+      "verified": true
+    },
+    {
+      "word": "definition",
+      "ch": 5,
+      "paragraph": 120,
+      "index": 1659,
+      "start": 692.016,
+      "end": 692.577,
+      "verified": true
+    },
+    {
+      "word": "explicitly",
+      "ch": 5,
+      "paragraph": 120,
+      "index": 1660,
+      "start": 692.697,
+      "end": 693.377,
+      "verified": true
+    },
+    {
+      "word": "connects",
+      "ch": 5,
+      "paragraph": 120,
+      "index": 1661,
+      "start": 693.437,
+      "end": 693.817,
+      "verified": true
+    },
+    {
+      "word": "the",
+      "ch": 5,
+      "paragraph": 120,
+      "index": 1662,
+      "start": 693.897,
+      "end": 693.997,
+      "verified": true
+    },
+    {
+      "word": "experience",
+      "ch": 5,
+      "paragraph": 120,
+      "index": 1663,
+      "start": 694.077,
+      "end": 694.658,
+      "verified": true
+    },
+    {
+      "word": "to",
+      "ch": 5,
+      "paragraph": 120,
+      "index": 1664,
+      "start": 694.718,
+      "end": 694.798,
+      "verified": true
+    },
+    {
+      "word": "work.",
+      "ch": 5,
+      "paragraph": 120,
+      "index": 1665,
+      "start": 694.838,
+      "end": 695.078,
+      "verified": true
+    },
+    {
+      "word": "Yet",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1666,
+      "start": 695.375,
+      "end": 695.575,
+      "verified": true
+    },
+    {
+      "word": "popular",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1667,
+      "start": 695.655,
+      "end": 696.136,
+      "verified": true
+    },
+    {
+      "word": "advice",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1668,
+      "start": 696.176,
+      "end": 696.596,
+      "verified": true
+    },
+    {
+      "word": "can",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1669,
+      "start": 696.676,
+      "end": 696.836,
+      "verified": true
+    },
+    {
+      "word": "place",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1670,
+      "start": 696.896,
+      "end": 697.176,
+      "verified": true
+    },
+    {
+      "word": "much",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1671,
+      "start": 697.297,
+      "end": 697.497,
+      "verified": true
+    },
+    {
+      "word": "of",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1672,
+      "start": 697.537,
+      "end": 697.577,
+      "verified": true
+    },
+    {
+      "word": "the",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1673,
+      "start": 697.617,
+      "end": 697.697,
+      "verified": true
+    },
+    {
+      "word": "responsibility",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1674,
+      "start": 697.737,
+      "end": 698.518,
+      "verified": true
+    },
+    {
+      "word": "on",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1675,
+      "start": 698.698,
+      "end": 698.778,
+      "verified": true
+    },
+    {
+      "word": "the",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1676,
+      "start": 698.818,
+      "end": 698.898,
+      "verified": true
+    },
+    {
+      "word": "employee.",
+      "ch": 5,
+      "paragraph": 121,
+      "index": 1677,
+      "start": 698.958,
+      "end": 699.418,
+      "verified": true
+    },
+    {
+      "word": "Learn",
+      "ch": 5,
+      "paragraph": 122,
+      "index": 1678,
+      "start": 699.618,
+      "end": 699.839,
+      "verified": true
+    },
+    {
+      "word": "to",
+      "ch": 5,
+      "paragraph": 122,
+      "index": 1679,
+      "start": 699.859,
+      "end": 699.919,
+      "verified": true
+    },
+    {
+      "word": "say",
+      "ch": 5,
+      "paragraph": 122,
+      "index": 1680,
+      "start": 699.979,
+      "end": 700.159,
+      "verified": true
+    },
+    {
+      "word": "no.",
+      "ch": 5,
+      "paragraph": 122,
+      "index": 1681,
+      "start": 700.239,
+      "end": 700.499,
+      "verified": true
+    },
+    {
+      "word": "Take",
+      "ch": 5,
+      "paragraph": 122,
+      "index": 1682,
+      "start": 701.14,
+      "end": 701.3,
+      "verified": true
+    },
+    {
+      "word": "more",
+      "ch": 5,
+      "paragraph": 122,
+      "index": 1683,
+      "start": 701.32,
+      "end": 701.48,
+      "verified": true
+    },
+    {
+      "word": "breaks.",
+      "ch": 5,
+      "paragraph": 122,
+      "index": 1684,
+      "start": 701.52,
+      "end": 701.86,
+      "verified": true
+    },
+    {
+      "word": "Develop",
+      "ch": 5,
+      "paragraph": 122,
+      "index": 1685,
+      "start": 702.18,
+      "end": 702.561,
+      "verified": true
+    },
+    {
+      "word": "a",
+      "ch": 5,
+      "paragraph": 122,
+      "index": 1686,
+      "start": 702.601,
+      "end": 702.641,
+      "verified": true
+    },
+    {
+      "word": "healthier",
+      "ch": 5,
+      "paragraph": 122,
+      "index": 1687,
+      "start": 702.681,
+      "end": 703.041,
+      "verified": true
+    },
+    {
+      "word": "routine.",
+      "ch": 5,
+      "paragraph": 122,
+      "index": 1688,
+      "start": 703.061,
+      "end": 703.481,
+      "verified": true
+    },
+    {
+      "word": "There",
+      "ch": 5,
+      "paragraph": 123,
+      "index": 1689,
+      "start": 703.802,
+      "end": 703.942,
+      "verified": true
+    },
+    {
+      "word": "may",
+      "ch": 5,
+      "paragraph": 123,
+      "index": 1690,
+      "start": 703.962,
+      "end": 704.062,
+      "verified": true
+    },
+    {
+      "word": "be",
+      "ch": 5,
+      "paragraph": 123,
+      "index": 1691,
+      "start": 704.102,
+      "end": 704.202,
+      "verified": true
+    },
+    {
+      "word": "good",
+      "ch": 5,
+      "paragraph": 123,
+      "index": 1692,
+      "start": 704.262,
+      "end": 704.462,
+      "verified": true
+    },
+    {
+      "word": "reasons",
+      "ch": 5,
+      "paragraph": 123,
+      "index": 1693,
+      "start": 704.522,
+      "end": 704.923,
+      "verified": true
+    },
+    {
+      "word": "to",
+      "ch": 5,
+      "paragraph": 123,
+      "index": 1694,
+      "start": 705.023,
+      "end": 705.123,
+      "verified": true
+    },
+    {
+      "word": "do",
+      "ch": 5,
+      "paragraph": 123,
+      "index": 1695,
+      "start": 705.163,
+      "end": 705.283,
+      "verified": true
+    },
+    {
+      "word": "those",
+      "ch": 5,
+      "paragraph": 123,
+      "index": 1696,
+      "start": 705.323,
+      "end": 705.543,
+      "verified": true
+    },
+    {
+      "word": "things.",
+      "ch": 5,
+      "paragraph": 123,
+      "index": 1697,
+      "start": 705.603,
+      "end": 705.923,
+      "verified": true
+    },
+    {
+      "word": "But",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1698,
+      "start": 706.344,
+      "end": 706.504,
+      "verified": true
+    },
+    {
+      "word": "none",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1699,
+      "start": 706.624,
+      "end": 706.784,
+      "verified": true
+    },
+    {
+      "word": "of",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1700,
+      "start": 706.824,
+      "end": 706.864,
+      "verified": true
+    },
+    {
+      "word": "them",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1701,
+      "start": 706.924,
+      "end": 707.064,
+      "verified": true
+    },
+    {
+      "word": "necessarily",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1702,
+      "start": 707.124,
+      "end": 707.745,
+      "verified": true
+    },
+    {
+      "word": "changes",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1703,
+      "start": 707.805,
+      "end": 708.225,
+      "verified": true
+    },
+    {
+      "word": "understaffing,",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1704,
+      "start": null,
+      "end": null,
+      "verified": false
+    },
+    {
+      "word": "unreasonable",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1705,
+      "start": 709.626,
+      "end": 710.247,
+      "verified": true
+    },
+    {
+      "word": "deadlines,",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1706,
+      "start": 710.287,
+      "end": 710.807,
+      "verified": true
+    },
+    {
+      "word": "or",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1707,
+      "start": 711.428,
+      "end": 711.588,
+      "verified": true
+    },
+    {
+      "word": "a",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1708,
+      "start": 711.628,
+      "end": 711.668,
+      "verified": true
+    },
+    {
+      "word": "workplace",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1709,
+      "start": 711.708,
+      "end": 712.168,
+      "verified": true
+    },
+    {
+      "word": "culture",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1710,
+      "start": 712.208,
+      "end": 712.609,
+      "verified": true
+    },
+    {
+      "word": "that",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1711,
+      "start": 712.649,
+      "end": 712.789,
+      "verified": true
+    },
+    {
+      "word": "expects",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1712,
+      "start": 712.869,
+      "end": 713.209,
+      "verified": true
+    },
+    {
+      "word": "people",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1713,
+      "start": 713.289,
+      "end": 713.589,
+      "verified": true
+    },
+    {
+      "word": "to",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1714,
+      "start": 713.629,
+      "end": 713.69,
+      "verified": true
+    },
+    {
+      "word": "be",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1715,
+      "start": 713.73,
+      "end": 713.83,
+      "verified": true
+    },
+    {
+      "word": "constantly",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1716,
+      "start": 713.91,
+      "end": 714.51,
+      "verified": true
+    },
+    {
+      "word": "available.",
+      "ch": 5,
+      "paragraph": 124,
+      "index": 1717,
+      "start": 714.57,
+      "end": 715.111,
+      "verified": true
+    },
+    {
+      "word": "An",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1718,
+      "start": 715.591,
+      "end": 715.671,
+      "verified": true
+    },
+    {
+      "word": "individual",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1719,
+      "start": 715.731,
+      "end": 716.332,
+      "verified": true
+    },
+    {
+      "word": "can",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1720,
+      "start": 716.392,
+      "end": 716.512,
+      "verified": true
+    },
+    {
+      "word": "make",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1721,
+      "start": 716.552,
+      "end": 716.692,
+      "verified": true
+    },
+    {
+      "word": "better",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1722,
+      "start": 716.732,
+      "end": 716.972,
+      "verified": true
+    },
+    {
+      "word": "choices",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1723,
+      "start": 717.012,
+      "end": 717.432,
+      "verified": true
+    },
+    {
+      "word": "while",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1724,
+      "start": 717.533,
+      "end": 717.753,
+      "verified": true
+    },
+    {
+      "word": "still",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1725,
+      "start": 717.853,
+      "end": 718.173,
+      "verified": true
+    },
+    {
+      "word": "facing",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1726,
+      "start": 718.273,
+      "end": 718.693,
+      "verified": true
+    },
+    {
+      "word": "conditions",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1727,
+      "start": 718.734,
+      "end": 719.234,
+      "verified": true
+    },
+    {
+      "word": "that",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1728,
+      "start": 719.294,
+      "end": 719.434,
+      "verified": true
+    },
+    {
+      "word": "remain",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1729,
+      "start": 719.514,
+      "end": 719.854,
+      "verified": true
+    },
+    {
+      "word": "fundamentally",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1730,
+      "start": 719.954,
+      "end": 720.675,
+      "verified": true
+    },
+    {
+      "word": "unreasonable.",
+      "ch": 5,
+      "paragraph": 125,
+      "index": 1731,
+      "start": 720.875,
+      "end": 721.556,
+      "verified": true
+    }
+  ]
+}

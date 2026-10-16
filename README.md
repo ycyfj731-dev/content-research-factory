@@ -338,3 +338,7 @@ skills/
 TrendRadar, Agent-Reach, MediaCrawler and MoneyPrinterTurbo remain shared runtime adapters under `src/content_research_factory/adapters/`; they are not presented as standalone skills until they have independent skill contracts.
 
 The user-requested `skills/youtube-intellectual-essay/` path is a deliberate layout exception. Its [V0.1 workflow](skills/youtube-intellectual-essay/SKILL.md) covers 13 stages for English 10–15 minute faceless essays, with Topic, Evidence and Anti-Slop gates. It is a production instruction skill, not a new runtime adapter or automatic uploader. The [first-episode regression specification](skills/youtube-intellectual-essay/tests/why-we-want-regression.md) exercises the gates without paid generation or publishing.
+
+## Episode 001 audiovisual review prototype
+
+[Chapter 5 VC-27–VC-30](projects/youtube/001-therapy-speak/ch5-prototype/README.md) now has a real 81-second 1080p MP4 cut using the checksum-verified V6.1 narration release, the existing four-shot candidate, original black-and-white artwork, WHO source attribution and 19 aligned caption cues. Both captioned and clean videos, provenance, measured QA and a reproducible renderer are included. This is a review prototype; final listening, mix and editorial approval remain pending.

@@ -1,0 +1,64 @@
+{
+  "state": "ACQUIRED_FOR_REVIEW_PROTOTYPE",
+  "base_pr": 4,
+  "base_head": "7177095db83903db01f86e63d098a6f0318a651b",
+  "user_authorization": "Create actual VC-27鈥揤C-30 audiovisual prototype and commit to PR #4; no merge.",
+  "audio": {
+    "release": "https://github.com/ycyfj731-dev/content-research-factory/releases/tag/episode001-audio-v1",
+    "asset_id": 639097451,
+    "bytes": 11109892,
+    "sha256": "415fe806af8f9f7a14222520629b0941b0a28d603c39c593c20b933c8605c175",
+    "rights_basis": "Existing user-owned project narration reused at user request; original voice-provider contract not independently audited.",
+    "acquisition": "Downloaded full release file; no synthesis or paid provider calls."
+  },
+  "alignment": {
+    "run_url": "https://github.com/ycyfj731-dev/content-research-factory/actions/runs/38517068375",
+    "artifact_id": 11872935346,
+    "archive_sha256": "adb8faa6183d357eba5a2699486d7d914faaf68377d511af79a84ee2f29af639",
+    "local_cache": "2026-10-14 workspace alignment.zip",
+    "verification": "Cached ZIP hash exactly matches live GitHub artifact digest. CI job 115698138362 logs show default release URL, 11109892 downloaded bytes and decoded duration 860.345750 s.",
+    "trust_limit": "CI did not record the audio hash then. Current release checksum and file length checked; measured alignment remains inherited, not rerun.",
+    "interior_unmatched_words": [
+      "P111: sixty",
+      "P124: understaffing,"
+    ],
+    "rule": "Use measured sentence edges for these captions; never interpolate their missing word times."
+  },
+  "who": {
+    "source_id": "WHO-2019-BURNOUT",
+    "publisher": "World Health Organization",
+    "title": "Burn-out an \"occupational phenomenon\": International Classification of Diseases",
+    "date": "2019-05-28",
+    "accessed": "2026-10-16",
+    "url": "https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases",
+    "locator": "Opening classification paragraphs, ICD-11 definition and occupational-context restriction.",
+    "supports": [
+      "Occupational phenomenon; not a medical condition",
+      "Chronic workplace stress not successfully managed",
+      "Occupational context specifically"
+    ],
+    "treatment": "Original typeset paraphrase and concise source attribution; full reference in README. No WHO screenshot, logo, page facsimile or copied artwork.",
+    "rights_status": "No third-party visual reproduction used; no claim of WHO endorsement or blanket reproduction clearance."
+  },
+  "artwork": {
+    "method": "Original deterministic Pillow line drawing and typography",
+    "creator": "Codex for this user-requested review prototype",
+    "limits": "Neutral illustrative worker only; no source photograph, named employer, fabricated messages, fictional testimony, generative image or mascot asset."
+  },
+  "fonts": {
+    "source": "Bundled pdfjs-dist standard_fonts",
+    "license": "SIL Open Font License 1.1; full license included",
+    "files": {
+      "LiberationSans-Bold.ttf": "361c61b82d575c5c35fd9157fda8b0194bcfcd0d88ea8521a4fb5dd53d33dddc",
+      "LiberationSans-Regular.ttf": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f"
+    }
+  },
+  "candidate_sha256_lf": "1713077629439bf62451f07f6a05bb2e09437963aa84612aef991dd3e8845f88",
+  "locked_inputs": {
+    "timing.json": "efb20760514bcb42e3b3847b610a14b56da24e356395b48cf3b5767d989479df",
+    "timeline.json": "b1c066f10002243068e10386c9e4b03d6f4b9cd3519bc3984a46f93d323b5f9b",
+    "fonts/LiberationSans-Regular.ttf": "6cf54a6d6cd7bccf4d72be7e8927370d341ae8ce8ebddee55178ad8858ad6c10",
+    "fonts/LiberationSans-Bold.ttf": "62f4fe1f9ec3904377f030577857cd8d50f619cd146b2c9203a39cc5419141a9",
+    "fonts/LICENSE_LIBERATION": "93fed46019c38bbe566b479d22148e2e8a1e85ada614accb0211c37b2c61c19b"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "technical_checks": "PASS",
+  "scope": "decoded actual exported MP4s",
+  "audio": {
+    "chapter5-clean.mp4": {
+      "waveform_correlation_at_zero_shift": 0.9999158099453217,
+      "decoded_seconds": 81.01442176870748,
+      "source_seconds": 81.01,
+      "decode_minus_source_seconds": 0.004421768707482994,
+      "sample_peak_dbfs": -4.440863589938675
+    },
+    "chapter5-review.mp4": {
+      "waveform_correlation_at_zero_shift": 0.9999158099453217,
+      "decoded_seconds": 81.01442176870748,
+      "source_seconds": 81.01,
+      "decode_minus_source_seconds": 0.004421768707482994,
+      "sample_peak_dbfs": -4.440863589938675
+    }
+  },
+  "sampled_frames": [
+    {
+      "output_seconds": 0,
+      "master_seconds": 640.546,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 8.125,
+      "master_seconds": 648.671,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 15.333,
+      "master_seconds": 655.879,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 16.9167,
+      "master_seconds": 657.4627,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 23.0417,
+      "master_seconds": 663.5877,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 23.375,
+      "master_seconds": 663.921,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 23.75,
+      "master_seconds": 664.296,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 30,
+      "master_seconds": 670.546,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 38.125,
+      "master_seconds": 678.671,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 38.2084,
+      "master_seconds": 678.7544,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 38.375,
+      "master_seconds": 678.921,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 38.4167,
+      "master_seconds": 678.9627,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 42.5417,
+      "master_seconds": 683.0877,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 42.8334,
+      "master_seconds": 683.3794,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 43.1667,
+      "master_seconds": 683.7127,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 46.5417,
+      "master_seconds": 687.0877,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 50.75,
+      "master_seconds": 691.296,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 52,
+      "master_seconds": 692.546,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 54.6667,
+      "master_seconds": 695.2127,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 54.7084,
+      "master_seconds": 695.2544,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 62.9584,
+      "master_seconds": 703.5044,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 63.2917,
+      "master_seconds": 703.8377,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 63.6667,
+      "master_seconds": 704.2127,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 70,
+      "master_seconds": 710.546,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 74.625,
+      "master_seconds": 715.171,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 75,
+      "master_seconds": 715.546,
+      "clean_and_captioned_sample_checks": "PASS"
+    },
+    {
+      "output_seconds": 80.9584,
+      "master_seconds": 721.5044,
+      "clean_and_captioned_sample_checks": "PASS"
+    }
+  ],
+  "visual_review": "See QA.md for actual inspected contact sheets and qualitative limits",
+  "human_listening_review": "NOT_RUN"
+}
