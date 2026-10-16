@@ -1,0 +1,48 @@
+{
+  "state": "RENDERED_REVIEW_PROTOTYPE",
+  "publication_ready": false,
+  "master_audio_sha256": "415fe806af8f9f7a14222520629b0941b0a28d603c39c593c20b933c8605c175",
+  "source_audio_span": [
+    640.546,
+    721.556
+  ],
+  "audio_edit": "single continuous trim; no TTS, substitutions, music, speed or level changes",
+  "audio_duration_target": 81.00999999999999,
+  "video_frames": 1945,
+  "fps": 24,
+  "video_duration_seconds": 81.04166666666667,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "frame_rounding_max_seconds": 0.041666666666666664,
+  "subtitle_cues": 19,
+  "subtitle_basis": "archived measured sentence boundaries; two interior unmatched words retained",
+  "cut_basis": "unmodified four-shot candidate; editorial proposal, not new speech alignment",
+  "files": {
+    "chapter5-clean.mp4": {
+      "whole_file_decode": "PASS",
+      "audio_duration_seconds": 81.01442176870748,
+      "loudness_summary": "Summary:\r\n\r\n  Integrated loudness:\r\n    I:         -24.9 LUFS\r\n    Threshold: -35.1 LUFS\r\n\r\n  Loudness range:\r\n    LRA:         2.7 LU\r\n    Threshold: -45.2 LUFS\r\n    LRA low:   -26.5 LUFS\r\n    LRA high:  -23.7 LUFS\r\n\r\n  True peak:\r\n    Peak:       -4.4 dBFS\r\n[out#0/null @ 0000016adbdf0000] video:0KiB audio:6978KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\r\nsize=N/A time=00:01:21.01 bitrate=N/A speed= 141x",
+      "sha256": "4af9b5f696b32762d7e6f6e367dd047d449fb1e279243e48691bce8b1566ae74",
+      "bytes": 2207274
+    },
+    "chapter5-review.mp4": {
+      "whole_file_decode": "PASS",
+      "audio_duration_seconds": 81.01442176870748,
+      "loudness_summary": "Summary:\r\n\r\n  Integrated loudness:\r\n    I:         -24.9 LUFS\r\n    Threshold: -35.1 LUFS\r\n\r\n  Loudness range:\r\n    LRA:         2.7 LU\r\n    Threshold: -45.2 LUFS\r\n    LRA low:   -26.5 LUFS\r\n    LRA high:  -23.7 LUFS\r\n\r\n  True peak:\r\n    Peak:       -4.4 dBFS\r\n[out#0/null @ 0000025fc4255f40] video:0KiB audio:6978KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\r\nsize=N/A time=00:01:21.01 bitrate=N/A speed= 104x",
+      "sha256": "a796a1296a50459081b84645d5fcd0b564cd367ec61e68bfe882d52dfb69cc04",
+      "bytes": 2485691
+    }
+  },
+  "renderer_sha256_lf": "6af31924dcc39fb59a719d19c5a5af93eb8fba12edd55848832c6c62095bc88f",
+  "font_sha256": {
+    "LiberationSans-Bold.ttf": "361c61b82d575c5c35fd9157fda8b0194bcfcd0d88ea8521a4fb5dd53d33dddc",
+    "LiberationSans-Regular.ttf": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f"
+  },
+  "ffmpeg_version": "ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+  "review_limits": [
+    "Human listening and final cut approval pending; see QA.md",
+    "Existing production contracts/approval hashes are not upgraded by this prototype"
+  ]
+}

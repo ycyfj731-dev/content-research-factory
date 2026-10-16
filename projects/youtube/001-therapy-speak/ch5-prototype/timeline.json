@@ -1,0 +1,207 @@
+{
+  "state": "EXECUTED_REVIEW_EDIT_DECISIONS",
+  "source_audio_span": [
+    640.546,
+    721.556
+  ],
+  "duration_seconds": 81.01,
+  "frame_rate": 24,
+  "coordinate_system": "master seconds; output = master minus 640.546",
+  "candidate_unchanged": true,
+  "shots": [
+    {
+      "id": "VC-27",
+      "speech": [
+        640.546,
+        657.288
+      ],
+      "start": 640.546,
+      "end": 657.488,
+      "asset": "line-illustration",
+      "primary": "One adult worker in neutral office/home context; calendar indicates long working week and a phone represents weekend reachability; no fabricated readable messages.",
+      "camera": "Static, one modest reframing; avoid invented employer or boss.",
+      "evidence": "narration P110-P112",
+      "unit_id": "VC-27",
+      "verified_speech_start": 640.546,
+      "verified_speech_end": 657.288,
+      "proposed_cut_in": 640.546,
+      "proposed_cut_out": 657.488,
+      "cut_status": "EDITORIAL_PROPOSAL",
+      "asset_status": "PENDING_EDITORIAL_AND_RIGHTS_REVIEW",
+      "subsentence_reveals": "DO_NOT_TIME_FROM_ESTIMATES",
+      "illustrative_character": "human-neutral; optional dog character NOT mandated",
+      "output_start": 0.0,
+      "output_end": 16.942,
+      "visual_source": "render.py",
+      "audio_source": "release asset 639097451"
+    },
+    {
+      "id": "VC-28",
+      "speech": [
+        657.688,
+        678.53
+      ],
+      "start": 657.488,
+      "end": 678.72,
+      "asset": "line-illustration",
+      "primary": "Same worker and same calendar, with one limited personal boundary gesture; external schedule visibly remains unchanged. No new story or boss character.",
+      "camera": "Maintain spatial continuity; reveal difference through one restrained change.",
+      "evidence": "narration P113-P117",
+      "unit_id": "VC-28",
+      "verified_speech_start": 657.688,
+      "verified_speech_end": 678.53,
+      "proposed_cut_in": 657.488,
+      "proposed_cut_out": 678.72,
+      "cut_status": "EDITORIAL_PROPOSAL",
+      "asset_status": "PENDING_EDITORIAL_AND_RIGHTS_REVIEW",
+      "subsentence_reveals": "DO_NOT_TIME_FROM_ESTIMATES",
+      "illustrative_character": "human-neutral; optional dog character NOT mandated",
+      "output_start": 16.942,
+      "output_end": 38.174,
+      "visual_source": "render.py",
+      "audio_source": "release asset 639097451"
+    },
+    {
+      "id": "VC-29",
+      "speech": [
+        678.91,
+        695.078
+      ],
+      "start": 678.72,
+      "end": 695.227,
+      "asset": "source-verified-typeset",
+      "primary": "A modest clearly attributed WHO source reference plus minimal original typography of narration's accurate classification, NOT a simulated WHO webpage or copyrighted screenshot.",
+      "camera": "Quiet hold with one restrained emphasis; no fake clinical chart.",
+      "evidence": "WHO 2019-05-28 original and narration P118-P120",
+      "unit_id": "VC-29",
+      "verified_speech_start": 678.91,
+      "verified_speech_end": 695.078,
+      "proposed_cut_in": 678.72,
+      "proposed_cut_out": 695.227,
+      "cut_status": "EDITORIAL_PROPOSAL",
+      "asset_status": "PENDING_EDITORIAL_AND_RIGHTS_REVIEW",
+      "subsentence_reveals": "DO_NOT_TIME_FROM_ESTIMATES",
+      "illustrative_character": "human-neutral; optional dog character NOT mandated",
+      "output_start": 38.174,
+      "output_end": 54.681,
+      "visual_source": "render.py",
+      "audio_source": "release asset 639097451"
+    },
+    {
+      "id": "VC-30",
+      "speech": [
+        695.375,
+        721.556
+      ],
+      "start": 695.227,
+      "end": 721.556,
+      "asset": "line-motion",
+      "primary": "Return to same worker and calendar; personal coping actions change on one side, while workload, deadlines and always-on expectation remain. No invented workload statistics.",
+      "camera": "One continuous compositional transformation instead of presentation panels.",
+      "evidence": "narration P121-P125",
+      "unit_id": "VC-30",
+      "verified_speech_start": 695.375,
+      "verified_speech_end": 721.556,
+      "proposed_cut_in": 695.227,
+      "proposed_cut_out": 721.556,
+      "cut_status": "EDITORIAL_PROPOSAL",
+      "asset_status": "PENDING_EDITORIAL_AND_RIGHTS_REVIEW",
+      "subsentence_reveals": "DO_NOT_TIME_FROM_ESTIMATES",
+      "illustrative_character": "human-neutral; optional dog character NOT mandated",
+      "output_start": 54.681,
+      "output_end": 81.01,
+      "visual_source": "render.py",
+      "audio_source": "release asset 639097451"
+    }
+  ],
+  "events": [
+    {
+      "id": "desk-hold",
+      "at_master": 640.546,
+      "basis": "neutral_hold",
+      "purpose": "Information-neutral empty desk; no employment specifics yet"
+    },
+    {
+      "id": "worker",
+      "at_master": 648.56,
+      "basis": "sentence_start",
+      "sentence_index": 139,
+      "supporting_quote": "Consider a worker"
+    },
+    {
+      "id": "calendar-and-phone",
+      "at_master": 655.506,
+      "basis": "sentence_end",
+      "sentence_index": 139,
+      "supporting_quote": "sixty hours a week, answers messages on weekends"
+    },
+    {
+      "id": "personal-boundary",
+      "at_master": 663.233,
+      "basis": "sentence_end",
+      "sentence_index": 141,
+      "supporting_quote": "setting boundaries"
+    },
+    {
+      "id": "who-source",
+      "at_master": 678.91,
+      "basis": "sentence_start",
+      "sentence_index": 146,
+      "supporting_quote": "The World Health Organization"
+    },
+    {
+      "id": "occupational-classification",
+      "at_master": 683.052,
+      "basis": "word_end",
+      "sentence_index": 146,
+      "supporting_quote": "occupational phenomenon",
+      "word_index": 1636
+    },
+    {
+      "id": "workplace-stress",
+      "at_master": 687.074,
+      "basis": "sentence_end",
+      "sentence_index": 146,
+      "supporting_quote": "chronic workplace stress that hasn't been successfully managed"
+    },
+    {
+      "id": "medical-qualification",
+      "at_master": 691.256,
+      "basis": "sentence_end",
+      "sentence_index": 147,
+      "supporting_quote": "doesn't classify burnout itself as a medical condition"
+    },
+    {
+      "id": "return-to-worker",
+      "at_master": 695.227,
+      "basis": "reuse_previously_supported_scene",
+      "supporting_quote": "P111 worker and schedule; P113 boundary"
+    },
+    {
+      "id": "advice-gesture",
+      "at_master": 703.481,
+      "basis": "sentence_end",
+      "sentence_index": 152,
+      "supporting_quote": "Develop a healthier routine."
+    },
+    {
+      "id": "unchanged-conditions",
+      "at_master": 715.111,
+      "basis": "sentence_end",
+      "sentence_index": 154,
+      "supporting_quote": "understaffing, unreasonable deadlines"
+    }
+  ],
+  "caption_track": {
+    "file": "chapter5.en.srt",
+    "source": "timing.json",
+    "cues": 19,
+    "interpolation": false,
+    "status": "SENTENCE_BOUNDARIES_INHERITED__LISTENING_REVIEW_PENDING"
+  },
+  "audio_track": {
+    "trim": "one continuous original interval",
+    "level_processing": "none",
+    "music": null
+  }
+}

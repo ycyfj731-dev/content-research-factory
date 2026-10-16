@@ -1,0 +1,107 @@
+{
+  "version": "chapter5-first-sequence-edit-candidate-v1",
+  "state": "REVIEW_ONLY_NOT_APPROVED",
+  "time_units": "seconds_master_audio",
+  "audio_basis": "episode-001-34unit-audio-sync-v1.md (WhisperX-derived spoken word boundaries)",
+  "rule": "Proposed edits inside documented inter-unit silent gaps; not presented as verified speech boundaries or independently measured silence.",
+  "media_status": "NO_RENDER_OR_GENERATION",
+  "edit_intervals": [
+    {
+      "id": "VC-27",
+      "speech": [
+        640.546,
+        657.288
+      ],
+      "start": 640.546,
+      "end": 657.488,
+      "asset": "line-illustration",
+      "primary": "One adult worker in neutral office/home context; calendar indicates long working week and a phone represents weekend reachability; no fabricated readable messages.",
+      "camera": "Static, one modest reframing; avoid invented employer or boss.",
+      "evidence": "narration P110-P112",
+      "unit_id": "VC-27",
+      "verified_speech_start": 640.546,
+      "verified_speech_end": 657.288,
+      "proposed_cut_in": 640.546,
+      "proposed_cut_out": 657.488,
+      "cut_status": "EDITORIAL_PROPOSAL",
+      "asset_status": "PENDING_EDITORIAL_AND_RIGHTS_REVIEW",
+      "subsentence_reveals": "DO_NOT_TIME_FROM_ESTIMATES",
+      "illustrative_character": "human-neutral; optional dog character NOT mandated"
+    },
+    {
+      "id": "VC-28",
+      "speech": [
+        657.688,
+        678.53
+      ],
+      "start": 657.488,
+      "end": 678.72,
+      "asset": "line-illustration",
+      "primary": "Same worker and same calendar, with one limited personal boundary gesture; external schedule visibly remains unchanged. No new story or boss character.",
+      "camera": "Maintain spatial continuity; reveal difference through one restrained change.",
+      "evidence": "narration P113-P117",
+      "unit_id": "VC-28",
+      "verified_speech_start": 657.688,
+      "verified_speech_end": 678.53,
+      "proposed_cut_in": 657.488,
+      "proposed_cut_out": 678.72,
+      "cut_status": "EDITORIAL_PROPOSAL",
+      "asset_status": "PENDING_EDITORIAL_AND_RIGHTS_REVIEW",
+      "subsentence_reveals": "DO_NOT_TIME_FROM_ESTIMATES",
+      "illustrative_character": "human-neutral; optional dog character NOT mandated"
+    },
+    {
+      "id": "VC-29",
+      "speech": [
+        678.91,
+        695.078
+      ],
+      "start": 678.72,
+      "end": 695.227,
+      "asset": "source-verified-typeset",
+      "primary": "A modest clearly attributed WHO source reference plus minimal original typography of narration's accurate classification, NOT a simulated WHO webpage or copyrighted screenshot.",
+      "camera": "Quiet hold with one restrained emphasis; no fake clinical chart.",
+      "evidence": "WHO 2019-05-28 original and narration P118-P120",
+      "unit_id": "VC-29",
+      "verified_speech_start": 678.91,
+      "verified_speech_end": 695.078,
+      "proposed_cut_in": 678.72,
+      "proposed_cut_out": 695.227,
+      "cut_status": "EDITORIAL_PROPOSAL",
+      "asset_status": "PENDING_EDITORIAL_AND_RIGHTS_REVIEW",
+      "subsentence_reveals": "DO_NOT_TIME_FROM_ESTIMATES",
+      "illustrative_character": "human-neutral; optional dog character NOT mandated"
+    },
+    {
+      "id": "VC-30",
+      "speech": [
+        695.375,
+        721.556
+      ],
+      "start": 695.227,
+      "end": 721.556,
+      "asset": "line-motion",
+      "primary": "Return to same worker and calendar; personal coping actions change on one side, while workload, deadlines and always-on expectation remain. No invented workload statistics.",
+      "camera": "One continuous compositional transformation instead of presentation panels.",
+      "evidence": "narration P121-P125",
+      "unit_id": "VC-30",
+      "verified_speech_start": 695.375,
+      "verified_speech_end": 721.556,
+      "proposed_cut_in": 695.227,
+      "proposed_cut_out": 721.556,
+      "cut_status": "EDITORIAL_PROPOSAL",
+      "asset_status": "PENDING_EDITORIAL_AND_RIGHTS_REVIEW",
+      "subsentence_reveals": "DO_NOT_TIME_FROM_ESTIMATES",
+      "illustrative_character": "human-neutral; optional dog character NOT mandated"
+    }
+  ],
+  "requirements": [
+    "No invented dialogue, screenshot, clinical diagnosis or archival artifact",
+    "Voiceover unchanged; subtitles only from verified SRT",
+    "No subtitle/camera starts before its supporting sentence",
+    "WHO source link/citation must be independently checked; screen capture forbidden until rights cleared",
+    "Every exported frame must pass eight PR #4 QA checks",
+    "No production model calls until hash approvals and backend exist"
+  ],
+  "source_url": "https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases"
+}
