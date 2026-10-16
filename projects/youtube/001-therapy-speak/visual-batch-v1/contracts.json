@@ -1,0 +1,461 @@
+{
+  "version": "V6.1/34",
+  "units": [
+    {
+      "unit_id": "VC-01",
+      "sentence_ids": [
+        "P001-S01",
+        "P002-S01",
+        "P002-S02",
+        "P002-S03"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-02",
+      "sentence_ids": [
+        "P003-S01",
+        "P003-S02",
+        "P004-S01",
+        "P004-S02",
+        "P004-S03",
+        "P004-S04"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-03",
+      "sentence_ids": [
+        "P005-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-04",
+      "sentence_ids": [
+        "P006-S01",
+        "P006-S02"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-05",
+      "sentence_ids": [
+        "P007-S01",
+        "P008-S01",
+        "P008-S02",
+        "P009-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-06",
+      "sentence_ids": [
+        "P010-S01",
+        "P010-S02",
+        "P011-S01",
+        "P011-S02",
+        "P012-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-07",
+      "sentence_ids": [
+        "P013-S01",
+        "P014-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-08",
+      "sentence_ids": [
+        "P015-S01",
+        "P016-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-09",
+      "sentence_ids": [
+        "P017-S01",
+        "P018-S01",
+        "P018-S02",
+        "P019-S01",
+        "P020-S01",
+        "P020-S02"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-10",
+      "sentence_ids": [
+        "P021-S01",
+        "P022-S01",
+        "P023-S01",
+        "P024-S01",
+        "P025-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-11",
+      "sentence_ids": [
+        "P026-S01",
+        "P027-S01",
+        "P027-S02",
+        "P028-S01",
+        "P029-S01",
+        "P030-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-12",
+      "sentence_ids": [
+        "P031-S01",
+        "P032-S01",
+        "P033-S01",
+        "P033-S02",
+        "P034-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-13",
+      "sentence_ids": [
+        "P035-S01",
+        "P036-S01",
+        "P037-S01",
+        "P038-S01",
+        "P039-S01",
+        "P039-S02"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-14",
+      "sentence_ids": [
+        "P040-S01",
+        "P041-S01",
+        "P042-S01",
+        "P043-S01",
+        "P044-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-15",
+      "sentence_ids": [
+        "P045-S01",
+        "P046-S01",
+        "P046-S02",
+        "P047-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-16",
+      "sentence_ids": [
+        "P048-S01",
+        "P049-S01",
+        "P050-S01",
+        "P051-S01",
+        "P051-S02",
+        "P052-S01",
+        "P053-S01",
+        "P053-S02"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-17",
+      "sentence_ids": [
+        "P054-S01",
+        "P055-S01",
+        "P056-S01",
+        "P057-S01",
+        "P057-S02",
+        "P058-S01",
+        "P059-S01",
+        "P060-S01",
+        "P061-S01",
+        "P062-S01",
+        "P062-S02",
+        "P063-S01",
+        "P064-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-18",
+      "sentence_ids": [
+        "P065-S01",
+        "P066-S01",
+        "P067-S01",
+        "P067-S02",
+        "P068-S01",
+        "P069-S01",
+        "P070-S01",
+        "P071-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-19",
+      "sentence_ids": [
+        "P072-S01",
+        "P073-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-20",
+      "sentence_ids": [
+        "P074-S01",
+        "P075-S01",
+        "P076-S01",
+        "P077-S01",
+        "P078-S01",
+        "P078-S02",
+        "P078-S03",
+        "P079-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-21",
+      "sentence_ids": [
+        "P080-S01",
+        "P081-S01",
+        "P082-S01",
+        "P083-S01",
+        "P084-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-22",
+      "sentence_ids": [
+        "P085-S01",
+        "P086-S01",
+        "P086-S02",
+        "P087-S01",
+        "P088-S01",
+        "P089-S01",
+        "P090-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-23",
+      "sentence_ids": [
+        "P091-S01",
+        "P092-S01",
+        "P093-S01",
+        "P094-S01",
+        "P094-S02",
+        "P095-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-24",
+      "sentence_ids": [
+        "P096-S01",
+        "P097-S01",
+        "P098-S01",
+        "P099-S01",
+        "P099-S02",
+        "P100-S01",
+        "P101-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-25",
+      "sentence_ids": [
+        "P102-S01",
+        "P103-S01",
+        "P104-S01",
+        "P105-S01",
+        "P105-S02",
+        "P106-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-26",
+      "sentence_ids": [
+        "P107-S01",
+        "P108-S01",
+        "P109-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-27",
+      "sentence_ids": [
+        "P110-S01",
+        "P110-S02",
+        "P111-S01",
+        "P112-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-28",
+      "sentence_ids": [
+        "P113-S01",
+        "P114-S01",
+        "P115-S01",
+        "P116-S01",
+        "P117-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-29",
+      "sentence_ids": [
+        "P118-S01",
+        "P119-S01",
+        "P120-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-30",
+      "sentence_ids": [
+        "P121-S01",
+        "P122-S01",
+        "P122-S02",
+        "P122-S03",
+        "P123-S01",
+        "P124-S01",
+        "P125-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-31",
+      "sentence_ids": [
+        "P126-S01",
+        "P127-S01",
+        "P127-S02",
+        "P128-S01",
+        "P129-S01",
+        "P130-S01",
+        "P131-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-32",
+      "sentence_ids": [
+        "P132-S01",
+        "P133-S01",
+        "P134-S01",
+        "P134-S02",
+        "P134-S03",
+        "P135-S01",
+        "P136-S01",
+        "P137-S01",
+        "P138-S01",
+        "P139-S01",
+        "P140-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-33",
+      "sentence_ids": [
+        "P141-S01",
+        "P142-S01",
+        "P142-S02",
+        "P143-S01",
+        "P144-S01",
+        "P145-S01",
+        "P146-S01",
+        "P147-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    },
+    {
+      "unit_id": "VC-34",
+      "sentence_ids": [
+        "P148-S01",
+        "P149-S01",
+        "P150-S01"
+      ],
+      "status": "DRAFT",
+      "border_collie": "absent",
+      "elements": []
+    }
+  ]
+}
