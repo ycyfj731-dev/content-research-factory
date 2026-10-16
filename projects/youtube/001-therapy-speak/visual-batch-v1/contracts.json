@@ -353,9 +353,38 @@
         "P111-S01",
         "P112-S01"
       ],
-      "status": "DRAFT",
+      "status": "READY_FOR_REVIEW",
       "border_collie": "absent",
-      "elements": []
+      "elements": [
+        {
+          "kind": "metaphor",
+          "description": "Keep one consistent anonymous worker and home/work schedule, reveal hours and weekend phone without fabricated message; quiet black line illustration.",
+          "sentence_id": "P110-S01",
+          "quote": "Therapy-speak doesn't only influence how we judge other people.",
+          "appears_at": "P110-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P110-S02",
+          "quote": "It can also shape the explanations we accept for our own problems.",
+          "appears_at": "P110-S02"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P111-S01",
+          "quote": "Consider a worker who regularly puts in sixty hours a week, answers messages on weekends, and struggles to get time off.",
+          "appears_at": "P111-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P112-S01",
+          "quote": "She says she's burned out.",
+          "appears_at": "P112-S01"
+        }
+      ]
     },
     {
       "unit_id": "VC-28",
@@ -366,9 +395,45 @@
         "P116-S01",
         "P117-S01"
       ],
-      "status": "DRAFT",
+      "status": "READY_FOR_REVIEW",
       "border_collie": "absent",
-      "elements": []
+      "elements": [
+        {
+          "kind": "metaphor",
+          "description": "Retain same worker and calendar; personal boundaries appear as a small change while employer's work schedule remains unchanged; no invented boss or statement.",
+          "sentence_id": "P113-S01",
+          "quote": "Her friends suggest setting boundaries, protecting her energy, and making more time for herself.",
+          "appears_at": "P113-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P114-S01",
+          "quote": "Those suggestions may help.",
+          "appears_at": "P114-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P115-S01",
+          "quote": "But suppose the employer expects everyone to maintain the same schedule.",
+          "appears_at": "P115-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P116-S01",
+          "quote": "What happens when a problem partly created by an organization is addressed mainly through personal behavior?",
+          "appears_at": "P116-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P117-S01",
+          "quote": "Burnout is a particularly revealing example.",
+          "appears_at": "P117-S01"
+        }
+      ]
     },
     {
       "unit_id": "VC-29",
@@ -377,9 +442,31 @@
         "P119-S01",
         "P120-S01"
       ],
-      "status": "DRAFT",
+      "status": "READY_FOR_REVIEW",
       "border_collie": "absent",
-      "elements": []
+      "elements": [
+        {
+          "kind": "hold",
+          "description": "Use authentic verified WHO definition asset only after sourcing and licensing; until then HOLD a neutral unlettered background, do not synthesize WHO text.",
+          "sentence_id": "P118-S01",
+          "quote": "The World Health Organization classifies it as an occupational phenomenon connected to chronic workplace stress that hasn't been successfully managed.",
+          "appears_at": "P118-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P119-S01",
+          "quote": "The WHO doesn't classify burnout itself as a medical condition.",
+          "appears_at": "P119-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P120-S01",
+          "quote": "And its definition explicitly connects the experience to work.",
+          "appears_at": "P120-S01"
+        }
+      ]
     },
     {
       "unit_id": "VC-30",
@@ -392,9 +479,59 @@
         "P124-S01",
         "P125-S01"
       ],
-      "status": "DRAFT",
+      "status": "READY_FOR_REVIEW",
       "border_collie": "absent",
-      "elements": []
+      "elements": [
+        {
+          "kind": "metaphor",
+          "description": "Continue same worker/schedule; contrast optional coping choices with persistent understaffing, deadlines and availability expectation, no invented named employer.",
+          "sentence_id": "P121-S01",
+          "quote": "Yet popular advice can place much of the responsibility on the employee.",
+          "appears_at": "P121-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P122-S01",
+          "quote": "Learn to say no.",
+          "appears_at": "P122-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P122-S02",
+          "quote": "Take more breaks.",
+          "appears_at": "P122-S02"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P122-S03",
+          "quote": "Develop a healthier routine.",
+          "appears_at": "P122-S03"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P123-S01",
+          "quote": "There may be good reasons to do those things.",
+          "appears_at": "P123-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P124-S01",
+          "quote": "But none of them necessarily changes understaffing, unreasonable deadlines, or a workplace culture that expects people to be constantly available.",
+          "appears_at": "P124-S01"
+        },
+        {
+          "kind": "hold",
+          "description": "Hold the same approved continuous visual without introducing additional actors, documents, dialogue, facts or narrative events.",
+          "sentence_id": "P125-S01",
+          "quote": "An individual can make better choices while still facing conditions that remain fundamentally unreasonable.",
+          "appears_at": "P125-S01"
+        }
+      ]
     },
     {
       "unit_id": "VC-31",
